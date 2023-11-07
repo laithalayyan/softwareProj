@@ -1,5 +1,6 @@
 Feature: user signs up
 
+
   Scenario: user sign up successfully
     Given that the user is not signed up
     When  email is "laith@gmail.com"

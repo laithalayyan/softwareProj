@@ -13,8 +13,8 @@ public class Customer {
     private String email;
     private String password;
     private String userType;
-    private List<roles.Order> orders;
-    private static List<Customer> customers = new ArrayList<>();
+    public List<roles.Order> orders;
+    public static List<Customer> customers = new ArrayList<>();
 
     public Customer(String username, String email, String password,String userType) {
         this.username = username;
@@ -44,7 +44,7 @@ public class Customer {
         return orders;
     }
 
-    private static void manageCustomers() {
+    public static void manageCustomers() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -80,11 +80,16 @@ public class Customer {
         System.out.print("Enter customer's email: ");
         String email = scanner.nextLine();
 
+
         System.out.print("Enter customer's password: ");
         String password = scanner.nextLine();
 
         customers.add(new Customer(username, email, password,"customer"));
         System.out.println("Customer registration successful!");
+
+
+
+
     }
 
     private static void listCustomers() {
@@ -96,16 +101,20 @@ public class Customer {
 
     //String loggedInUsername = customerUser.getUsername();
     public static Customer getLoggedInCustomer() {
+        /*for (Customer customer : userDatabase) {
+         if (user.getEmail().equals("customer@customer.com")) {
+                return user;
+            }
+        }
+        return null ;*/
         for (Customer customer : customers) {
-
+            //
             if (customer.getEmail().equals("customer@customer.com")) {
                 return customer;
             }
-
         }
         return null ;
     }
-
 
 
 

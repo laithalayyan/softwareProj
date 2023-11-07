@@ -1,9 +1,11 @@
 package roles;
 
+import java.util.List;
 import java.util.Scanner;
 
 import static org.example.AdminDashboard.*;
 //import static roles.Customer.getLoggedInCustomer;
+import static roles.Customer.customers;
 import static roles.Order.manageOrders;
 
 public class User {
@@ -23,6 +25,14 @@ public class User {
 
     public static String loggedIngetEmail;
 
+    /*private List<Order> orders;
+    public List<Order> getOrders() {
+        return orders;
+    }*/
+
+    public User() {
+
+    }
     public User(String username, String email, String password, String userType) {
         this.username = username;
         this.email = email;
@@ -109,10 +119,21 @@ public class User {
         System.out.print("Enter your user type (admin, customer, installer): ");
         String userType = scanner.nextLine();
 
-        User user = new User(username, email, password, userType);
-        userDatabase.add(user);
+        User us = new User(username, email, password, userType);
 
-        System.out.println("Registration successful!");
+        for (User user : userDatabase) {
+            if (email.equals(user.getEmail())) {
+
+                System.out.println("this user already exist");
+                return ;
+            }else {
+                System.out.println("Registration successful!");
+                userDatabase.add(us);
+            }
+
+        }
+
+
     }
 
     public static void loginUser() {
@@ -129,6 +150,7 @@ public class User {
         for (User user : userDatabase) {
             if (user.getEmail().equals(email) && user.getPassword().equals(password)&&user.getUserType().equals("admin")) {
                 System.out.println("Login successful. User type: " + user.getUserType());
+
                 if (isAdminLoggedIn()) {
                     adminDashboard();
                     adminIsLogged=true;
@@ -136,6 +158,9 @@ public class User {
                 else System.out.println("You need to log in correctly");
                 break; }
             else if(user.getEmail().equals(email) && user.getPassword().equals(password)&&user.getUserType().equals("customer")){
+                //List<Customer> customer=user.getEmail();
+                Customer customer = new Customer(user.getUsername(), user.getEmail(), user.getPassword(), user.getUserType());
+                customers.add(customer);
                 loggedIngetEmail = user.getEmail();
                   if(isCustomerLoggedIn()) {
                       manageOrders();

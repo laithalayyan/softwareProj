@@ -10,6 +10,7 @@ import static roles.Appointment.listAppointments;
 import static roles.Appointment.scheduleAppointment;
 import static roles.Category.manageCategories;
 //import static roles.Customer.getLoggedInCustomer;
+import static roles.Customer.manageCustomers;
 import static roles.Installer.listInstallers;
 import static roles.Order.listOrders;
 import static roles.Order.placeOrder;
@@ -23,7 +24,7 @@ public class AdminDashboard {
     public static List<Product> products = new ArrayList<>();
     public static List<Category> categories = new ArrayList<>();
 
-    public static List<Customer> customers = new ArrayList<>();
+    //public static List<Customer> customers = new ArrayList<>();
     public static List<Installer> installers = new ArrayList<>();
     public static int orderIdCounter = 1;
     public static int appointmentIdCounter = 1;
@@ -99,36 +100,43 @@ public class AdminDashboard {
         return installerUser != null && installerUser.getUserType().equals("installer");
     }
 
+    private static boolean adminDash;
     public static void adminDashboard() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Admin Dashboard");
-            System.out.println("1. Manage Products");
-            System.out.println("2. Manage Categories");
-            System.out.println("3. Manage User Accounts");
-            System.out.println("4. Logout");
-            System.out.print("Choose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            adminDash=true;
+            if(isAdminLoggedIn()==true) {
+                System.out.println("Admin Dashboard");
+                System.out.println("1. Manage Products");
+                System.out.println("2. Manage Categories");
+                System.out.println("3. Manage User Accounts");
+                System.out.println("4. Manage Customers");
+                System.out.println("5. Logout");
+                System.out.print("Choose an option: ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
 
-            switch (choice) {
-                case 1:
-                    manageProducts();
-                    break;
-                case 2:
-                    manageCategories();
-                    break;
-                case 3:
-                    manageUserAccounts();
-                    break;
-                case 4:
-                    System.out.println("Logging out from the admin dashboard.");
-                    return;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-            }
-        }
+                switch (choice) {
+                    case 1:
+                        manageProducts();
+                        break;
+                    case 2:
+                        manageCategories();
+                        break;
+                    case 3:
+                        manageUserAccounts();
+                        break;
+                    case 4:
+                        manageCustomers();
+                        break;
+                    case 5:
+                        System.out.println("Logging out from the admin dashboard.");
+                        return;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            }}
     }
 
     public static void customerDashboard() {
