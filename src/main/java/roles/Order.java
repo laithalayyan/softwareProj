@@ -5,14 +5,23 @@ import java.util.List;
 import java.util.Scanner;
 
 import static org.example.AdminDashboard.*;
+//import static roles.Category.listCategories;
+import static roles.Appointment.scheduleAppointment;
+import static roles.Category.listCategories;
 import static roles.Customer.getLoggedInCustomer;
+//import static roles.Product.listCategories;
+import static roles.Installer.listInstallers;
 import static roles.Product.listProducts;
+import static roles.Product.searchProducts;
+
 import roles.Product;
 
 public class Order {
     private int orderId;
     private List<Product> orderedProducts;
     private double totalPrice;
+
+
 
 
 
@@ -43,14 +52,15 @@ public class Order {
         return totalPrice;
     }
 
-    static void manageOrders() {
+    public static void manageOrders() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("Order Management");
             System.out.println("1. Place Order");
             System.out.println("2. List Orders");
-            System.out.println("3. Back");
+            System.out.println("3. List Categories");
+            System.out.println("4. Back");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -63,6 +73,9 @@ public class Order {
                     listOrders();
                     break;
                 case 3:
+                    listCategories();
+                    break;
+                case 4:
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -73,23 +86,57 @@ public class Order {
     public static void placeOrder() {
         Scanner scanner = new Scanner(System.in);
 
+
         System.out.println("Available Products:");
         listProducts();
 
-        List<Product> selectedProducts = new ArrayList<>();
 
+
+        System.out.println("Do you want to search specifc products ? (y/n)");
+        String pro = scanner.nextLine();
+        switch (pro){
+            case "y":
+                searchProducts();
+                ordersteps();
+                break;
+            case "n":
+                ordersteps();
+                break;
+        }
+
+
+    }
+
+    public static void ordersteps(){
+        Scanner scanner = new Scanner(System.in);
+        List<Product> selectedProducts = new ArrayList<>();
         while (true) {
             System.out.print("Enter the name of the product you want to order (or 'done' to finish): ");
             String input = scanner.nextLine();
 
             for (Product product : products) {
-                if (product.getName().equalsIgnoreCase(input)) {
+                if (product.getName().equalsIgnoreCase(input)&&product.getAvailablity()!=0) {
                     selectedProducts.add(product);
+                    product.setAvailablity();
+                    listProducts();
                     break;
-                }
+                }else if (product.getAvailablity()==0){ System.out.println("There is no enough");}
             }
             if (input.equalsIgnoreCase("done")) {
+                System.out.println("Do you want installation service ? (y/n)");
+                String in = scanner.nextLine();
+                switch (in){
+                    case "y":
+                        scheduleAppointment();
+                        //String installer = scanner.nextLine();
+                        break;
+
+
+                    case "n":
+                        break;
+                }
                 break;
+
             }
         }
 
@@ -103,9 +150,9 @@ public class Order {
             System.out.println("Order placed successfully!");
         }
     }
-
     public static void listOrders() {
         Customer customer = getLoggedInCustomer();
+        //Customer customer2 =
         if (customer != null) {
             System.out.println("Orders for " + customer.getUsername() + ":");
             List<Order> orders = customer.getOrders();

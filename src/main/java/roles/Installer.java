@@ -1,10 +1,13 @@
 package roles;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import static org.example.AdminDashboard.adminUser;
+import static org.example.AdminDashboard.*;
+import static roles.User.loggedIngetEmail;
 
 public class Installer {
     private int id;
@@ -12,15 +15,18 @@ public class Installer {
     private String email;
     private String password;
     private String userType;
-    private List<Appointment> appointments;
-    private static List<Installer> installers = new ArrayList<>();
 
-    public Installer(int id ,String username, String email, String password,String userType) {
+    private String avaialable;
+    private List<Appointment> appointments;
+    //private static List<Installer> installersDatabase = new ArrayList<>();
+
+    public Installer(int id ,String username, String email, String password,String userType,String avaialable) {
         this.id=id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.userType = "installer";
+        this.avaialable=avaialable;
         this.appointments = new ArrayList<>();
     }
     public int getId(){
@@ -47,7 +53,7 @@ public class Installer {
         return appointments;
     }
 
-    private static void manageInstallers() {
+    public static void manageInstallers() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -89,21 +95,24 @@ public class Installer {
         System.out.print("Enter installer's password: ");
         String password = scanner.nextLine();
 
-        installers.add(new Installer(id,username, email, password,"installer"));
+        System.out.print("Enter the first date you are available at ");
+        String avaialable = scanner.nextLine();
+
+        installersDatabase.add(new Installer(id,username, email, password,"installer",avaialable));
         System.out.println("Installer registration successful!");
     }
 
     public static void listInstallers() {
         System.out.println("Installers:");
-        for (Installer installer : installers) {
-            System.out.println("Username: " + installer.getUsername() + ", Email: " + installer.getEmail());
+        for (Installer installer : installersDatabase) {
+            System.out.println("Installer ID: " + installer.getId()+" Installer name: " + installer.getUsername() + ", Email: " + installer.getEmail());
         }
     }
 
     public static Installer getLoggedInInstaller() {
 
-        for (Installer installer : installers) {
-            if (installer.getUsername().equals(adminUser.getUsername())) {
+        for (Installer installer : installersDatabase) {
+            if (installer.getEmail().equals(loggedIngetEmail)) {
                 return installer;
             }
         }

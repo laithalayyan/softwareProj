@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import static org.example.AdminDashboard.*;
 import static roles.User.loggedIngetEmail;
+import static roles.User.loggedIngetEmailCustomer;
 
 
 public class Customer {
@@ -84,7 +85,7 @@ public class Customer {
         System.out.print("Enter customer's password: ");
         String password = scanner.nextLine();
 
-        customers.add(new Customer(username, email, password,"customer"));
+        userDatabase.add(new User(username, email, password,"customer"));
         System.out.println("Customer registration successful!");
 
 
@@ -94,8 +95,11 @@ public class Customer {
 
     private static void listCustomers() {
         System.out.println("Customers:");
-        for (Customer customer : customers) {
-            System.out.println("Username: " + customer.getUsername() + ", Email: " + customer.getEmail());
+        for (User user : userDatabase) {
+            if(user.getUserType().equalsIgnoreCase("customer")){
+                System.out.println("Username: " + user.getUsername() + ", Email: " + user.getEmail());
+            }
+
         }
     }
 
@@ -109,7 +113,17 @@ public class Customer {
         return null ;*/
         for (Customer customer : customers) {
             //
-            if (customer.getEmail().equals("customer@customer.com")) {
+            if (customer.getEmail().equals(loggedIngetEmailCustomer)) {
+                return customer;
+            }
+        }
+        return null ;
+    }
+
+    public static Customer getOrderdCustomer() {
+        for (Customer customer : customers) {
+
+            if (customer.getEmail().equals(loggedIngetEmail)) {
                 return customer;
             }
         }

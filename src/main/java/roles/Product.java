@@ -1,24 +1,52 @@
 package roles;
 
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 
-import static org.example.AdminDashboard.products;
+import static org.example.AdminDashboard.*;
+import static org.example.AdminDashboard.categories;
+import java.awt.image.*;
 
 public class Product {
+
+
     private String name;
     private double price;
 
-    public Product(String name, double price) {
+    private String category;
+
+    private int availablity;
+
+    public Product(String name, double price,String category,int availablity ) {
         this.name = name;
         this.price = price;
+        this.category=category;
+        this.availablity=availablity;
     }
+
 
     public String getName() {
         return name;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setAvailablity() {
+        availablity = availablity-1;
+    }
+
     public double getPrice() {
         return price;
+    }
+    public int getAvailablity() {
+        return availablity;
     }
 
     public static void manageProducts() {
@@ -58,7 +86,11 @@ public class Product {
         String name = scanner.nextLine();
         System.out.print("Enter product price: ");
         double price = scanner.nextDouble();
-        products.add(new Product(name, price));
+        System.out.print("Enter category name: ");
+        String category = scanner.nextLine();
+        System.out.print("Enter product amount: ");
+        int ava = scanner.nextInt();
+        products.add(new Product(name, price, category,ava));
         System.out.println("Product added successfully.");
     }
 
@@ -79,8 +111,22 @@ public class Product {
     public static void listProducts() {
         System.out.println("Products:");
         for (Product product : products) {
-            System.out.println("Name: " + product.getName() + ", Price: " + product.getPrice());
+            System.out.println("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
         }
     }
+
+    public static void searchProducts(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Search for specific product by name:");
+        String pro = scanner.nextLine();
+        for (Product product : products) {
+
+            if (product.getName().equalsIgnoreCase(pro)) {
+                System.out.println("Name: " + product.getName() + ", Price: " + product.getPrice());
+            }
+        }
+    }
+
+
 
 }

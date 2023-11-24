@@ -1,21 +1,29 @@
 package org.example;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import roles.*;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.awt.image.*;
 
-import static roles.Appointment.listAppointments;
-import static roles.Appointment.scheduleAppointment;
-import static roles.Category.manageCategories;
+import javax.imageio.ImageIO;
+
+//import static roles.Category.manageCategories;
 //import static roles.Customer.getLoggedInCustomer;
+import static roles.Appointment.*;
+import static roles.Category.listCategories;
+import static roles.Category.manageCategories;
 import static roles.Customer.manageCustomers;
 import static roles.Installer.listInstallers;
-import static roles.Order.listOrders;
-import static roles.Order.placeOrder;
-import static roles.Product.listProducts;
-import static roles.Product.manageProducts;
+import static roles.Installer.manageInstallers;
+import static roles.Order.*;
+import static roles.Product.*;
 import static roles.User.*;
 
 
@@ -25,35 +33,50 @@ public class AdminDashboard {
     public static List<Category> categories = new ArrayList<>();
 
     //public static List<Customer> customers = new ArrayList<>();
-    public static List<Installer> installers = new ArrayList<>();
+    public static List<Installer> installersDatabase = new ArrayList<>();
     public static int orderIdCounter = 1;
     public static int appointmentIdCounter = 1;
     public static User adminUser;
     public static User customerUser;
-    public static User installerUser;
+    public static User customerUser2;
+    public static Installer installerUser;
+    public static Installer installerUser2;
     public static Product product;
+    public static Category categoryy;
 
 
     public static void main(String[] args) {
         adminUser = new User("admin", "admin@admin.com", "123", "admin");
         userDatabase.add(adminUser);
 
-        customerUser = new User("customerlith", "customer@customer.com", "123","customer");
+        customerUser = new User("customerlaith1", "customer@customer.com", "123","customer");
         userDatabase.add(customerUser);
 
-        installerUser = new User("intallerlith", "installer@installer.com", "123","installer");
-        userDatabase.add(installerUser);
+        customerUser2 = new User("customerlaith2", "customer2@customer.com", "123","customer");
+        userDatabase.add(customerUser2);
 
-        product=new Product("laith",20);
+        installerUser = new Installer(1, "installerlaith", "installer@installer.com","123","installer","12-12-2023");
+        installersDatabase.add(installerUser);
+
+        installerUser2 = new Installer(2, "installerlaith2", "installer2@installer.com","123","installer","12-11-2023");
+        installersDatabase.add(installerUser2);
+
+        categoryy=new Category("Interior");
+        categories.add(categoryy);
+        categoryy=new Category("Exterior");
+        categories.add(categoryy);
+        categoryy=new Category("Mirors");
+        categories.add(categoryy);
+        categoryy=new Category("Tears");
+        categories.add(categoryy);
+        product=new Product("miror",20,"mirors",20);
         products.add(product);
-        product=new Product("laith2",20);
+        product=new Product("tear",20,"tears",30);
         products.add(product);
-        product=new Product("laith3",20);
+        product=new Product("interior",20,"Interior",40);
         products.add(product);
-
-
-
-
+        product=new Product("exterior",20,"Exterior",50);
+        products.add(product);
 
 
         Scanner scanner = new Scanner(System.in);
@@ -112,12 +135,16 @@ public class AdminDashboard {
                 System.out.println("2. Manage Categories");
                 System.out.println("3. Manage User Accounts");
                 System.out.println("4. Manage Customers");
-                System.out.println("5. Logout");
+                System.out.println("5. Manage Installers");
+                System.out.println("6. Manage Appointments");
+                System.out.println("7. Manage Orders");
+                System.out.println("8. Logout");
                 System.out.print("Choose an option: ");
                 int choice = scanner.nextInt();
                 scanner.nextLine();
 
                 switch (choice) {
+
                     case 1:
                         manageProducts();
                         break;
@@ -131,6 +158,15 @@ public class AdminDashboard {
                         manageCustomers();
                         break;
                     case 5:
+                        manageInstallers();
+                        break;
+                    case 6:
+                        manageAppointments();
+                        break;
+                    case 7:
+                        manageOrders();
+                        break;
+                    case 8:
                         System.out.println("Logging out from the admin dashboard.");
                         return;
                     default:
@@ -147,7 +183,8 @@ public class AdminDashboard {
             System.out.println("1. Browse products");
             System.out.println("2. make purchases");
             System.out.println("3. view orders");
-            System.out.println("4. Logout");
+            System.out.println("4. List Categories");
+            System.out.println("5. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -163,6 +200,9 @@ public class AdminDashboard {
                     listOrders();
                     break;
                 case 4:
+                    listCategories();
+                    break;
+                case 5:
                     System.out.println("Logging out from the admin dashboard.");
                     return;
                 default:
@@ -177,7 +217,7 @@ public class AdminDashboard {
         while (true) {
             System.out.println("installer Dashboard");
             System.out.println("1. View installation requests");
-            System.out.println("2. View schedule appointments");
+            System.out.println("2. schedule appointments");
             System.out.println("3. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
@@ -185,13 +225,13 @@ public class AdminDashboard {
 
             switch (choice) {
                 case 1:
-                    scheduleAppointment();
-                    break;
-                case 2:
                     listAppointments();
                     break;
+                case 2:
+                    scheduleAppointment();
+                    break;
                 case 3:
-                    System.out.println("Logging out from the admin dashboard.");
+                    System.out.println("Logging out from the installer dashboard.");
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");

@@ -18,12 +18,14 @@ public class User {
     private static boolean customerIsLogged;
     private boolean installerIsLogged;
     private boolean issignedup ;
+    public static String customerOrder;
 
     public void setIssignedup(boolean issignedup){
         this.issignedup=issignedup;
     }
 
     public static String loggedIngetEmail;
+    public static String loggedIngetEmailCustomer;
 
     /*private List<Order> orders;
     public List<Order> getOrders() {
@@ -87,6 +89,9 @@ public class User {
         for (User user : userDatabase) {
             System.out.println("Username: " + user.getUsername() + ", Email: " + user.getEmail() + ", User Type: " + user.getUserType());
         }
+        for (Installer installer : installersDatabase) {
+            System.out.println("Username: " + installer.getUsername() + ", Email: " + installer.getEmail() + ", User Type: " + installer.getUserType());
+        }
     }
 
     private static void deleteUserAccount() {
@@ -123,15 +128,12 @@ public class User {
 
         for (User user : userDatabase) {
             if (email.equals(user.getEmail())) {
-
                 System.out.println("this user already exist");
-                return ;
-            }else {
-                System.out.println("Registration successful!");
-                userDatabase.add(us);
-            }
+                return ;}
 
         }
+        System.out.println("Registration successful!");
+        userDatabase.add(us);
 
 
     }
@@ -148,7 +150,7 @@ public class User {
 
 
         for (User user : userDatabase) {
-            if (user.getEmail().equals(email) && user.getPassword().equals(password)&&user.getUserType().equals("admin")) {
+            if (user.getEmail().equals(email) && user.getPassword().equals(password)&&user.getUserType().equalsIgnoreCase("admin")) {
                 System.out.println("Login successful. User type: " + user.getUserType());
 
                 if (isAdminLoggedIn()) {
@@ -157,16 +159,28 @@ public class User {
                 }
                 else System.out.println("You need to log in correctly");
                 break; }
-            else if(user.getEmail().equals(email) && user.getPassword().equals(password)&&user.getUserType().equals("customer")){
+            else if(user.getEmail().equals(email) && user.getPassword().equals(password)&&user.getUserType().equalsIgnoreCase("customer")){
                 //List<Customer> customer=user.getEmail();
                 Customer customer = new Customer(user.getUsername(), user.getEmail(), user.getPassword(), user.getUserType());
                 customers.add(customer);
-                loggedIngetEmail = user.getEmail();
+                loggedIngetEmailCustomer = user.getEmail();
+                customerOrder=user.getEmail();
+
                   if(isCustomerLoggedIn()) {
-                      manageOrders();
+                      customerDashboard();
+                      //manageOrders();
                       customerIsLogged = true;
                 }
             }
+            else
+                for (Installer installer : installersDatabase){
+                    if(installer.getEmail().equals(email) && installer.getPassword().equals(password) && installer.getUserType().equalsIgnoreCase("installer")){
+                        loggedIngetEmail = installer.getEmail();
+
+                        System.out.println("Login successful. User type: " + installer.getUserType());
+                        installerDashboard();
+                    }
+                }
 
 
         }
