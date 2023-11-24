@@ -102,6 +102,10 @@ public class Order {
             case "n":
                 ordersteps();
                 break;
+            default:
+
+                System.out.println("Invalid choice. Please try again.");
+                placeOrder();
         }
 
 
@@ -134,6 +138,8 @@ public class Order {
 
                     case "n":
                         break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
                 }
                 break;
 
