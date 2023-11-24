@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="final product">
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/roles/AvailableDates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Installer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700857584044</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="final product">
+      <created>1700857944688</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700857944689</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,24 +156,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/roles/Customer.java</url>
           <line>75</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/roles/Appointment.java</url>
-          <line>48</line>
-          <properties class="roles.Appointment" method="getAppointmentDate">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/roles/Order.java</url>
-          <line>54</line>
-          <properties class="roles.Order" method="manageOrders">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/roles/Product.java</url>

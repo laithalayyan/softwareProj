@@ -1,26 +1,19 @@
 package org.example;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+
 import java.util.ArrayList;
-import java.util.InputMismatchException;
+
 import java.util.List;
 import java.util.Scanner;
 import roles.*;
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.awt.image.*;
 
-import javax.imageio.ImageIO;
 
-//import static roles.Category.manageCategories;
-//import static roles.Customer.getLoggedInCustomer;
+
 import static roles.Appointment.*;
 import static roles.Category.listCategories;
 import static roles.Category.manageCategories;
 import static roles.Customer.manageCustomers;
-import static roles.Installer.listInstallers;
+
 import static roles.Installer.manageInstallers;
 import static roles.Order.*;
 import static roles.Product.*;
@@ -34,6 +27,12 @@ public class AdminDashboard {
 
     //public static List<Customer> customers = new ArrayList<>();
     public static List<Installer> installersDatabase = new ArrayList<>();
+    public static List<AvailableDates> availableDates = new ArrayList<>();
+
+    public static AvailableDates availabledate1;
+    public static AvailableDates availabledate2;
+    public static AvailableDates availabledate3;
+    public static AvailableDates availabledate4;
     public static int orderIdCounter = 1;
     public static int appointmentIdCounter = 1;
     public static User adminUser;
@@ -55,10 +54,10 @@ public class AdminDashboard {
         customerUser2 = new User("customerlaith2", "customer2@customer.com", "123","customer");
         userDatabase.add(customerUser2);
 
-        installerUser = new Installer(1, "installerlaith", "installer@installer.com","123","installer","12-12-2023");
+        installerUser = new Installer(1, "installerlaith", "installer@installer.com","123","installer");
         installersDatabase.add(installerUser);
 
-        installerUser2 = new Installer(2, "installerlaith2", "installer2@installer.com","123","installer","12-11-2023");
+        installerUser2 = new Installer(2, "installerlaith2", "installer2@installer.com","123","installer");
         installersDatabase.add(installerUser2);
 
         categoryy=new Category("Interior");
@@ -77,6 +76,16 @@ public class AdminDashboard {
         products.add(product);
         product=new Product("exterior",20,"Exterior",50);
         products.add(product);
+
+        availabledate1=new AvailableDates("20","11","2023","installerlaith");
+        availabledate2=new AvailableDates("2","5","2024","installerlaith");
+        availabledate3=new AvailableDates("7","9","2024","installerlaith2");
+        availabledate4=new AvailableDates("4","3","2024","installerlaith2");
+        availableDates.add(availabledate1);
+        availableDates.add(availabledate2);
+        availableDates.add(availabledate3);
+        availableDates.add(availabledate4);
+
 
 
         Scanner scanner = new Scanner(System.in);

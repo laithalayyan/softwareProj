@@ -25,6 +25,7 @@ public class User {
     }
 
     public static String loggedIngetEmail;
+    public static String loggedIngetName;
     public static String loggedIngetEmailCustomer;
 
     /*private List<Order> orders;
@@ -176,6 +177,7 @@ public class User {
                 for (Installer installer : installersDatabase){
                     if(installer.getEmail().equals(email) && installer.getPassword().equals(password) && installer.getUserType().equalsIgnoreCase("installer")){
                         loggedIngetEmail = installer.getEmail();
+                        loggedIngetName=installer.getUsername();
 
                         System.out.println("Login successful. User type: " + installer.getUserType());
                         installerDashboard();

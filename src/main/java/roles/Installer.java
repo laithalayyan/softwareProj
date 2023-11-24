@@ -1,5 +1,7 @@
 package roles;
 
+import org.example.AdminDashboard;
+
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,6 +10,7 @@ import java.util.Scanner;
 
 import static org.example.AdminDashboard.*;
 import static roles.User.loggedIngetEmail;
+import static roles.User.loggedIngetName;
 
 public class Installer {
     private int id;
@@ -18,15 +21,16 @@ public class Installer {
 
     private String avaialable;
     private List<Appointment> appointments;
+    //private static List<AvailableDates> availableDates;
+
     //private static List<Installer> installersDatabase = new ArrayList<>();
 
-    public Installer(int id ,String username, String email, String password,String userType,String avaialable) {
+    public Installer(int id ,String username, String email, String password,String userType) {
         this.id=id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.userType = "installer";
-        this.avaialable=avaialable;
         this.appointments = new ArrayList<>();
     }
     public int getId(){
@@ -51,6 +55,9 @@ public class Installer {
 
     public List<Appointment> getAppointments() {
         return appointments;
+    }
+    public List<AvailableDates> getAvailableDates() {
+        return availableDates;
     }
 
     public static void manageInstallers() {
@@ -95,17 +102,41 @@ public class Installer {
         System.out.print("Enter installer's password: ");
         String password = scanner.nextLine();
 
-        System.out.print("Enter the first date you are available at ");
-        String avaialable = scanner.nextLine();
+        System.out.print("Enter the dates you are available at(Write 'Done' When finish)");
+        String a = scanner.nextLine();
+        switch (a){
+            case "done":
+                break;
+            default:
+                System.out.print("Enter the year you are available at");
+                String year = scanner.nextLine();
+                System.out.print("Enter the month you are available at");
+                String month = scanner.nextLine();
+                System.out.print("Enter the days you are available at this month(write 'Done' when finish)");
+                String day = scanner.nextLine();
+                if(day!="done"){
+                    availableDates.add(new AvailableDates(day,month,year,loggedIngetName));
+                }else break;
 
-        installersDatabase.add(new Installer(id,username, email, password,"installer",avaialable));
+
+        }
+
+        //String avaialable = scanner.nextLine();
+
+
+        installersDatabase.add(new Installer(id,username, email, password,"installer"));
         System.out.println("Installer registration successful!");
     }
 
     public static void listInstallers() {
-        System.out.println("Installers:");
+        /*System.out.println("Installers:");
         for (Installer installer : installersDatabase) {
             System.out.println("Installer ID: " + installer.getId()+" Installer name: " + installer.getUsername() + ", Email: " + installer.getEmail());
+        }*/
+        System.out.println("Available Date For Installers:");
+
+        for(AvailableDates availableDatess:availableDates){
+            System.out.println(availableDates.indexOf(availableDatess) + "-" + "Installer Name:" + availableDatess.getInstaller() + "  Date Available:" + availableDatess.getDay() + "/" + availableDatess.getMonth() + "/" + availableDatess.getYear());
         }
     }
 

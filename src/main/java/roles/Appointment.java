@@ -89,7 +89,7 @@ public class Appointment {
         System.out.println("Available Installers:");
         listInstallers();
 
-        System.out.print("Enter the ID of the installer you want to schedule an appointment with: ");
+        System.out.print("Enter the # of the installer you want to schedule an appointment with: ");
         int installerId = scanner.nextInt();
         scanner.nextLine();
 
