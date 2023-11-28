@@ -108,7 +108,7 @@ public class Category {
                         return;
                     }
                     deletenoti();
-                    return;
+
                 }
             }
             //logger.info("Category not found.");
