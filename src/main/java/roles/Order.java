@@ -3,29 +3,48 @@ package roles;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import static org.example.AdminDashboard.*;
-//import static roles.Category.listCategories;
 import static roles.Appointment.scheduleAppointment;
 import static roles.Category.listCategories;
 import static roles.Customer.getLoggedInCustomer;
-//import static roles.Product.listCategories;
-import static roles.Installer.listInstallers;
 import static roles.Product.listProducts;
 import static roles.Product.searchProducts;
 
-import roles.Product;
-
 public class Order {
+    public static boolean placeOrder;
+    public static boolean listOrder;
+    public static boolean listCategories;
+
+    public static boolean isPlaceOrder() {
+        return placeOrder;
+    }
+
+    public static void setPlaceOrder(boolean placeOrder) {
+        Order.placeOrder = placeOrder;
+    }
+
+    public static boolean isListOrder() {
+        return listOrder;
+    }
+
+    public static void setListOrder(boolean listOrder) {
+        Order.listOrder = listOrder;
+    }
+
+    public static boolean isListCategories() {
+        return listCategories;
+    }
+
+    public static void setListCategories(boolean listCategories) {
+        Order.listCategories = listCategories;
+    }
+
     private int orderId;
     private List<Product> orderedProducts;
     private double totalPrice;
-
-
-
-
-
-
+    private static Logger logger = Logger.getLogger(Order.class.getName());
     public Order(int orderId, List<Product> orderedProducts) {
         this.orderId = orderId;
         this.orderedProducts = orderedProducts;
@@ -56,29 +75,28 @@ public class Order {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Order Management");
-            System.out.println("1. Place Order");
-            System.out.println("2. List Orders");
-            System.out.println("3. List Categories");
-            System.out.println("4. Back");
-            System.out.print("Choose an option: ");
+            logger.info("\nOrder Management\n1. Place Order\n2. List Orders" +
+                    "\n3. List Categories\n4. Back\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
                 case 1:
+                    setPlaceOrder(true);
                     placeOrder();
                     break;
                 case 2:
+                    setListOrder(true);
                     listOrders();
                     break;
                 case 3:
+                    setListCategories(true);
                     listCategories();
                     break;
                 case 4:
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
         }
     }
@@ -87,12 +105,12 @@ public class Order {
         Scanner scanner = new Scanner(System.in);
 
 
-        System.out.println("Available Products:");
+        logger.info("Available Products:");
         listProducts();
 
 
 
-        System.out.println("Do you want to search specifc products ? (y/n)");
+        logger.info("Do you want to search specifc products ? (y/n)");
         String pro = scanner.nextLine();
         switch (pro){
             case "y":
@@ -115,7 +133,7 @@ public class Order {
         Scanner scanner = new Scanner(System.in);
         List<Product> selectedProducts = new ArrayList<>();
         while (true) {
-            System.out.print("Enter the name of the product you want to order (or 'done' to finish): ");
+            logger.info("Enter the name of the product you want to order (or 'done' to finish): ");
             String input = scanner.nextLine();
 
             for (Product product : products) {
@@ -124,22 +142,19 @@ public class Order {
                     product.setAvailablity();
                     listProducts();
                     break;
-                }else if (product.getAvailablity()==0){ System.out.println("There is no enough");}
+                }else if (product.getAvailablity()==0){ logger.info("There is no enough");}
             }
             if (input.equalsIgnoreCase("done")) {
-                System.out.println("Do you want installation service ? (y/n)");
+                logger.info("Do you want installation service ? (y/n)");
                 String in = scanner.nextLine();
                 switch (in){
                     case "y":
                         scheduleAppointment();
-                        //String installer = scanner.nextLine();
                         break;
-
-
                     case "n":
                         break;
                     default:
-                        System.out.println("Invalid choice. Please try again.");
+                        logger.info("Invalid choice. Please try again.");
                 }
                 break;
 
@@ -147,32 +162,31 @@ public class Order {
         }
 
         if (selectedProducts.isEmpty()) {
-            System.out.println("No products selected. Order not placed.");
+            logger.info("No products selected. Order not placed.");
         } else {
             Customer customer = getLoggedInCustomer();
             Order order = new Order(orderIdCounter, selectedProducts);
             customer.getOrders().add(order);
             orderIdCounter++;
-            System.out.println("Order placed successfully!");
+            logger.info("Order placed successfully!");
         }
     }
     public static void listOrders() {
         Customer customer = getLoggedInCustomer();
-        //Customer customer2 =
         if (customer != null) {
-            System.out.println("Orders for " + customer.getUsername() + ":");
+            logger.info("Orders for " + customer.getUsername() + ":");
             List<Order> orders = customer.getOrders();
             for (Order order : orders) {
-                System.out.println("Order ID: " + order.getOrderId());
-                System.out.println("Ordered Products:");
+                logger.info("Order ID: " + order.getOrderId());
+                logger.info("Ordered Products:");
                 for (Product product : order.getOrderedProducts()) {
-                    System.out.println("Name: " + product.getName() + ", Price: " + product.getPrice());
+                    logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
                 }
-                System.out.println("Total Price: " + order.getTotalPrice());
-                System.out.println("----------");
+                logger.info("Total Price: " + order.getTotalPrice());
+                logger.info("----------");
             }
         } else {
-            System.out.println("You need to log in as a customer to view orders.");
+            logger.info("You need to log in as a customer to view orders.");
         }
     }
 }

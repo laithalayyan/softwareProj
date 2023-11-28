@@ -1,13 +1,49 @@
 package roles;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import static org.example.AdminDashboard.categories;
 import static org.example.AdminDashboard.products;
 import static roles.Product.searchProducts;
 
 public class Category {
+    public static boolean addcat;
+    public static boolean deletecat;
+    public static boolean listcat;
+    public static boolean searchproduct;
+    public static boolean isSearchproduct() {
+        return searchproduct;
+    }
+
+    public static void setSearchproduct(boolean searchproduct) {
+        Category.searchproduct = searchproduct;
+    }
+    public static boolean isListcat() {
+        return listcat;
+    }
+
+    public static void setListcat(boolean listcat) {
+        Category.listcat = listcat;
+    }
+    public static void setAddcat(boolean addcat) {
+        Category.addcat = addcat;
+    }
+
+    public static boolean isAddcat() {
+        return addcat;
+    }
+    public static boolean isDeletecat() {
+        return deletecat;
+    }
+
+    public static void setDeletecat(boolean deletecat) {
+        Category.deletecat = deletecat;
+    }
+
+
     private String name;
+    private static Logger logger = Logger.getLogger(Category.class.getName());
 
     public Category(String name) {
         this.name = name;
@@ -21,66 +57,48 @@ public class Category {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Category Management");
-            System.out.println("1. Add Category");
-            System.out.println("2. Delete Category");
-            System.out.println("3. List Categories");
-            System.out.println("4. Search Product");
-            System.out.println("5. Back");
-            System.out.print("Choose an option: ");
+            logger.info("\nCategory Management\n1. Add Category\n2. Delete Category" +
+                    "\n3. List Categories\n4. Search Product\n5. Back\nChoose an option: ");
+
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
                 case 1:
+                    setAddcat(true);
                     addCategory();
                     break;
                 case 2:
+                    setDeletecat(true);
                     deleteCategory();
                     break;
                 case 3:
+                    setListcat(true);
                     listCategories();
                     break;
                 case 4:
+                    setSearchproduct(true);
                     searchProducts();
                     break;
                 case 5:
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
         }
     }
 
-    private static void addCategory() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter category name: ");
-        String name = scanner.nextLine();
+    public static void addcat(String name){
         categories.add(new Category(name));
-
-        System.out.println("Do you want to add products to this Category(y) , or leave it empty(n) ? ");
-        String c = scanner.nextLine();
-        switch (c) {
-            case "y":
-                System.out.print("Enter product name: ");
-                String pname = scanner.nextLine();
-                System.out.print("Enter product price: ");
-                double price = scanner.nextDouble();
-                System.out.print("Enter product availability: ");
-                int ava = scanner.nextInt();
-                products.add(new Product(pname, price, name,ava));
-                System.out.println("Product added successfully.");
-            case "n":
-                System.out.println("Category added successfully.");
-
-        }
-
     }
+    public static void deletenoti(){
+        logger.info("Category deleted successfully.");
+    }
+    public static void addnoti(){
+        logger.info("Category addedd successfully.");
+    }
+    public static void deletecat(String name){
 
-    private static void deleteCategory() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the category name to delete: ");
-        String name = scanner.nextLine();
         for (Category category : categories) {
             if (category.getName().equals(name)) {
                 categories.remove(category);
@@ -89,32 +107,66 @@ public class Category {
                         products.remove(product);
                         return;
                     }
+                    deletenoti();
+                    return;
                 }
-                System.out.println("Category deleted successfully.");
-                return;
             }
+            //logger.info("Category not found.");
         }
-        System.out.println("Category not found.");
+
+    }
+    private static void addCategory() {
+        Scanner scanner = new Scanner(System.in);
+        logger.info("Enter category name: ");
+        String name = scanner.nextLine();
+        addcat(name);
+        //categories.add(new Category(name));
+
+        logger.info("Do you want to add products to this Category(y) , or leave it empty(n) ? ");
+        String c = scanner.nextLine();
+        switch (c) {
+            case "y":
+                logger.info("Enter product name: ");
+                String pname = scanner.nextLine();
+                logger.info("Enter product price: ");
+                double price = scanner.nextDouble();
+                logger.info("Enter product availability: ");
+                int ava = scanner.nextInt();
+                products.add(new Product(pname, price, name,ava));
+                logger.info("Product added successfully.");
+            case "n":
+                addnoti();
+
+        }
+
     }
 
+    private static void deleteCategory() {
+        Scanner scanner = new Scanner(System.in);
+        logger.info("Enter the category name to delete: ");
+        String name = scanner.nextLine();
+        deletecat(name);
+    }
+
+    public static void listCategoriesTest(){
+        for (Category category : categories) {
+
+            logger.info( category.getName()  );
+        }
+    }
     public static void listCategories() {
         System.out.println("Categories:");
         for (Category category : categories) {
-            /*if(!categories.contains(product.getCategory())){
-                categories.add(product.getCategory());
-            }*/
 
-            System.out.println( category.getName()  );
+            logger.info( category.getName()  );
         }
-        /*for(int i=0 ;i<categories.size();i++){
-            System.out.println("Name: " + categories.get(i));
-        }*/
+
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Select Category to Show category products: ");
+        logger.info("Select Category to Show category products: ");
         String cat = scanner.nextLine();
         for(Product product:products) {
             if (product.getCategory().equalsIgnoreCase(cat)) {
-                System.out.println("Name: " + product.getName() + ", Price: " + product.getPrice());
+                logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
             }
         }
     }

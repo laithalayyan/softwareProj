@@ -2,27 +2,41 @@ package roles;
 
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.logging.Logger;
 import static org.example.AdminDashboard.*;
-//import static roles.Customer.getLoggedInCustomer;
 import static roles.Customer.getLoggedInCustomer;
 import static roles.Installer.getLoggedInInstaller;
 import static roles.Installer.listInstallers;
 import static roles.Order.listOrders;
-import static roles.User.customerOrder;
 
-import org.example.AdminDashboard.*;
 
 public class Appointment {
+    public static boolean listappointment;
+    public static boolean isChooseSchedule ;
+    public static boolean isListappointment() {
+        return listappointment;
+    }
+    public static void setListappointment(boolean listappointment) {
+        Appointment.listappointment = listappointment;
+    }
+    public static boolean isChooseSchedule() {
+        return isChooseSchedule;
+    }
+    public static void setChooseSchedule(boolean chooseSchedule) {
+        isChooseSchedule = chooseSchedule;
+    }
     private int appointmentId;
     private String customerName;
     private String appointmentDate;
 
     private String carModer;
     private String carDate;
+    private static Logger logger = Logger.getLogger(Appointment.class.getName());
 
-    //private List<Product> orderedProducts;
 
+    public Appointment() {
+
+    }
     public Appointment(int appointmentId, String customerName, String appointmentDate,String carModer , String carDate) {
         this.appointmentId = appointmentId;
         this.customerName = customerName;
@@ -78,18 +92,29 @@ public class Appointment {
         }
     }
 
+    public String carMM;
+
+    public String getCarMM() {
+        return carMM;
+    }
+
+    public static void setCarMM(String carMM) {
+
+    }
+
     public static void scheduleAppointment() {
+        setChooseSchedule(true);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("what is your car model ?");
+        logger.info("what is your car model ?");
         String carmodel = scanner.nextLine();
-        System.out.println("what is your car date ?");
+        logger.info("what is your car date ?");
         String cardate = scanner.nextLine();
 
-        System.out.println("Choose the installer you want ");
-        System.out.println("Available Installers:");
+        logger.info("Choose the installer you want ");
+        logger.info("Available Installers:");
         listInstallers();
 
-        System.out.print("Enter the # of the installer you want to schedule an appointment with: ");
+        logger.info("Enter the # of the installer you want to schedule an appointment with: ");
         int installerId = scanner.nextInt();
         scanner.nextLine();
 
@@ -102,36 +127,37 @@ public class Appointment {
         }
 
         if (selectedInstaller != null) {
-            System.out.print("Enter the appointment date: ");
+            logger.info("Enter the appointment date: ");
             String appointmentDate = scanner.nextLine();
             Appointment appointment = new Appointment(appointmentIdCounter, getLoggedInCustomer().getUsername(), appointmentDate,carmodel,cardate);
             selectedInstaller.getAppointments().add(appointment);
             appointmentIdCounter++;
-            System.out.println("Appointment scheduled successfully!");
+            logger.info("Appointment scheduled successfully!");
         } else {
-            System.out.println("Installer not found with the given ID.");
+            logger.info("Installer not found with the given ID.");
         }
 
     }
 
     public static void listAppointments() {
+        setListappointment(true);
         Installer installer = getLoggedInInstaller();
         if (installer != null) {
-            System.out.println("Appointments for " + installer.getUsername() + ":");
+            logger.info("Appointments for " + installer.getUsername() + ":");
             List<Appointment> appointments = installer.getAppointments();
             for (Appointment appointment : appointments) {
 
-                System.out.println("Appointment ID: " + appointment.getAppointmentId());
-                System.out.println("Customer Name: " + appointment.getCustomerName());
-                System.out.println("Appointment Date: " + appointment.getAppointmentDate());
-                System.out.println("Customer Car Date: " + appointment.getCustomerCarDate());
-                System.out.println("Customer Car Model: " + appointment.getCustomerCarModel());
-                System.out.println("Products wanted: " );
+                logger.info("Appointment ID: " + appointment.getAppointmentId() + "\n" +"Customer Name: " + appointment.getCustomerName() +
+                        "\n"+"Appointment Date: " + appointment.getAppointmentDate()+"\n"+"Customer Car Date: " + appointment.getCustomerCarDate() +
+                        "\n"+"Customer Car Model: " + appointment.getCustomerCarModel());
+                logger.info("Products wanted: " );
+
                 listOrders();
-                System.out.println("----------");
+                logger.info("----------");
             }
         } else {
-            System.out.println("You need to log in as an installer to view appointments.");
+            logger.info("You need to log in as an installer to view appointments.");
         }
     }
+
 }

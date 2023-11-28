@@ -1,13 +1,19 @@
 Feature: Sign In
 
-  Scenario: Successful sign-in
-    Given I am on the sign-in page
-    When emaill is "admin@admin.com"
-    And passwordd is "123"
-    Then I should be redirected to the dashboard
+  Scenario: Login as admin
+    Given admin is not logged in
+    When Admin eemail is "admin@admin.com"
+    And Admin ppassword is "123"
+    Then the admin login
 
-  Scenario: Unsuccessful sign-in
-    Given I am on the sign-in page
-    When  emaill is "laith1@gmail.com"
-    And passwordd is "123"
-    Then I should see an error message
+  Scenario: Login as Customer
+    Given customer is not logged in
+    When Customer eemail is "customer@customer.com"
+    And Customer ppassword is "123"
+    Then the customer login
+
+  Scenario: Login as Installer
+    Given installer is not logged in
+    When Installer eemail is "installer@installer.com"
+    And Installer ppassword is "123"
+    Then the installer login

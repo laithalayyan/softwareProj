@@ -1,37 +1,69 @@
 package roles;
 
-import java.util.List;
-import java.util.Scanner;
 
+import java.util.Scanner;
+import java.util.logging.Logger;
 import static org.example.AdminDashboard.*;
-//import static roles.Customer.getLoggedInCustomer;
 import static roles.Customer.customers;
-import static roles.Order.manageOrders;
+
 
 public class User {
+    public static boolean issignedup;
+
+    public static boolean isIssignedup() {
+        return issignedup;
+    }
+
+    public static void setIssignedup(boolean issignedup) {
+        User.issignedup = issignedup;
+    }
+
+    public static boolean Adminislogged;
+    public static boolean Installerislogged;
+    public static boolean Customerislogged;
+
+    public static boolean isAdminislogged() {
+        return Adminislogged;
+    }
+
+    public static void setAdminislogged(boolean adminislogged) {
+        Adminislogged = adminislogged;
+    }
+
+    public static boolean isInstallerislogged() {
+        return Installerislogged;
+    }
+
+    public static void setInstallerislogged(boolean installerislogged) {
+        Installerislogged = installerislogged;
+    }
+
+    public static boolean isCustomerislogged() {
+        return Customerislogged;
+    }
+
+    public static void setCustomerislogged(boolean customerislogged) {
+        Customerislogged = customerislogged;
+    }
+
     private String username;
+
     private String email;
     private String password;
     private String userType;
 
-    private static boolean adminIsLogged;
-    private static boolean customerIsLogged;
-    private boolean installerIsLogged;
-    private boolean issignedup ;
-    public static String customerOrder;
 
-    public void setIssignedup(boolean issignedup){
-        this.issignedup=issignedup;
-    }
+
+
+    public static String customerOrder;
+    private static Logger logger = Logger.getLogger(User.class.getName());
+
 
     public static String loggedIngetEmail;
     public static String loggedIngetName;
     public static String loggedIngetEmailCustomer;
 
-    /*private List<Order> orders;
-    public List<Order> getOrders() {
-        return orders;
-    }*/
+
 
     public User() {
 
@@ -42,6 +74,7 @@ public class User {
         this.password = password;
         this.userType = userType;
     }
+
 
     public String getUsername() {
         return username;
@@ -62,11 +95,11 @@ public class User {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("User Account Management");
-            System.out.println("1. List User Accounts");
-            System.out.println("2. Delete User Account");
-            System.out.println("3. Back");
-            System.out.print("Choose an option: ");
+            logger.info("User Account Management");
+            logger.info("1. List User Accounts");
+            logger.info("2. Delete User Account");
+            logger.info("3. Back");
+            logger.info("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -80,143 +113,143 @@ public class User {
                 case 3:
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
         }
     }
 
     private static void listUserAccounts() {
-        System.out.println("User Accounts:");
+        logger.info("User Accounts:");
         for (User user : userDatabase) {
-            System.out.println("Username: " + user.getUsername() + ", Email: " + user.getEmail() + ", User Type: " + user.getUserType());
+            logger.info("Username: " + user.getUsername() + ", Email: " + user.getEmail() + ", User Type: " + user.getUserType());
         }
         for (Installer installer : installersDatabase) {
-            System.out.println("Username: " + installer.getUsername() + ", Email: " + installer.getEmail() + ", User Type: " + installer.getUserType());
+            logger.info("Username: " + installer.getUsername() + ", Email: " + installer.getEmail() + ", User Type: " + installer.getUserType());
         }
     }
 
     private static void deleteUserAccount() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the email of the user account to delete: ");
+        logger.info("Enter the email of the user account to delete: ");
         String email = scanner.nextLine();
 
         for (User user : userDatabase) {
             if (user.getEmail().equals(email)) {
                 userDatabase.remove(user);
-                System.out.println("User account deleted successfully.");
+                logger.info("User account deleted successfully.");
                 return;
             }
         }
 
-        System.out.println("User account not found.");
+        logger.info("User account not found.");
     }
     public static void registerUser() {
+        setIssignedup(false);
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter your username: ");
+        logger.info("Enter your username: ");
         String username = scanner.nextLine();
 
-        System.out.print("Enter your email: ");
+        logger.info("Enter your email: ");
         String email = scanner.nextLine();
 
-        System.out.print("Enter your password: ");
+        logger.info("Enter your password: ");
         String password = scanner.nextLine();
 
-        System.out.print("Enter your user type (admin, customer, installer): ");
+        logger.info("Enter your user type (admin, customer, installer): ");
         String userType = scanner.nextLine();
 
-        User us = new User(username, email, password, userType);
+        register(username,email,password,userType);
 
+
+    }
+    public static void register(String username,String email,String password,String userType){
+        User us = new User(username, email, password, userType);
         for (User user : userDatabase) {
             if (email.equals(user.getEmail())) {
-                System.out.println("this user already exist");
+                logger.info("this user already exist");
                 return ;}
-
         }
-        System.out.println("Registration successful!");
+        logger.info("Registration successful!");
         userDatabase.add(us);
-
-
     }
+
 
     public static void loginUser() {
-        Scanner scanner = new Scanner(System.in);
+        setAdminislogged(false);
+        setInstallerislogged(false);
+        setCustomerislogged(false);
 
-        System.out.print("Enter your email: ");
-        String email = scanner.nextLine();
+            Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter your password: ");
-        String password = scanner.nextLine();
+            logger.info("Enter your email: ");
+            String email = scanner.nextLine();
+
+            logger.info("Enter your password: ");
+            String password = scanner.nextLine();
+            signin(email,password);
+
+    }
+    public static void adminsignin(User user){
+        logger.info("Login successful. User type: " + user.getUserType());
+        setAdminislogged(true);
 
 
 
-        for (User user : userDatabase) {
-            if (user.getEmail().equals(email) && user.getPassword().equals(password)&&user.getUserType().equalsIgnoreCase("admin")) {
-                System.out.println("Login successful. User type: " + user.getUserType());
+    }
+    public static void customersignin(User user){
+        Customer customer = new Customer(user.getUsername(), user.getEmail(), user.getPassword(), user.getUserType());
+        customers.add(customer);
+        loggedIngetEmailCustomer = user.getEmail();
+        customerOrder = user.getEmail();
+        logger.info("Login successful. User type: " + user.getUserType());
+        setCustomerislogged(true);
 
-                if (isAdminLoggedIn()) {
-                    adminDashboard();
-                    adminIsLogged=true;
-                }
-                else System.out.println("You need to log in correctly");
-                break; }
-            else if(user.getEmail().equals(email) && user.getPassword().equals(password)&&user.getUserType().equalsIgnoreCase("customer")){
-                //List<Customer> customer=user.getEmail();
-                Customer customer = new Customer(user.getUsername(), user.getEmail(), user.getPassword(), user.getUserType());
-                customers.add(customer);
-                loggedIngetEmailCustomer = user.getEmail();
-                customerOrder=user.getEmail();
 
-                  if(isCustomerLoggedIn()) {
-                      customerDashboard();
-                      //manageOrders();
-                      customerIsLogged = true;
-                }
+    }
+    public static void installersignin(String email ,String password){
+        for (Installer installer : installersDatabase) {
+            if (installer.getEmail().equals(email) && installer.getPassword().equals(password) && installer.getUserType().equalsIgnoreCase("installer")) {
+                loggedIngetEmail = installer.getEmail();
+                loggedIngetName = installer.getUsername();
+
+                setInstallerislogged(true);
             }
-            else
-                for (Installer installer : installersDatabase){
-                    if(installer.getEmail().equals(email) && installer.getPassword().equals(password) && installer.getUserType().equalsIgnoreCase("installer")){
-                        loggedIngetEmail = installer.getEmail();
-                        loggedIngetName=installer.getUsername();
-
-                        System.out.println("Login successful. User type: " + installer.getUserType());
-                        installerDashboard();
-                    }
+        }
+        logger.info("Login successful. User type: installer");
+    }
+    public static void signin(String email,String password){
+        for (User user : userDatabase) {
+            if (user.getEmail().equals(email) && user.getPassword().equals(password) && user.getUserType().equalsIgnoreCase("admin")) {
+                adminsignin(user);
+                if (isAdminislogged()) {
+                    adminDashboard();
+                } else logger.info("You need to log in correctly");
+            } else if (user.getEmail().equals(email) && user.getPassword().equals(password) && user.getUserType().equalsIgnoreCase("customer")) {
+                customersignin(user);
+                if (isCustomerLoggedIn()) {
+                    customerDashboard();
                 }
+            } else {
+                installersignin(email, password);
+                if (isInstallerislogged()) {
+                    installerDashboard();
+                }
+
+            }
+
 
 
         }
+        logger.info("Login failed. Please check your email and password.");
 
-        System.out.println("Login failed. Please check your email and password.");
-    }
-
-    public boolean isloggedin(){
-        return adminIsLogged && customerIsLogged && installerIsLogged;
-    }
-    public void login(){
-        adminIsLogged=true;
-        customerIsLogged=true;
-        installerIsLogged=true;
-    }
-    public void logout(){
-        adminIsLogged=false;
-        customerIsLogged=false;
-        installerIsLogged=false;
     }
 
 
-    public boolean isAdminIsLogged() {
-        return adminIsLogged;
-    }
 
-    public boolean isCustomerIsLogged() {
-        return customerIsLogged;
-    }
 
-    public boolean isInstallerIsLogged() {
-        return installerIsLogged;
-    }
-    public boolean isIssignedup() {
-        return issignedup;
-    }
+
+
+
+
 }

@@ -7,24 +7,42 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import static org.example.AdminDashboard.*;
 import static roles.User.loggedIngetEmail;
 import static roles.User.loggedIngetName;
 
 public class Installer {
+    public static boolean regInstaller;
+    public static boolean listInstaller;
+    public static boolean isRegInstaller() {
+        return regInstaller;
+    }
+
+    public static void setRegInstaller(boolean regInstaller) {
+        Installer.regInstaller = regInstaller;
+    }
+
+    public static boolean isListInstaller() {
+        return listInstaller;
+    }
+
+    public static void setListInstaller(boolean listInstaller) {
+        Installer.listInstaller = listInstaller;
+    }
+
     private int id;
     private String username;
     private String email;
     private String password;
     private String userType;
 
-    private String avaialable;
+    private String date;
     private List<Appointment> appointments;
-    //private static List<AvailableDates> availableDates;
+    private static Logger logger = Logger.getLogger(Installer.class.getName());
 
-    //private static List<Installer> installersDatabase = new ArrayList<>();
-
+    public Installer(){}
     public Installer(int id ,String username, String email, String password,String userType) {
         this.id=id;
         this.username = username;
@@ -64,79 +82,83 @@ public class Installer {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Installer Management");
-            System.out.println("1. Register Installer");
-            System.out.println("2. List Installers");
-            System.out.println("3. Back");
-            System.out.print("Choose an option: ");
+            logger.info("\nInstaller Management\n1. Register Installer\n2. List Installers" +
+                    "\n3. Back\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
                 case 1:
+                    setRegInstaller(true);
                     registerInstaller();
                     break;
                 case 2:
+                    setListInstaller(true);
                     listInstallers();
                     break;
                 case 3:
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
+        }
+    }
+    public static void date(){
+        Scanner scanner = new Scanner(System.in);
+        String date = scanner.nextLine();
+        switch (date){
+            case "done":
+                break;
+            default:
+                availableDates.add(new AvailableDates(date,loggedIngetName));
+                date();
         }
     }
 
     private static void registerInstaller() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter installer's id: ");
+        logger.info("Enter installer's id: ");
         int id = scanner.nextInt();
 
-        System.out.print("Enter installer's username: ");
+
+        logger.info("Enter installer's username: ");
         String username = scanner.nextLine();
 
-        System.out.print("Enter installer's email: ");
+
+        logger.info("Enter installer's email: ");
         String email = scanner.nextLine();
 
-        System.out.print("Enter installer's password: ");
+        logger.info("Enter installer's password: ");
         String password = scanner.nextLine();
 
-        System.out.print("Enter the dates you are available at(Write 'Done' When finish)");
-        String a = scanner.nextLine();
-        switch (a){
+        logger.info("Enter the dates you are available at(Write 'Done' When finish)");
+        String date = scanner.nextLine();
+        switch (date){
             case "done":
                 break;
             default:
-                System.out.print("Enter the year you are available at");
-                String year = scanner.nextLine();
-                System.out.print("Enter the month you are available at");
-                String month = scanner.nextLine();
-                System.out.print("Enter the days you are available at this month(write 'Done' when finish)");
-                String day = scanner.nextLine();
-                if(day!="done"){
-                    availableDates.add(new AvailableDates(day,month,year,loggedIngetName));
-                }else break;
-
-
+                availableDates.add(new AvailableDates(date,loggedIngetName));
+                date();
         }
 
-        //String avaialable = scanner.nextLine();
-
-
         installersDatabase.add(new Installer(id,username, email, password,"installer"));
-        System.out.println("Installer registration successful!");
+        logger.info("Installer registration successful!");
+    }
+    public static void reginstaller(int id,String username , String email,String password ,String type){
+        installersDatabase.add(new Installer(id,username, email, password,type));
+        logger.info("Installer registration successful!");
+    }
+    public static void reginstallerav(String date,String installer){
+        availableDates.add(new AvailableDates(date,installer));
     }
 
     public static void listInstallers() {
-        /*System.out.println("Installers:");
-        for (Installer installer : installersDatabase) {
-            System.out.println("Installer ID: " + installer.getId()+" Installer name: " + installer.getUsername() + ", Email: " + installer.getEmail());
-        }*/
-        System.out.println("Available Date For Installers:");
+
+
 
         for(AvailableDates availableDatess:availableDates){
-            System.out.println(availableDates.indexOf(availableDatess) + "-" + "Installer Name:" + availableDatess.getInstaller() + "  Date Available:" + availableDatess.getDay() + "/" + availableDatess.getMonth() + "/" + availableDatess.getYear());
+            logger.info("\nAvailable Date For Installers:\n"+availableDates.indexOf(availableDatess) + "-" + "Installer Name:" + availableDatess.getInstaller() + "  Date Available:" + availableDatess.getDate() );
         }
     }
 

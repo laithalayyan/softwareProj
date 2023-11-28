@@ -2,18 +2,15 @@ package org.example;
 
 
 import java.util.ArrayList;
-
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
+
 import roles.*;
-
-
-
 import static roles.Appointment.*;
 import static roles.Category.listCategories;
 import static roles.Category.manageCategories;
 import static roles.Customer.manageCustomers;
-
 import static roles.Installer.manageInstallers;
 import static roles.Order.*;
 import static roles.Product.*;
@@ -21,6 +18,8 @@ import static roles.User.*;
 
 
 public class AdminDashboard {
+
+
     public static ArrayList<User> userDatabase = new ArrayList<>();
     public static List<Product> products = new ArrayList<>();
     public static List<Category> categories = new ArrayList<>();
@@ -43,7 +42,11 @@ public class AdminDashboard {
     public static Product product;
     public static Category categoryy;
 
+    private static Logger logger = Logger.getLogger(AdminDashboard.class.getName());
 
+    public static ArrayList<User> getUserDatabase() {
+        return userDatabase;
+    }
     public static void main(String[] args) {
         adminUser = new User("admin", "admin@admin.com", "123", "admin");
         userDatabase.add(adminUser);
@@ -77,10 +80,10 @@ public class AdminDashboard {
         product=new Product("exterior",20,"Exterior",50);
         products.add(product);
 
-        availabledate1=new AvailableDates("20","11","2023","installerlaith");
-        availabledate2=new AvailableDates("2","5","2024","installerlaith");
-        availabledate3=new AvailableDates("7","9","2024","installerlaith2");
-        availabledate4=new AvailableDates("4","3","2024","installerlaith2");
+        availabledate1=new AvailableDates("20/11/2023","installerlaith");
+        availabledate2=new AvailableDates("2/11/2023","installerlaith");
+        availabledate3=new AvailableDates("6/11/2023","installerlaith2");
+        availabledate4=new AvailableDates("8/11/2023","installerlaith2");
         availableDates.add(availabledate1);
         availableDates.add(availabledate2);
         availableDates.add(availabledate3);
@@ -91,10 +94,7 @@ public class AdminDashboard {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("1. Register");
-            System.out.println("2. Login");
-            System.out.println("3. Exit");
-            System.out.print("Choose an option: ");
+            logger.info("\n1.Register\n2.Login\n3.Exit\nChoose an option: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -107,11 +107,11 @@ public class AdminDashboard {
                     loginUser();
                     break;
                 case 3:
-                    System.out.println("Exiting the system.");
+                    logger.info("Exiting the system.");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
 
         }
@@ -139,16 +139,8 @@ public class AdminDashboard {
         while (true) {
             adminDash=true;
             if(isAdminLoggedIn()==true) {
-                System.out.println("Admin Dashboard");
-                System.out.println("1. Manage Products");
-                System.out.println("2. Manage Categories");
-                System.out.println("3. Manage User Accounts");
-                System.out.println("4. Manage Customers");
-                System.out.println("5. Manage Installers");
-                System.out.println("6. Manage Appointments");
-                System.out.println("7. Manage Orders");
-                System.out.println("8. Logout");
-                System.out.print("Choose an option: ");
+                logger.info("\nAdmin Dashboard\n1. Manage Products\n2. Manage Categories\n3. Manage User Accounts\n4. Manage Customers\n" +
+                        "5. Manage Installers\n6. Manage Appointments\n7. Manage Orders\n8. Logout\nChoose an option: ");
                 int choice = scanner.nextInt();
                 scanner.nextLine();
 
@@ -176,10 +168,10 @@ public class AdminDashboard {
                         manageOrders();
                         break;
                     case 8:
-                        System.out.println("Logging out from the admin dashboard.");
+                        logger.info("Logging out from the admin dashboard.");
                         return;
                     default:
-                        System.out.println("Invalid choice. Please try again.");
+                        logger.info("Invalid choice. Please try again.");
                 }
             }}
     }
@@ -188,13 +180,8 @@ public class AdminDashboard {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("customer Dashboard");
-            System.out.println("1. Browse products");
-            System.out.println("2. make purchases");
-            System.out.println("3. view orders");
-            System.out.println("4. List Categories");
-            System.out.println("5. Logout");
-            System.out.print("Choose an option: ");
+            logger.info("\ncustomer Dashboard\n1. Browse products\n2. make purchases\n3. view orders\n4. List Categories\n" +
+                    "5. Logout\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -212,10 +199,10 @@ public class AdminDashboard {
                     listCategories();
                     break;
                 case 5:
-                    System.out.println("Logging out from the admin dashboard.");
+                    logger.info("Logging out from the admin dashboard.");
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
         }
     }
@@ -224,11 +211,8 @@ public class AdminDashboard {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("installer Dashboard");
-            System.out.println("1. View installation requests");
-            System.out.println("2. schedule appointments");
-            System.out.println("3. Logout");
-            System.out.print("Choose an option: ");
+            logger.info("\ninstaller Dashboard\n1. View installation requests\n2. schedule appointments" +
+                    "3. Logout\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -240,10 +224,10 @@ public class AdminDashboard {
                     scheduleAppointment();
                     break;
                 case 3:
-                    System.out.println("Logging out from the installer dashboard.");
+                    logger.info("Logging out from the installer dashboard.");
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
         }
     }

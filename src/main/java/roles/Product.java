@@ -1,19 +1,39 @@
 package roles;
 
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+
 import java.util.Scanner;
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
+import java.util.logging.Logger;
 
 import static org.example.AdminDashboard.*;
-import static org.example.AdminDashboard.categories;
-import java.awt.image.*;
 
 public class Product {
+    public static boolean addProduct;
+    public static boolean deleteProduct;
+    public static boolean listProduct;
 
+    public static boolean isAddProduct() {
+        return addProduct;
+    }
+
+    public static void setAddProduct(boolean addProduct) {
+        Product.addProduct = addProduct;
+    }
+
+    public static boolean isDeleteProduct() {
+        return deleteProduct;
+    }
+
+    public static void setDeleteProduct(boolean deleteProduct) {
+        Product.deleteProduct = deleteProduct;
+    }
+
+    public static boolean isListProduct() {
+        return listProduct;
+    }
+
+    public static void setListProduct(boolean listProduct) {
+        Product.listProduct = listProduct;
+    }
 
     private String name;
     private double price;
@@ -21,6 +41,8 @@ public class Product {
     private String category;
 
     private int availablity;
+
+    private static Logger logger = Logger.getLogger(Product.class.getName());
 
     public Product(String name, double price,String category,int availablity ) {
         this.name = name;
@@ -53,78 +75,88 @@ public class Product {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Product Management");
-            System.out.println("1. Add Product");
-            System.out.println("2. Delete Product");
-            System.out.println("3. List Products");
-            System.out.println("4. Back");
-            System.out.print("Choose an option: ");
+            logger.info("\nProduct Management\n1. Add Product\n2. Delete Product" +
+                    "\n3. List Products\n4. Back\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
                 case 1:
+                    setAddProduct(true);
                     addProduct();
                     break;
                 case 2:
+                    setDeleteProduct(true);
                     deleteProduct();
                     break;
                 case 3:
+                    setListProduct(true);
                     listProducts();
                     break;
                 case 4:
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
         }
+    }
+    public static void productadd(String name,double price,String category,int amount){
+        products.add(new Product(name, price, category,amount));
+        logger.info("Product added successfully.");
+    }
+    public static void productdelete(String name){
+        for (Product product : products) {
+            if (product.getName().equals(name)) {
+                products.remove(product);
+                logger.info("Product deleted successfully.");
+                return;
+            }
+        }
+        logger.info("Product not found.");
     }
 
     private static void addProduct() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter product name: ");
+        logger.info("Enter product name: ");
         String name = scanner.nextLine();
-        System.out.print("Enter product price: ");
+        logger.info("Enter product price: ");
         double price = scanner.nextDouble();
-        System.out.print("Enter category name: ");
+        logger.info("Enter category name: ");
         String category = scanner.nextLine();
-        System.out.print("Enter product amount: ");
+        logger.info("Enter product amount: ");
         int ava = scanner.nextInt();
-        products.add(new Product(name, price, category,ava));
-        System.out.println("Product added successfully.");
+        productadd(name,price,category,ava);
+
     }
 
     private static void deleteProduct() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the product name to delete: ");
+        logger.info("Enter the product name to delete: ");
         String name = scanner.nextLine();
-        for (Product product : products) {
-            if (product.getName().equals(name)) {
-                products.remove(product);
-                System.out.println("Product deleted successfully.");
-                return;
-            }
-        }
-        System.out.println("Product not found.");
+        productdelete(name);
+
     }
 
     public static void listProducts() {
-        System.out.println("Products:");
+        logger.info("Products:");
         for (Product product : products) {
-            System.out.println("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
+            logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
         }
     }
 
-    public static void searchProducts(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Search for specific product by name:");
-        String pro = scanner.nextLine();
+    public static void productsearch(String name){
         for (Product product : products) {
-
-            if (product.getName().equalsIgnoreCase(pro)) {
-                System.out.println("Name: " + product.getName() + ", Price: " + product.getPrice());
+            if (product.getName().equalsIgnoreCase(name)) {
+                logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
             }
         }
+    }
+    public static void searchProducts(){
+        Scanner scanner = new Scanner(System.in);
+        logger.info("Search for specific product by name:");
+        String pro = scanner.nextLine();
+        productsearch(pro);
+
     }
 
 
