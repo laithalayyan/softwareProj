@@ -93,7 +93,7 @@ public class AdminDashboard {
 
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+
             logger.info("\n1.Register\n2.Login\n3.Exit\nChoose an option: ");
 
             int choice = scanner.nextInt();
@@ -114,7 +114,7 @@ public class AdminDashboard {
                     logger.info("Invalid choice. Please try again.");
             }
 
-        }
+
     }
 
 
