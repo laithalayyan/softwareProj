@@ -56,21 +56,11 @@ public class Customer {
         return email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
 
     public List<Order> getOrders() {
         return orders;
     }
 
-    public static void manageCustomersChoice(){
-
-    }
     public static void manageCustomers() {
         Scanner scanner = new Scanner(System.in);
 
@@ -98,8 +88,25 @@ public class Customer {
     }
 
     public static void regCust(String username,String email,String password,String type){
-        userDatabase.add(new User(username, email, password,type));
+        User us = new User(username, email, password, type);
+        for (User user : userDatabase) {
+            if (email.equals(user.getEmail())) {
+                logger.info("this user already exist");
+                return ;}
+        }
+        userDatabase.add(us);
         logger.info("Customer registration successful!");
+    }
+    public static boolean regCustTest(String username,String email,String password,String type){
+        User us = new User(username, email, password, type);
+        for (User user : userDatabase) {
+            if (email.equals(user.getEmail())) {
+                logger.info("this user already exist");
+                return false;}
+        }
+        userDatabase.add(us);
+        logger.info("Customer registration successful!");
+        return true;
     }
     public static void registerCustomer() {
         Scanner scanner = new Scanner(System.in);

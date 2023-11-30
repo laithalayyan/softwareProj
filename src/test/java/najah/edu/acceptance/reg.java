@@ -42,7 +42,8 @@ public class reg {
     }
     @Then("the user will sign up and added to userslist")
     public void theUserWillSignUpAndAddedToUserslist() {
-        user.register(username,email,password,type);
+        //user.register(username,email,password,type);
+        assertTrue(user.registerTest(username,email,password,type));
     }
 
 
@@ -69,7 +70,7 @@ public class reg {
     }
     @Then("the user2 will not signed up")
     public void theUser2WillNotSignedUp() {
-        user2.register(username2,email2,password2,type2);
+        assertFalse(user2.registerTest(username2,email2,password2,type2));
     }
 
 

@@ -54,10 +54,13 @@ public class AdminManageCategories {
         categoryList.add(category);
         categoryList.add(category2);
 
-            category.addcat(categoryName);
-            category.addcat(categoryName2);
+           // category.addcat(categoryName);
+          //  category.addcat(categoryName2);
 
-        addnoti();
+        assertTrue(addcatTest(categoryName));
+        assertTrue(addcatTest(categoryName2));
+
+        //addnoti();
         //listCategoriesTest();
     }
 
@@ -75,8 +78,9 @@ public class AdminManageCategories {
     public void theCategoryShouldBeRemovedSuccessfully() {
         //category=new Category(categoryName2);
         categoryList.remove(category);
-        category.deletecat(categoryName);
-        deletenoti();
+        //category.deletecat(categoryName);
+        assertTrue(deletecatTest(categoryName));
+        //deletenoti();
         //listCategoriesTest();
     }
 

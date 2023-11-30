@@ -104,6 +104,18 @@ public class Product {
         products.add(new Product(name, price, category,amount));
         logger.info("Product added successfully.");
     }
+    public static boolean productaddTest(String name,double price,String category,int amount){
+        for (Product product : products) {
+            if (product.getName().equals(name)) {
+                //products.remove(product);
+                logger.info("Product Found.");
+                return false;
+            }
+        }
+        products.add(new Product(name, price, category,amount));
+        logger.info("Product added successfully.");
+        return true;
+    }
     public static void productdelete(String name){
         for (Product product : products) {
             if (product.getName().equals(name)) {
@@ -113,6 +125,17 @@ public class Product {
             }
         }
         logger.info("Product not found.");
+    }
+    public static boolean productdeleteTest(String name){
+        for (Product product : products) {
+            if (product.getName().equals(name)) {
+                products.remove(product);
+                logger.info("Product deleted successfully.");
+                return true;
+            }
+        }
+        logger.info("Product not found.");
+        return false;
     }
 
     private static void addProduct() {

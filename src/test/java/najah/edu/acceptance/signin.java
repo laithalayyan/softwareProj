@@ -21,6 +21,7 @@ public class signin {
     Installer installer;
     Customer customer;
     public static List<User> userList=new ArrayList<>();
+    public static List<User> userList2=new ArrayList<>();
     public static List<Installer> installerList=new ArrayList<>();
     public static List<Customer> customerList=new ArrayList<>();
 
@@ -50,7 +51,8 @@ public class signin {
     public void theAdminLogin() {
         user=new User("admin",AdminEmail,AdminPass,"admin");
         userList.add(user);
-        adminsignin(user);
+        this.userList2=User.getlist();
+        assertTrue(loginadmin(AdminEmail,AdminPass,userList2));
     }
 
 
@@ -70,9 +72,11 @@ public class signin {
     }
     @Then("the customer login")
     public void theCustomerLogin() {
-        user2=new User("customer",CustomerEmail,CustomerPass,"Customer");
+        user2=new User("customer",CustomerEmail,CustomerPass,"customer");
         userList.add(user2);
-        customersignin(user2);
+        //setUserDatabasee();
+        this.userList2=User.getlist();
+        assertTrue(logincustomer(CustomerEmail,CustomerPass,userList2));
     }
 
 
@@ -95,7 +99,10 @@ public class signin {
     public void theInstallerLogin() {
         user3=new User("installer",InstallerEmail,InstallerPass,"installer");
         userList.add(user3);
-        installersignin(InstallerEmail,InstallerPass);
+        //installersignin(InstallerEmail,InstallerPass);
+        //assertFalse(isInstallerislogged());
+        this.userList2=User.getlist();
+        assertTrue(logininstaller(InstallerEmail,InstallerPass,userList2));
     }
 
 

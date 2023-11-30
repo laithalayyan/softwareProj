@@ -51,9 +51,10 @@ public class InstallerManagement {
     public void theInstallerShouldBeRegisteredSuccessfully() {
         installer=new Installer(id,username,email,pass,"installer");
         installerList.add(installer);
-        reginstaller(id,username,email,pass,"installer");
+        //reginstaller(id,username,email,pass,"installer");
         availableDate=new AvailableDates(av,installer.getUsername());
         reginstallerav(av,installer.getUsername());
+        assertTrue(reginstallerTest(id,username,email,pass,"installer"));
     }
 
     @Given("they choose List Installers")

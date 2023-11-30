@@ -10,8 +10,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 import static org.example.AdminDashboard.*;
-import static roles.User.loggedIngetEmail;
-import static roles.User.loggedIngetName;
+import static roles.User.*;
 
 public class Installer {
     public static boolean regInstaller;
@@ -121,10 +120,8 @@ public class Installer {
         logger.info("Enter installer's id: ");
         int id = scanner.nextInt();
 
-
         logger.info("Enter installer's username: ");
         String username = scanner.nextLine();
-
 
         logger.info("Enter installer's email: ");
         String email = scanner.nextLine();
@@ -149,14 +146,22 @@ public class Installer {
         installersDatabase.add(new Installer(id,username, email, password,type));
         logger.info("Installer registration successful!");
     }
+    public static boolean reginstallerTest(int id,String username , String email,String password ,String type){
+            for(Installer installer:installersDatabase){
+                if(installer.getEmail()==email&&installer.getUsername()==username){
+                    logger.info("Installer already registered!");
+                    return false;
+                }
+            }
+        installersDatabase.add(new Installer(id,username, email, password,type));
+        logger.info("Installer registration successful!");
+        return true;
+    }
     public static void reginstallerav(String date,String installer){
         availableDates.add(new AvailableDates(date,installer));
     }
 
     public static void listInstallers() {
-
-
-
         for(AvailableDates availableDatess:availableDates){
             logger.info("\nAvailable Date For Installers:\n"+availableDates.indexOf(availableDatess) + "-" + "Installer Name:" + availableDatess.getInstaller() + "  Date Available:" + availableDatess.getDate() );
         }

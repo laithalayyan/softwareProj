@@ -91,6 +91,29 @@ public class Category {
     public static void addcat(String name){
         categories.add(new Category(name));
     }
+    public static boolean addcatTest(String name){
+        for (Category category : categories) {
+            if (category.getName().equals(name)) {
+                logger.info("Category exist");
+                return false;
+                }
+            }
+        categories.add(new Category(name));
+        addnoti();
+        return true;
+        }
+
+    public static boolean deletecatTest(String name){
+        for (Category category : categories) {
+            if (category.getName().equals(name)) {
+                categories.remove(category);
+                deletenoti();
+                return true;
+            }
+        }
+        logger.info("Category not found.");
+        return false;
+    }
     public static void deletenoti(){
         logger.info("Category deleted successfully.");
     }

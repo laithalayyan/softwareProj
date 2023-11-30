@@ -5,6 +5,7 @@ import roles.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static roles.Installer.*;
 import static roles.Order.*;
@@ -69,8 +70,10 @@ public class ProductManagement {
         product2=new Product(product2Name,product2Price,product2Category,product2Amount);
         productList.add(product);
         productList.add(product2);
-        productadd(productName,productPrice,productCategory,productAmount);
-        productadd(product2Name,product2Price,product2Category,product2Amount);
+        //productadd(productName,productPrice,productCategory,productAmount);
+        //productadd(product2Name,product2Price,product2Category,product2Amount);
+        assertTrue(productaddTest(productName,productPrice,productCategory,productAmount));
+        assertTrue(productaddTest(product2Name,product2Price,product2Category,product2Amount));
     }
 
 
@@ -87,7 +90,9 @@ public class ProductManagement {
     @Then("the product should be removed successfully")
     public void theProductShouldBeRemovedSuccessfully() {
         productList.remove(productdelete);
-        productdelete(productdelete);
+        //productdelete(productdelete);
+
+        assertTrue(productdeleteTest(productdelete));
     }
 
 
