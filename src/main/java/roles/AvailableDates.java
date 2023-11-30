@@ -8,6 +8,7 @@ public class AvailableDates {
 
     private String installer;
 
+
     public AvailableDates(String date, String installer) {
 
         this.date = date;

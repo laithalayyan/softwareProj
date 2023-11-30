@@ -38,16 +38,30 @@ public class Installer {
     private String userType;
 
     private String date;
-    private List<Appointment> appointments;
+
+    public String getDate() {
+        return date;
+    }
+
+    private static List<Appointment> appointments;
+
+    public static void setAppointments(List<Appointment> appointments) {
+        //this.appointments = appointments;
+    }
+    public static void addAppintments(Appointment appointment){
+        appointments.add(appointment);
+    }
+
     private static Logger logger = Logger.getLogger(Installer.class.getName());
 
     public Installer(){}
-    public Installer(int id ,String username, String email, String password,String userType) {
+    public Installer(int id ,String username, String email, String password,String userType,String date) {
         this.id=id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.userType = "installer";
+        this.date=date;
         this.appointments = new ArrayList<>();
     }
     public int getId(){
@@ -135,25 +149,26 @@ public class Installer {
             case "done":
                 break;
             default:
+                installersDatabase.add(new Installer(id,username, email, password,"installer",date));
                 availableDates.add(new AvailableDates(date,loggedIngetName));
                 date();
         }
 
-        installersDatabase.add(new Installer(id,username, email, password,"installer"));
+        //installersDatabase.add(new Installer(id,username, email, password,"installer"));
         logger.info("Installer registration successful!");
     }
-    public static void reginstaller(int id,String username , String email,String password ,String type){
-        installersDatabase.add(new Installer(id,username, email, password,type));
+    public static void reginstaller(int id,String username , String email,String password ,String type,String date){
+        installersDatabase.add(new Installer(id,username, email, password,type,date));
         logger.info("Installer registration successful!");
     }
-    public static boolean reginstallerTest(int id,String username , String email,String password ,String type){
+    public static boolean reginstallerTest(int id,String username , String email,String password ,String type,String date){
             for(Installer installer:installersDatabase){
                 if(installer.getEmail()==email&&installer.getUsername()==username){
                     logger.info("Installer already registered!");
                     return false;
                 }
             }
-        installersDatabase.add(new Installer(id,username, email, password,type));
+        installersDatabase.add(new Installer(id,username, email, password,type,date));
         logger.info("Installer registration successful!");
         return true;
     }
@@ -162,8 +177,13 @@ public class Installer {
     }
 
     public static void listInstallers() {
-        for(AvailableDates availableDatess:availableDates){
-            logger.info("\nAvailable Date For Installers:\n"+availableDates.indexOf(availableDatess) + "-" + "Installer Name:" + availableDatess.getInstaller() + "  Date Available:" + availableDatess.getDate() );
+        /*for(AvailableDates availableDatess:availableDates){
+            //logger.info("\nAvailable Date For Installers:\n"+availableDates.indexOf(availableDatess) + "-" + "Installer Name:" + availableDatess.getInstaller() + "  Date Available:" + availableDatess.getDate() );
+            //logger.info(inst);
+        }*/
+        logger.info("Available Date For Installers:\n");
+        for(Installer installer:installersDatabase){
+            logger.info(installer.getId()+" - "+"Installer Name:"+installer.getUsername()+" - "+"Available Date:"+installer.getDate());
         }
     }
 

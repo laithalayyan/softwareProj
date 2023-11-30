@@ -57,10 +57,10 @@ public class AdminDashboard {
         customerUser2 = new User("customerlaith2", "customer2@customer.com", "123","customer");
         userDatabase.add(customerUser2);
 
-        installerUser = new Installer(1, "installerlaith", "installer@installer.com","123","installer");
+        installerUser = new Installer(1, "installerlaith", "installer@installer.com","123","installer","12/7/2023");
         installersDatabase.add(installerUser);
 
-        installerUser2 = new Installer(2, "installerlaith2", "installer2@installer.com","123","installer");
+        installerUser2 = new Installer(2, "installerlaith2", "installer2@installer.com","123","installer","2/2/2024");
         installersDatabase.add(installerUser2);
 
         categoryy=new Category("Interior");
@@ -169,6 +169,7 @@ public class AdminDashboard {
                         break;
                     case 8:
                         logger.info("Logging out from the admin dashboard.");
+                        loginUser();
                         return;
                     default:
                         logger.info("Invalid choice. Please try again.");
@@ -200,6 +201,7 @@ public class AdminDashboard {
                     break;
                 case 5:
                     logger.info("Logging out from the admin dashboard.");
+                    loginUser();
                     return;
                 default:
                     logger.info("Invalid choice. Please try again.");
@@ -212,7 +214,7 @@ public class AdminDashboard {
 
         while (true) {
             logger.info("\ninstaller Dashboard\n1. View installation requests\n2. schedule appointments" +
-                    "3. Logout\nChoose an option: ");
+                    "\n3. Logout\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -225,6 +227,7 @@ public class AdminDashboard {
                     break;
                 case 3:
                     logger.info("Logging out from the installer dashboard.");
+                    loginUser();
                     return;
                 default:
                     logger.info("Invalid choice. Please try again.");

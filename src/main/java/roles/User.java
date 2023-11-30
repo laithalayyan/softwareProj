@@ -10,6 +10,10 @@ import static roles.Customer.customers;
 
 
 public class User {
+    public List<roles.Order> ordersuser;
+    public List<Order> getOrders() {
+        return ordersuser;
+    }
 
     public static boolean issignedup;
 
@@ -97,11 +101,7 @@ public class User {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            logger.info("User Account Management");
-            logger.info("1. List User Accounts");
-            logger.info("2. Delete User Account");
-            logger.info("3. Back");
-            logger.info("Choose an option: ");
+            logger.info("User Account Management\n1. List User Accounts\n2. Delete User Account\n3. Back\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -158,10 +158,11 @@ public class User {
         logger.info("Enter your password: ");
         String password = scanner.nextLine();
 
-        logger.info("Enter your user type (admin, customer, installer): ");
+        logger.info("Enter your user type (customer, installer): ");
         String userType = scanner.nextLine();
 
         register(username,email,password,userType);
+
 
 
     }
@@ -174,6 +175,8 @@ public class User {
         }
         logger.info("Registration successful!");
         userDatabase.add(us);
+        logger.info("Now you can login!");
+        loginUser();
     }
     public static boolean registerTest(String username,String email,String password,String userType){
         User us = new User(username, email, password, userType);

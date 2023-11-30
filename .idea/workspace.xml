@@ -6,19 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="final product">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/AvailableDates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/AvailableDates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Installer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomersManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomersManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageAppintments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageAppintments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/InstallerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/InstallerManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/reg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/reg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/signin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/signin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/InstallersManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/InstallersManagement.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701140760450</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="final product">
+      <created>1701309624134</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701309624134</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

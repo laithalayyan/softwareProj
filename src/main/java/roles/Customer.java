@@ -65,7 +65,7 @@ public class Customer {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            logger.info("\nCustomer Management\n1. Register Custome\n2. List Customers" +
+            logger.info("\nCustomer Management\n1. Register Customer\n2. List Customers" +
                     "\n3. Back\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -142,6 +142,14 @@ public class Customer {
 
             if (customer.getEmail().equals(loggedIngetEmailCustomer)) {
                 return customer;
+            }
+        }
+        return null ;
+    }
+    public static String getLoggedInCustomerName() {
+        for (Customer customer : customers) {
+            if (customer.getEmail().equals(loggedIngetEmailCustomer)) {
+                return customer.getUsername();
             }
         }
         return null ;

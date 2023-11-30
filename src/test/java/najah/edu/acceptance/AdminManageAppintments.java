@@ -53,7 +53,7 @@ public class AdminManageAppintments {
     }
     @Then("the appointment should be scheduled successfully")
     public void theAppointmentShouldBeScheduledSuccessfully() {
-        appointment=new Appointment(1,"laith",appointmentDate,CarModel,CarDate);
+        appointment=new Appointment("laith",appointmentDate,CarModel,CarDate);
         appointmentList.add(appointment);
         logger.info("Appointment scheduled successfullyy!");
     }

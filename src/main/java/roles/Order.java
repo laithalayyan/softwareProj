@@ -128,6 +128,8 @@ public class Order {
 
     }
 
+    static List<Order> orderss;
+    static Customer customer1;
     public static void ordersteps(){
         Scanner scanner = new Scanner(System.in);
         List<Product> selectedProducts = new ArrayList<>();
@@ -159,13 +161,25 @@ public class Order {
 
             }
         }
+        if(Appointment.getinstaller()==null){
+            logger.info("Invalid choice. Please try again.");
+            return;
+        }
 
         if (selectedProducts.isEmpty()) {
             logger.info("No products selected. Order not placed.");
         } else {
             Customer customer = getLoggedInCustomer();
             Order order = new Order(orderIdCounter, selectedProducts);
-            customer.getOrders().add(order);
+            if(customer==null){
+                logger.info("Insert Customer Name: ");
+                String customername=scanner.nextLine();
+                logger.info("Insert Customer email: ");
+                String customeremail=scanner.nextLine();
+                customer1=new Customer(customername,customeremail,"","customer");
+                customer1.getOrders().add(order);
+                orderss=customer1.getOrders();
+            }else customer.getOrders().add(order);
             orderIdCounter++;
             logger.info("Order placed successfully!");
         }
@@ -182,10 +196,17 @@ public class Order {
                     logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
                 }
                 logger.info("Total Price: " + order.getTotalPrice());
-                logger.info("----------");
             }
         } else {
-            logger.info("You need to log in as a customer to view orders.");
+            logger.info("Orders for " + customer1.getUsername() + ":");
+            for (Order order : orderss) {
+                logger.info("Order ID: " + order.getOrderId());
+                logger.info("Ordered Products:");
+                for (Product product : order.getOrderedProducts()) {
+                    logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
+                }
+                logger.info("Total Price: " + order.getTotalPrice());
+            }
         }
     }
 }
