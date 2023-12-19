@@ -20,7 +20,7 @@ jobs:
    - name: Step 3 - Build Maven Project
      run: mvn --batch-mode clean -DskipTests
 
-   - name: Step4 - run test cases
+   - name: Step4 - run test cases 
      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
 
    - name: Cache SonarCloud packages
