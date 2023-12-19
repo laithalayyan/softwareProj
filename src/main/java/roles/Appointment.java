@@ -5,11 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import static org.example.AdminDashboard.*;
-import static roles.Customer.getLoggedInCustomer;
 import static roles.Customer.getLoggedInCustomerName;
 import static roles.Installer.*;
 import static roles.Order.listOrders;
-import static roles.User.loggedIngetEmail;
 
 
 public class Appointment {
@@ -41,7 +39,6 @@ public class Appointment {
 
     }
     public Appointment( String customerName, String appointmentDate,String carModer , String carDate) {
-        //this.appointmentId = appointmentId;
         this.customerName = customerName;
         this.appointmentDate = appointmentDate;
         this.carDate=carDate;
@@ -83,7 +80,7 @@ public class Appointment {
                     return;
 
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    logger.info("Invalid choice. Please try again.");
             }
 
     }
@@ -107,8 +104,6 @@ public class Appointment {
         int installerId = scanner.nextInt();
         scanner.nextLine();
 
-        //Installer selectedInstaller = null;
-        AvailableDates av = null;
         for(Installer installer:installersDatabase){
             if(installerId==installer.getId()){
                 selectedInstaller=installer;
@@ -118,48 +113,12 @@ public class Appointment {
                 appointments2.add(appointment);
                 Installer.setAppointments(appointments2);
                 addAppintments(appointment);
-                //Appointment.add();
                 logger.info("Appointment scheduled successfully!");
                 break;
             }
         }
         logger.info("There is no appointment available with this number!");
         listInstallers();
-        /*for(AvailableDates availableDatess:availableDates){
-            if(installerId==(availableDates.indexOf(availableDatess))){
-                for (Installer installer : installersDatabase) {
-                    if (installerId == installer.getId()) {
-                        selectedInstaller = installer;
-                        break;
-                    }
-                }
-                av =availableDatess;
-                break;
-            }
-        }*/
-
-        /*if(av!=null){
-            logger.info("Enter the appointment date: ");
-            String appointmentDate = scanner.nextLine();
-            Appointment appointment = new Appointment(appointmentIdCounter, getLoggedInCustomer().getUsername(), appointmentDate,carmodel,cardate);
-            selectedInstaller.getAppointments().add(appointment);
-            appointmentIdCounter++;
-            logger.info("Appointment scheduled successfully!");
-        } else {
-            logger.info("Installer not found with the given date.");
-        }
-        }*/
-
-        /*if (selectedInstaller != null) {
-            logger.info("Enter the appointment date: ");
-            String appointmentDate = scanner.nextLine();
-            Appointment appointment = new Appointment(appointmentIdCounter, getLoggedInCustomer().getUsername(), appointmentDate,carmodel,cardate);
-            selectedInstaller.getAppointments().add(appointment);
-            appointmentIdCounter++;
-            logger.info("Appointment scheduled successfully!");
-        } else {
-            logger.info("Installer not found with the given ID.");
-        }*/
 
     }
 
@@ -170,14 +129,12 @@ public class Appointment {
     public static Installer getinstaller(){
         return selectedInstaller;
     }
-    //public static List<Appointment> appointmentss=new ArrayList<>();
     public static void listAppointments() {
         setListappointment(true);
         Installer installer1 = getLoggedInInstaller();
         for(Installer installer:installersDatabase) {
             if (installer.equals(installer1)) {
                 logger.info("Appointments for " + installer.getUsername() + ":");
-                //appointments.add(installer.getAppointments());
                 List<Appointment> appointments = installer.getAppointments();
                 for (Appointment appointment : appointments) {
 
