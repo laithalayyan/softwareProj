@@ -6,7 +6,6 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 import static org.example.AdminDashboard.*;
-import static roles.User.loggedIngetEmail;
 import static roles.User.loggedIngetEmailCustomer;
 
 
@@ -33,18 +32,36 @@ public class Customer {
 
     private String username;
     private String email;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
     private String password;
     private String userType;
     public List<roles.Order> orders;
     public static List<Customer> customers = new ArrayList<>();
-    private static Logger logger = Logger.getLogger(Customer.class.getName());
+    private static final Logger logger = Logger.getLogger(Customer.class.getName());
 
     public Customer(){}
+    public static final String CUSTOMERU="customer";
     public Customer(String username, String email, String password,String userType) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.userType = "customer";
+        this.userType = userType;
         this.orders = new ArrayList<>();
     }
 
@@ -121,7 +138,7 @@ public class Customer {
         logger.info("Enter customer's password: ");
         String password = scanner.nextLine();
 
-        regCust(username,email,password,"customer");
+        regCust(username,email,password,CUSTOMERU);
 
 
 
@@ -131,7 +148,7 @@ public class Customer {
     public static void listCustomers() {
         logger.info("Customers:");
         for (User user : userDatabase) {
-            if(user.getUserType().equalsIgnoreCase("customer")){
+            if(user.getUserType().equalsIgnoreCase(CUSTOMERU)){
                 logger.info("Username: " + user.getUsername() + ", Email: " + user.getEmail());
             }
 
@@ -156,15 +173,6 @@ public class Customer {
         return null ;
     }
 
-    public static Customer getOrderdCustomer() {
-        for (Customer customer : customers) {
-
-            if (customer.getEmail().equals(loggedIngetEmail)) {
-                return customer;
-            }
-        }
-        return null ;
-    }
 
 
 

@@ -8,13 +8,10 @@ import static org.example.AdminDashboard.products;
 import static roles.Product.searchProducts;
 
 public class Category {
-    public static boolean addcat;
-    public static boolean deletecat;
+    public static boolean ADD_CATTEGO;
+    public static boolean delete_cat;
     public static boolean listcat;
     public static boolean searchproduct;
-    public static boolean isSearchproduct() {
-        return searchproduct;
-    }
 
     public static void setSearchproduct(boolean searchproduct) {
         Category.searchproduct = searchproduct;
@@ -27,18 +24,18 @@ public class Category {
         Category.listcat = listcat;
     }
     public static void setAddcat(boolean addcat) {
-        Category.addcat = addcat;
+        Category.ADD_CATTEGO = addcat;
     }
 
     public static boolean isAddcat() {
-        return addcat;
+        return ADD_CATTEGO;
     }
     public static boolean isDeletecat() {
-        return deletecat;
+        return delete_cat;
     }
 
     public static void setDeletecat(boolean deletecat) {
-        Category.deletecat = deletecat;
+        Category.delete_cat = deletecat;
     }
 
 
@@ -88,7 +85,7 @@ public class Category {
         }
     }
 
-    public static void addcat(String name){
+    public static void addcatTEG(String name){
         categories.add(new Category(name));
     }
 
@@ -135,7 +132,7 @@ public class Category {
 
                 }
             }
-            //logger.info("Category not found.");
+
         }
 
     }
@@ -143,8 +140,8 @@ public class Category {
         Scanner scanner = new Scanner(System.in);
         logger.info("Enter category name: ");
         String name = scanner.nextLine();
-        addcat(name);
-        //categories.add(new Category(name));
+        addcatTEG(name);
+
 
         logger.info("Do you want to add products to this Category(y) , or leave it empty(n) ? ");
         String c = scanner.nextLine();
@@ -158,8 +155,12 @@ public class Category {
                 int ava = scanner.nextInt();
                 products.add(new Product(pname, price, name,ava));
                 logger.info("Product added successfully.");
+                break;
             case "n":
                 addnoti();
+                break;
+            default:
+                logger.info("Wrong choice!");
 
         }
 
@@ -179,7 +180,7 @@ public class Category {
         }
     }
     public static void listCategories() {
-        System.out.println("Categories:");
+        logger.info("Categories:");
         for (Category category : categories) {
 
             logger.info( category.getName()  );

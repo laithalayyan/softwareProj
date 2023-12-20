@@ -29,6 +29,9 @@ public class User {
     public static boolean Adminislogged;
     public static boolean Installerislogged;
     public static boolean Customerislogged;
+    public static final String INSTALLERUT="installer";
+    public static final String ADMINUT="installer";
+    public static final String CUSTOMERUT="installer";
 
     public static boolean isAdminislogged() {
         return Adminislogged;
@@ -225,7 +228,7 @@ public class User {
     }
     public static void installersignin(String email ,String password){
         for (Installer installer : installersDatabase) {
-            if (installer.getEmail().equals(email) && installer.getPassword().equals(password) && installer.getUserType().equalsIgnoreCase("installer")) {
+            if (installer.getEmail().equals(email) && installer.getPassword().equals(password) && installer.getUserType().equalsIgnoreCase(INSTALLERUT)) {
                 loggedIngetEmail = installer.getEmail();
                 loggedIngetName = installer.getUsername();
                 setInstallerislogged(true);
@@ -234,12 +237,12 @@ public class User {
         logger.info("Login successful. User type: installer");
     }
 
-    public static List getlist(){
-        User customerUser= new User("customer", "customer@customer.com", "123", "customer");
+    public static List<User> getlist(){
+        User customerUser= new User(CUSTOMERUT, "customer@customer.com", "123", CUSTOMERUT);
         userDatabasee.add(customerUser);
-        User adminUser= new User("admin", "admin@admin.com", "123", "admin");
+        User adminUser= new User(ADMINUT, "admin@admin.com", "123", ADMINUT);
         userDatabasee.add(adminUser);
-        User installerUser= new User("installer", "installer@installer.com", "123", "installer");
+        User installerUser= new User(INSTALLERUT, "installer@installer.com", "123", INSTALLERUT);
         userDatabasee.add(installerUser);
         return userDatabasee;
     }
@@ -263,7 +266,7 @@ public class User {
     }
     public static boolean logininstaller(String email, String password,List<User> userList){
         for (User user : userList) {
-            if (user.getEmail().equals(email) && user.getPassword().equals(password) && user.getUserType().equalsIgnoreCase("installer")) {
+            if (user.getEmail().equals(email) && user.getPassword().equals(password) && user.getUserType().equalsIgnoreCase(INSTALLERUT)) {
                 customersignin(user);
                 return true;
             }
@@ -274,34 +277,31 @@ public class User {
         for (User user : userDatabase) {
             if (user.getEmail().equals(email) && user.getPassword().equals(password) && user.getUserType().equalsIgnoreCase("admin")) {
                 adminsignin(user);
-                if (isAdminislogged()) {
-                    adminDashboard();
-                } else logger.info("You need to log in correctly");
+                isAdminLogged();
             } else if (user.getEmail().equals(email) && user.getPassword().equals(password) && user.getUserType().equalsIgnoreCase("customer")) {
                 customersignin(user);
-                if (isCustomerLoggedIn()) {
-                    customerDashboard();
-                }
+                isCustLogged();
             } else {
                 installersignin(email, password);
-                while (isInstallerislogged()) {
-                    installerDashboard();
-                }
-
+                isInstallerLogged();
             }
-
-
-
         }
         logger.info("Login failed. Please check your email and password.");
-
     }
 
-
-
-
-
-
-
-
+    public static void isCustLogged(){
+        if (isCustomerLoggedIn()) {
+            customerDashboard();
+        }
+    }
+    public static void isAdminLogged(){
+        if (isAdminislogged()) {
+            adminDashboard();
+        } else logger.info("You need to log in correctly");
+    }
+    public static void isInstallerLogged(){
+        while (isInstallerislogged()) {
+            installerDashboard();
+        }
+    }
 }

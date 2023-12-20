@@ -107,7 +107,7 @@ public class Product {
     public static boolean productaddTest(String name,double price,String category,int amount){
         for (Product product : products) {
             if (product.getName().equals(name)) {
-                //products.remove(product);
+
                 logger.info("Product Found.");
                 return false;
             }

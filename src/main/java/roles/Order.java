@@ -66,7 +66,7 @@ public class Order {
     }
 
     private double calculateTotalPrice() {
-        //double totalPrice = 0;
+        
         for (Product product : orderedProducts) {
             totalPrice += product.getPrice();
         }
@@ -161,7 +161,7 @@ public class Order {
                         break;
                     case "n":
                         return;
-                        //break;
+
                     default:
                         logger.info(xchoice);
                 }

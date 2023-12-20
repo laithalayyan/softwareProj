@@ -1,10 +1,6 @@
 package roles;
 
-import org.example.AdminDashboard;
-
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -13,14 +9,14 @@ import static org.example.AdminDashboard.*;
 import static roles.User.*;
 
 public class Installer {
-    public static boolean regInstaller;
+    public static boolean regInstallerr;
     public static boolean listInstaller;
     public static boolean isRegInstaller() {
-        return regInstaller;
+        return regInstallerr;
     }
 
     public static void setRegInstaller(boolean regInstaller) {
-        Installer.regInstaller = regInstaller;
+        Installer.regInstallerr = regInstaller;
     }
 
     public static boolean isListInstaller() {
@@ -38,6 +34,7 @@ public class Installer {
     private String userType;
 
     private String date;
+    public static final String INSTALLERSUCCESS = "Installer registration successful!";
 
     public String getDate() {
         return date;
@@ -46,7 +43,7 @@ public class Installer {
     private static List<Appointment> appointments;
 
     public static void setAppointments(List<Appointment> appointments) {
-        //this.appointments = appointments;
+        //appointments = appointmentsS;
     }
     public static void addAppintments(Appointment appointment){
         appointments.add(appointment);
@@ -61,7 +58,7 @@ public class Installer {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.userType = "installer";
+        this.userType = userType;
         this.date=date;
         this.appointments = new ArrayList<>();
     }
@@ -154,23 +151,21 @@ public class Installer {
                 availableDates.add(new AvailableDates(date,loggedIngetName));
                 date();
         }
-
-        //installersDatabase.add(new Installer(id,username, email, password,"installer"));
-        logger.info("Installer registration successful!");
+        logger.info(INSTALLERSUCCESS);
     }
     public static void reginstaller(int id,String username , String email,String password ,String type,String date){
         installersDatabase.add(new Installer(id,username, email, password,type,date));
-        logger.info("Installer registration successful!");
+        logger.info(INSTALLERSUCCESS);
     }
     public static boolean reginstallerTest(int id,String username , String email,String password ,String type,String date){
             for(Installer installer:installersDatabase){
-                if(installer.getEmail()==email&&installer.getUsername()==username){
+                if(installer.getEmail().equals(email)&&installer.getUsername().equals(username)){
                     logger.info("Installer already registered!");
                     return false;
                 }
             }
         installersDatabase.add(new Installer(id,username, email, password,type,date));
-        logger.info("Installer registration successful!");
+        logger.info(INSTALLERSUCCESS);
         return true;
     }
     public static void reginstallerav(String date,String installer){
@@ -178,10 +173,6 @@ public class Installer {
     }
 
     public static void listInstallers() {
-        /*for(AvailableDates availableDatess:availableDates){
-            //logger.info("\nAvailable Date For Installers:\n"+availableDates.indexOf(availableDatess) + "-" + "Installer Name:" + availableDatess.getInstaller() + "  Date Available:" + availableDatess.getDate() );
-            //logger.info(inst);
-        }*/
         logger.info("Available Date For Installers:\n");
         for(Installer installer:installersDatabase){
             logger.info(installer.getId()+" - "+"Installer Name:"+installer.getUsername()+" - "+"Available Date:"+installer.getDate());

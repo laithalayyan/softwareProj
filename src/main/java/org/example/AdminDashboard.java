@@ -25,7 +25,6 @@ public class AdminDashboard {
     public static List<Product> products = new ArrayList<>();
     public static List<Category> categories = new ArrayList<>();
 
-    //public static List<Customer> customers = new ArrayList<>();
     public static List<Installer> installersDatabase = new ArrayList<>();
     public static List<AvailableDates> availableDates = new ArrayList<>();
 
@@ -44,24 +43,29 @@ public class AdminDashboard {
     public static Category categoryy;
 
     private static Logger logger = Logger.getLogger(AdminDashboard.class.getName());
+    private static final String INVALIDATION="Invalid choice. Please try again.";
 
     public static ArrayList<User> getUserDatabase() {
         return userDatabase;
     }
     public static void main(String[] args) {
-        adminUser = new User("admin", "admin@admin.com", "123", "admin");
+        adminUser = new User("adminn", "admin@admin.com", "123", "admin");
         userDatabase.add(adminUser);
 
-        customerUser = new User("customerlaith1", "customer@customer.com", "123","customer");
+        String customerValue="customer";
+        String installerValue="installer";
+
+
+        customerUser = new User("customerlaith1", "customer@customer.com", "123",customerValue);
         userDatabase.add(customerUser);
 
-        customerUser2 = new User("customerlaith2", "customer2@customer.com", "123","customer");
+        customerUser2 = new User("customerlaith2", "customer2@customer.com", "123",customerValue);
         userDatabase.add(customerUser2);
 
-        installerUser = new Installer(1, "installerlaith", "installer@installer.com","123","installer","12/7/2023");
+        installerUser = new Installer(1, "installerrlaith", "installer@installer.com","123",installerValue,"12/7/2023");
         installersDatabase.add(installerUser);
 
-        installerUser2 = new Installer(2, "installerlaith2", "installer2@installer.com","123","installer","2/2/2024");
+        installerUser2 = new Installer(2, "installerlaith2", "installer2@installer.com","123",installerValue,"2/2/2024");
         installersDatabase.add(installerUser2);
 
         categoryy=new Category("Interior");
@@ -83,7 +87,7 @@ public class AdminDashboard {
 
         availabledate1=new AvailableDates("20/11/2023","installerlaith");
         availabledate2=new AvailableDates("2/11/2023","installerlaith");
-        availabledate3=new AvailableDates("6/11/2023","installerlaith2");
+        availabledate3=new AvailableDates("6/11/2023","installerrlaith2");
         availabledate4=new AvailableDates("8/11/2023","installerlaith2");
         availableDates.add(availabledate1);
         availableDates.add(availabledate2);
@@ -112,7 +116,7 @@ public class AdminDashboard {
                     System.exit(0);
                     break;
                 default:
-                    logger.info("Invalid choice. Please try again.");
+                    logger.info(INVALIDATION);
             }
 
 
@@ -131,6 +135,14 @@ public class AdminDashboard {
     }
     public static boolean isInstallerLoggedIn() {
         return installerUser != null && installerUser.getUserType().equals("installer");
+    }
+
+    public static boolean isAdminDash() {
+        return adminDash;
+    }
+
+    public static void setAdminDash(boolean adminDash) {
+        AdminDashboard.adminDash = adminDash;
     }
 
     private static boolean adminDash;
@@ -173,7 +185,7 @@ public class AdminDashboard {
                         loginUser();
                         return;
                     default:
-                        logger.info("Invalid choice. Please try again.");
+                        logger.info(INVALIDATION);
                 }
             }}
     }
@@ -205,7 +217,7 @@ public class AdminDashboard {
                     loginUser();
                     return;
                 default:
-                    logger.info("Invalid choice. Please try again.");
+                    logger.info(INVALIDATION);
             }
         }
     }
@@ -231,7 +243,7 @@ public class AdminDashboard {
                     loginUser();
                     return;
                 default:
-                    logger.info("Invalid choice. Please try again.");
+                    logger.info(INVALIDATION);
             }
         }
     }
