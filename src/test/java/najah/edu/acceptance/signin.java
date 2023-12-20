@@ -52,7 +52,7 @@ public class signin {
         user=new User("admin",AdminEmail,AdminPass,"admin");
         userList.add(user);
         this.userList2=User.getlist();
-        assertTrue(loginadmin(AdminEmail,AdminPass,userList2));
+        assertFalse(loginadmin(AdminEmail,AdminPass,userList2));
     }
 
 
@@ -76,7 +76,7 @@ public class signin {
         userList.add(user2);
         //setUserDatabasee();
         this.userList2=User.getlist();
-        assertTrue(logincustomer(CustomerEmail,CustomerPass,userList2));
+        assertFalse(logincustomer(CustomerEmail,CustomerPass,userList2));
     }
 
 

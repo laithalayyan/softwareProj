@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonarr">
+    <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonar pre-final stage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Installer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/signin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/signin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +59,7 @@
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.AdminDashboard">
+  <component name="RunManager" selected="JUnit.AcceptanceTest">
     <configuration name="AdminDashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="MAIN_CLASS_NAME" value="org.example.AdminDashboard" />
@@ -115,9 +109,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AcceptanceTest" />
         <item itemvalue="Application.AdminDashboard" />
         <item itemvalue="JUnit.All in softproj3" />
-        <item itemvalue="JUnit.AcceptanceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703083813009</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="sonar pre-final stage">
+      <created>1703086860443</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1703086860443</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +298,8 @@
     <MESSAGE value="final product" />
     <MESSAGE value="sonar" />
     <MESSAGE value="sonarr" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonarr" />
+    <MESSAGE value="sonar pre-final stage" />
+    <option name="LAST_COMMIT_MESSAGE" value="sonar pre-final stage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
