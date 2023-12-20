@@ -1,0 +1,16 @@
+
+x
+java:S1104
+"VMake addProduct a static final constant or non-public and provide accessors if needed.(ÐÎô¶øÿÿÿÿ8Ê’ê›Á1
+{
+java:S1104"YMake deleteProduct a static final constant or non-public and provide accessors if needed.(’ ½‹þÿÿÿÿ8Ë’ê›Á1
+y
+java:S1104"WMake listProduct a static final constant or non-public and provide accessors if needed.(¾«Â¡þÿÿÿÿ8Ë’ê›Á1
+R
+java:S1444
+"0Make this "public static addProduct" field final(ÐÎô¶øÿÿÿÿ8Ì’ê›Á1
+U
+java:S1444"3Make this "public static deleteProduct" field final(’ ½‹þÿÿÿÿ8Í’ê›Á1
+S
+java:S1444"1Make this "public static listProduct" field final(¾«Â¡þÿÿÿÿ8Ï’ê›Á1
+X	java:S125n"<This block of commented-out lines of code should be removed.(ñ•Œž8£‚ÊîÁ1
