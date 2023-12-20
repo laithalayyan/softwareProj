@@ -52,6 +52,7 @@ public class Installer {
         appointments.add(appointment);
     }
 
+
     private static Logger logger = Logger.getLogger(Installer.class.getName());
 
     public Installer(){}

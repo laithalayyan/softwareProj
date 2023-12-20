@@ -136,6 +136,7 @@ public class Product {
         }
         logger.info("Product not found.");
         return false;
+
     }
 
     private static void addProduct() {

@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="final product">
+    <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonar">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Installer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--tags" />
@@ -62,7 +71,12 @@
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="MAIN_CLASS_NAME" value="org.example.AdminDashboard" />
       <module name="softproj3" />
-      <extension name="coverage">
+      <extension name="coverage" track_test_folders="true">
+        <pattern>
+          <option name="PATTERN" value="najah.edu.acceptance.*" />
+          <option name="ENABLED" value="true" />
+          <option name="INCLUDE" value="false" />
+        </pattern>
         <pattern>
           <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
@@ -215,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703025626846</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="sonar">
+      <created>1703026948224</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703026948224</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,7 +254,8 @@
     <MESSAGE value="newnew" />
     <MESSAGE value="finalll" />
     <MESSAGE value="final product" />
-    <option name="LAST_COMMIT_MESSAGE" value="final product" />
+    <MESSAGE value="sonar" />
+    <option name="LAST_COMMIT_MESSAGE" value="sonar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -248,5 +270,12 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/softproj3$AdminDashboard.ic" NAME="AdminDashboard Coverage Results" MODIFIED="1703028851764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+      <EXCLUDED_FILTER>najah.edu.acceptance.*</EXCLUDED_FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3.ic" NAME="All in softproj3 Coverage Results" MODIFIED="1703028948325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

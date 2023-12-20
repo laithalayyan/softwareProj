@@ -29,15 +29,14 @@ public class Appointment {
     private String customerName;
     private String appointmentDate;
 
+
     private String carModer;
     private String carDate;
-    public static List<Appointment> appointments2=new ArrayList<>();
-    private static Logger logger = Logger.getLogger(Appointment.class.getName());
+    public static final List<Appointment> appointments2=new ArrayList<>();
+    private static final Logger logger = Logger.getLogger(Appointment.class.getName());
 
 
-    public Appointment() {
 
-    }
     public Appointment( String customerName, String appointmentDate,String carModer , String carDate) {
         this.customerName = customerName;
         this.appointmentDate = appointmentDate;
@@ -143,11 +142,10 @@ public class Appointment {
                             "\n" + "Customer Car Model: " + appointment.getCustomerCarModel());
                     logger.info("Products wanted: ");
                     listOrders();
-                    return;
                 }
-            }return;
+            }
         }
-        logger.info("There is no apponintments for this installer");
+        logger.info("There is no apponintments for installer");
     }
 
 }

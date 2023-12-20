@@ -91,6 +91,7 @@ public class Category {
     public static void addcat(String name){
         categories.add(new Category(name));
     }
+
     public static boolean addcatTest(String name){
         for (Category category : categories) {
             if (category.getName().equals(name)) {

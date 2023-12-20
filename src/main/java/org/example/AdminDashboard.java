@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+
 import roles.*;
 import static roles.Appointment.*;
 import static roles.Category.listCategories;

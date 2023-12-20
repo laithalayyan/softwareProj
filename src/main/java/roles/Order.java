@@ -13,16 +13,17 @@ import static roles.Product.listProducts;
 import static roles.Product.searchProducts;
 
 public class Order {
-    public static boolean placeOrder;
+    static String xchoice="Invalid choice. Please try again.";
+    public static boolean placeOrderr;
     public static boolean listOrder;
     public static boolean listCategories;
 
     public static boolean isPlaceOrder() {
-        return placeOrder;
+        return placeOrderr;
     }
 
     public static void setPlaceOrder(boolean placeOrder) {
-        Order.placeOrder = placeOrder;
+        Order.placeOrderr = placeOrder;
     }
 
     public static boolean isListOrder() {
@@ -32,6 +33,7 @@ public class Order {
     public static void setListOrder(boolean listOrder) {
         Order.listOrder = listOrder;
     }
+
 
     public static boolean isListCategories() {
         return listCategories;
@@ -64,7 +66,7 @@ public class Order {
     }
 
     private double calculateTotalPrice() {
-        double totalPrice = 0;
+        //double totalPrice = 0;
         for (Product product : orderedProducts) {
             totalPrice += product.getPrice();
         }
@@ -96,7 +98,7 @@ public class Order {
                 case 4:
                     return;
                 default:
-                    logger.info("Invalid choice. Please try again.");
+                    logger.info(xchoice);
             }
         }
     }
@@ -121,7 +123,7 @@ public class Order {
                 break;
             default:
 
-                System.out.println("Invalid choice. Please try again.");
+                logger.info(xchoice);
                 placeOrder();
         }
 
@@ -130,21 +132,26 @@ public class Order {
 
     static List<Order> orderss;
     static Customer customer1;
+    static List<Product> selectedProducts = new ArrayList<>();
+    public static void orderstep1(String input){
+        for (Product product : products) {
+            if (product.getName().equalsIgnoreCase(input)&&product.getAvailablity()!=0) {
+                selectedProducts.add(product);
+                product.setAvailablity();
+                listProducts();
+                break;
+            }else if (product.getAvailablity()==0){ logger.info("There is no enough");}
+        }
+    }
     public static void ordersteps(){
         Scanner scanner = new Scanner(System.in);
-        List<Product> selectedProducts = new ArrayList<>();
+
         while (true) {
             logger.info("Enter the name of the product you want to order (or 'done' to finish): ");
             String input = scanner.nextLine();
 
-            for (Product product : products) {
-                if (product.getName().equalsIgnoreCase(input)&&product.getAvailablity()!=0) {
-                    selectedProducts.add(product);
-                    product.setAvailablity();
-                    listProducts();
-                    break;
-                }else if (product.getAvailablity()==0){ logger.info("There is no enough");}
-            }
+            orderstep1(input);
+
             if (input.equalsIgnoreCase("done")) {
                 logger.info("Do you want installation service ? (y/n)");
                 String in = scanner.nextLine();
@@ -153,25 +160,30 @@ public class Order {
                         scheduleAppointment();
                         break;
                     case "n":
-                        break;
+                        return;
+                        //break;
                     default:
-                        logger.info("Invalid choice. Please try again.");
+                        logger.info(xchoice);
                 }
                 break;
 
             }
         }
         if(Appointment.getinstaller()==null){
-            logger.info("Invalid choice. Please try again.");
+            logger.info(xchoice);
             return;
         }
 
+        Customer customer = getLoggedInCustomer();
+        Order order = new Order(orderIdCounter, selectedProducts);
+
         if (selectedProducts.isEmpty()) {
             logger.info("No products selected. Order not placed.");
-        } else {
-            Customer customer = getLoggedInCustomer();
-            Order order = new Order(orderIdCounter, selectedProducts);
+        }
+
+
             if(customer==null){
+
                 logger.info("Insert Customer Name: ");
                 String customername=scanner.nextLine();
                 logger.info("Insert Customer email: ");
@@ -183,7 +195,7 @@ public class Order {
             orderIdCounter++;
             logger.info("Order placed successfully!");
         }
-    }
+
     public static void listOrders() {
         Customer customer = getLoggedInCustomer();
         if (customer != null) {
