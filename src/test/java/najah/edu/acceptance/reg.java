@@ -44,6 +44,7 @@ public class reg {
     public void theUserWillSignUpAndAddedToUserslist() {
         //user.register(username,email,password,type);
         assertTrue(user.registerTest(username,email,password,type));
+
     }
 
 

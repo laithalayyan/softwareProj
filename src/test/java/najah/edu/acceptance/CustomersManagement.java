@@ -59,6 +59,7 @@ public class CustomersManagement {
         //customer.regCust(customer2Name,customer2Email,customer2Pass,"customer");
         assertTrue(regCustTest(customerName,customerEmail,customerPass,"customer"));
         assertTrue(regCustTest(customer2Name,customer2Email,customer2Pass,"customer"));
+
     }
 
 

@@ -17,6 +17,7 @@ public class OrdersManagement {
     public static List<Category> categoryList=new ArrayList<>();
 
 
+
     @Given("they choose Place Order")
     public void theyChoosePlaceOrder() {
         order.setPlaceOrder(true);

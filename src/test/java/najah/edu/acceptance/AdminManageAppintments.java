@@ -56,6 +56,7 @@ public class AdminManageAppintments {
         appointment=new Appointment("laith",appointmentDate,CarModel,CarDate);
         appointmentList.add(appointment);
         logger.info("Appointment scheduled successfullyy!");
+
     }
 
 

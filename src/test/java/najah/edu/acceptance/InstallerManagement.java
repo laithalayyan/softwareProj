@@ -55,6 +55,7 @@ public class InstallerManagement {
         availableDate=new AvailableDates(av,installer.getUsername());
         reginstallerav(av,installer.getUsername());
         assertTrue(reginstallerTest(id,username,email,pass,"installer",""));
+
     }
 
     @Given("they choose List Installers")

@@ -95,6 +95,7 @@ public class signin {
     public void installerPpasswordIs(String string) {
         this.InstallerPass=string;
     }
+
     @Then("the installer login")
     public void theInstallerLogin() {
         user3=new User("installer",InstallerEmail,InstallerPass,"installer");
