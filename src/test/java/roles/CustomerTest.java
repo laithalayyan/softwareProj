@@ -8,14 +8,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class CustomerTest {
-    /**
-     * Methods under test:
-     *
-     * <ul>
-     *   <li>{@link Customer#Customer(String, String, String, String)}
-     *   <li>{@link Customer#getPassword()}
-     * </ul>
-     */
+
     @Test
     void testConstructor() {
         // Arrange, Act and Assert
@@ -28,14 +21,6 @@ class CustomerTest {
                 (new Customer("janedoe", "jane.doe@example.org", "iloveyou", "User Type")).getEmail());
     }
 
-    /**
-     * Methods under test:
-     *
-     * <ul>
-     *   <li>{@link Customer#Customer(String, String, String, String)}
-     *   <li>{@link Customer#setPassword(String)}
-     * </ul>
-     */
     @Test
     void testConstructor2() {
         // Arrange and Act
@@ -46,14 +31,7 @@ class CustomerTest {
         assertEquals("iloveyou", actualCustomer.getPassword());
     }
 
-    /**
-     * Methods under test:
-     *
-     * <ul>
-     *   <li>{@link Customer#Customer(String, String, String, String)}
-     *   <li>{@link Customer#getOrders()}
-     * </ul>
-     */
+
     @Test
     void testConstructor3() {
         // Arrange and Act

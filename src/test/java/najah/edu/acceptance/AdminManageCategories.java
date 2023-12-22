@@ -1,6 +1,8 @@
 package najah.edu.acceptance;
 
 import org.junit.experimental.categories.Categories;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import roles.Category;
 import io.cucumber.java.en.*;
 import roles.Appointment;
@@ -13,6 +15,7 @@ import static org.example.Main.deletecat;
 import static org.example.Main.manageCat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static roles.Appointment.*;
 import static roles.Category.*;
 import static roles.Product.productsearch;
@@ -126,5 +129,29 @@ public class AdminManageCategories {
     @Then("the category should not be deleted")
     public void theCategoryShouldNotBeDeleted() {
         assertFalse(deletecatTest(categoryName));
+    }
+
+
+
+
+    @Test
+    void testConstructor() {
+        // Arrange, Act and Assert
+        Assertions.assertTrue((new Category("Name")).isSearchproduct());
+    }
+
+    @Test
+    void testConstructor2() {
+        // Arrange and Act
+        Category actualCategory = new Category("Name");
+        actualCategory.setSearchproduct(true);
+
+        // Assert
+        assertEquals("Name", actualCategory.getName());
+    }
+
+    @Test
+    void testAddcatTEG() {
+        Category.addcatTEG("Name");
     }
 }
