@@ -3,6 +3,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import org.example.Main;
 import roles.Customer;
 
 import static org.junit.Assert.assertEquals;
@@ -51,7 +52,7 @@ public class CustomerSteps {
 
     @Then("the system should display the result")
     public void theSystemShouldDisplayTheResult() {
-        regCust(custName, custEmail, custPass, "customer");
+        regCustTest(custName, custEmail, custPass, "customer");
         //registerCustomer();
 
     }
@@ -63,7 +64,7 @@ public class CustomerSteps {
 
     @When("I check the logged-in customer's name")
     public void getLoggedInCustomerName() {
-        loggedInCustomerNameResult = customer.getLoggedInCustomerName();
+        loggedInCustomerNameResult = Main.getLoggedInCustomerName();
     }
 
     @Then("the system should display {string}")

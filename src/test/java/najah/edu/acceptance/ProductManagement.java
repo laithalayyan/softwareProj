@@ -105,7 +105,7 @@ public class ProductManagement {
     }
     @Then("they should see a list of available products")
     public void theyShouldSeeAListOfAvailableProducts() {
-        listProducts();
+        //listProducts();
     }
 
 

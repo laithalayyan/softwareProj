@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import static org.example.Main.*;
-import static roles.Customer.getLoggedInCustomerName;
 import static roles.Installer.*;
-import static roles.Order.listOrders;
 
 
 public class Appointment {

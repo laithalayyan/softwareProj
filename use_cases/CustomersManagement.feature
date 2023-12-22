@@ -11,6 +11,13 @@ Feature: Customers Management
     And customer2 password is "123"
     Then the customers should be registered successfully
 
+  Scenario: register a existed customer
+    Given they choose Register Customer
+    When customerr username is "laith"
+    And customerr email is "laith@gmail.com"
+    And customerr password is "123"
+    Then the customers should not be registered
+
   Scenario: lists customers
     Given they choose List Customers
     Then they should see a list of registered customers

@@ -88,24 +88,7 @@ public class Category {
     public static void addnoti(){
         logger.info("Category addedd successfully.");
     }
-    public static void deletecat(String name){
 
-        for (Category category : categories) {
-            if (category.getName().equals(name)) {
-                categories.remove(category);
-                for (Product product : products) {
-                    if (product.getCategory().equals(name)) {
-                        products.remove(product);
-                        return;
-                    }
-                    deletenoti();
-
-                }
-            }
-
-        }
-
-    }
 
 
 

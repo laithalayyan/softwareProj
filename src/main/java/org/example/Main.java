@@ -18,14 +18,17 @@ import static roles.User.*;
 
 
 public class Main {
-    public static ArrayList<User> userDatabase = new ArrayList<>();
-    public static List<Product> products = new ArrayList<>();
-    public static List<Category> categories = new ArrayList<>();
+    public static final ArrayList<User> userDatabase = new ArrayList<>();
+    public static final List<Product> products = new ArrayList<>();
+    public static final List<Category> categories = new ArrayList<>();
 
     public static List<Installer> getInstallersDatabase() {
         return installersDatabase;
     }
 
+    public static List<Product> getproductList(){
+        return products;
+    }
     public static List<Installer> installersDatabase = new ArrayList<>();
 
     public static List<AvailableDates> availableDates = new ArrayList<>();
@@ -230,7 +233,7 @@ public class Main {
                 return 2;
             case 3:
                 setListProduct(true);
-                listProducts();
+                listProducts(products);
                 return 3;
             case 4:
                 adminDashboard();
@@ -322,6 +325,24 @@ public class Main {
         logger.info("Enter the category name to delete: ");
         String name = scanner.nextLine();
         deletecat(name);
+    }
+    public static void deletecat(String name){
+
+        for (Category category : categories) {
+            if (category.getName().equals(name)) {
+                categories.remove(category);
+                for (Product product : products) {
+                    if (product.getCategory().equals(name)) {
+                        products.remove(product);
+                        return;
+                    }
+                    deletenoti();
+
+                }
+            }
+
+        }
+
     }
     public static void listCategories() {
         logger.info("Categories:");
@@ -416,7 +437,7 @@ public class Main {
         String email = regCustEmail(scanner);
         String password = regCustPass(scanner);
 
-        if (regCust(username, email, password, CUSTOMERU)) {
+        if (regCustTest(username, email, password, CUSTOMERU)) {
             return "Customer registration successful!";
         } else {
             return "Customer registration failed. User with the same email already exists.";
@@ -555,7 +576,7 @@ public class Main {
     public static void placeOrder() {
         Scanner scanner = new Scanner(System.in);
         logger.info("Available Products:");
-        listProducts();
+        listProducts(products);
         logger.info("Do you want to search specifc products ? (y/n)");
         String pro = scanner.nextLine();
         switch (pro){
@@ -588,7 +609,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    listProducts();
+                    listProducts(products);
                     break;
                 case 2:
                     placeOrder();
@@ -605,6 +626,31 @@ public class Main {
                     return;
                 default:
                     logger.info(INVALIDATION);
+            }
+        }
+    }
+    public static void listOrders() {
+        Customer customer = getLoggedInCustomer();
+        if (customer != null) {
+            logger.info("Orders for " + customer.getUsername() + ":");
+            List<Order> orders = customer.getOrders();
+            for (Order order : orders) {
+                logger.info("Order ID: " + order.getOrderId());
+                logger.info("Ordered Products:");
+                for (Product product : order.getOrderedProducts()) {
+                    logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
+                }
+                logger.info("Total Price: " + order.getTotalPrice());
+            }
+        } else {
+            logger.info("Orders for " + customer1.getUsername() + ":");
+            for (Order order : orderss) {
+                logger.info("Order ID: " + order.getOrderId());
+                logger.info("Ordered Products:");
+                for (Product product : order.getOrderedProducts()) {
+                    logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
+                }
+                logger.info("Total Price: " + order.getTotalPrice());
             }
         }
     }
@@ -645,7 +691,7 @@ public class Main {
             logger.info("Enter the name of the product you want to order (or 'done' to finish): ");
             String input = scanner.nextLine();
 
-            orderstep1(input);
+            orderstep1(input,products);
 
             if (input.equalsIgnoreCase("done")) {
                 logger.info("Do you want installation service ? (y/n)");
@@ -705,6 +751,22 @@ public class Main {
         int installerId = scanner.nextInt();
         scanner.nextLine();
         scheduleAppointment(carmodel,carDate,installerId,installersDatabase);
+    }
+    public static Customer getLoggedInCustomer() {
+        for (Customer customer : customers) {
+            if (customer.getEmail().equals(getLoggedIngetEmailCustomer())) {
+                return customer;
+            }
+        }
+        return null ;
+    }
+    public static String getLoggedInCustomerName() {
+        for (Customer customer : customers) {
+            if (customer.getEmail().equals(getLoggedIngetEmailCustomer())) {
+                return customer.getUsername();
+            }
+        }
+        return null ;
     }
 }
 

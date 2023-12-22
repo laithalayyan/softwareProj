@@ -4,6 +4,7 @@ package roles;
 import java.util.logging.Logger;
 
 import static org.example.Main.*;
+import java.util.List;
 
 public class Product {
     public static boolean addProduct;
@@ -113,8 +114,14 @@ public class Product {
 
 
 
+    public static void listProductsOrder() {
+        logger.info("Products:");
+        for (Product product : products) {
+            logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
+        }
+    }
 
-    public static void listProducts() {
+    public static void listProducts(List<Product> products) {
         logger.info("Products:");
         for (Product product : products) {
             logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );

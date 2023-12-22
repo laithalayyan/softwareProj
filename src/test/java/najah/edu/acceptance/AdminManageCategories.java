@@ -9,6 +9,7 @@ import roles.User;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.Main.deletecat;
 import static org.example.Main.manageCat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -22,6 +23,8 @@ public class AdminManageCategories {
     Category category2;
     private String categoryName;
     private String categoryName2;
+    private String categoryName3;
+    private String categoryName4;
     private String productName;
     List <Category> categoryList = new ArrayList<Category>();
 
@@ -63,6 +66,7 @@ public class AdminManageCategories {
 
         assertTrue(addcatTest(categoryName));
         assertTrue(addcatTest(categoryName2));
+       // assertFalse(addcatTest("lala"));
 
         //addnoti();
         //listCategoriesTest();
@@ -81,13 +85,10 @@ public class AdminManageCategories {
     }
     @Then("the category should be removed successfully")
     public void theCategoryShouldBeRemovedSuccessfully() {
-        //category=new Category(categoryName2);
         categoryList.remove(category);
-        deletecat(categoryName);
-        //category.deletecat(categoryName);
-        assertFalse(deletecatTest(categoryName));
-        //deletenoti();
-        //listCategoriesTest();
+        //deletecat(categoryName);
+        assertTrue(deletecatTest(categoryName));
+
     }
 
 
@@ -105,7 +106,25 @@ public class AdminManageCategories {
     }
 
 
+    @When("Category namee is {string}")
+    public void categoryNameeIs(String arg0) {
+        this.categoryName3=arg0;
+
+    }
+
+    @Then("the category should not be added")
+    public void theCategoryShouldNotBeAdded() {
+        assertFalse(addcatTest(categoryName3));
+    }
 
 
+    @When("Categoryy namee is {string}")
+    public void categoryyNameeIs(String arg0) {
+        this.categoryName4=arg0;
+    }
 
+    @Then("the category should not be deleted")
+    public void theCategoryShouldNotBeDeleted() {
+        assertFalse(deletecatTest(categoryName));
+    }
 }

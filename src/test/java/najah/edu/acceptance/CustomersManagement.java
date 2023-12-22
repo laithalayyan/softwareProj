@@ -14,12 +14,16 @@ import static roles.Customer.*;
 public class CustomersManagement {
     Customer customer;
     Customer customer2;
+    Customer customer3;
     private String customerName;
     private String customerEmail;
     private String customerPass;
     private String customer2Name;
     private String customer2Email;
     private String customer2Pass;
+    private String customer3Name;
+    private String customer3Email;
+    private String customer3Pass;
     public static List<Customer> customerList=new ArrayList<>();
 
 
@@ -77,8 +81,25 @@ public class CustomersManagement {
     }
 
 
-    
-    
-    
+    @When("customerr username is {string}")
+    public void customerrUsernameIs(String arg0) {
+        this.customer3Name=arg0;
+    }
 
+    @And("customerr email is {string}")
+    public void customerrEmailIs(String arg0) {
+        this.customer3Email=arg0;
+    }
+
+    @And("customerr password is {string}")
+    public void customerrPasswordIs(String arg0) {
+        this.customer3Pass=arg0;
+    }
+
+    @Then("the customers should not be registered")
+    public void theCustomersShouldNotBeRegistered() {
+        customer3=new Customer(customer2Name,customer2Email,customer2Pass,"customer");
+        customerList.add(customer3);
+        regCustTest(customer3Name,customer3Email,customer3Pass,"customer");
+    }
 }

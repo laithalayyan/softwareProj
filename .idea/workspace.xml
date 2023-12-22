@@ -5,38 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonar pre-final stage">
-      <change afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomerSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/roles/AppointmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/roles/AvailableDatesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f696e83d363c7484d99872d298f7d1911163c3f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f696e83d363c7484d99872d298f7d1911163c3f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a0f9b1da6a28127de8ed9cfe482fa3685dd11de" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a0f9b1da6a28127de8ed9cfe482fa3685dd11de" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c9ab57ef6df492f54af10484c2408637d14b990" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c9ab57ef6df492f54af10484c2408637d14b990" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/43657f7df4ad9df4b1e086f9b9c8f52503555ae6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/43657f7df4ad9df4b1e086f9b9c8f52503555ae6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/43f7b88824986e29a56ddd460516b5c21b820f3f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/43f7b88824986e29a56ddd460516b5c21b820f3f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e492f32bd5d1ab3f49a388bb530bab303e5076b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e492f32bd5d1ab3f49a388bb530bab303e5076b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a90287866d248700a86fa89d53cb0afed83dc6a2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a90287866d248700a86fa89d53cb0afed83dc6a2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d69d158b6f302213acd25ea2fc72ee63417a8458" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d69d158b6f302213acd25ea2fc72ee63417a8458" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e47c52c40bdd6d3444d34eeb8a34a8df62b7dd76" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e47c52c40bdd6d3444d34eeb8a34a8df62b7dd76" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/roles/CategoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/roles/CustomerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/roles/OrderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/AvailableDates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/AvailableDates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Installer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageAppintments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageAppintments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomerSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomerSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomersManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomersManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/OrdersManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/OrdersManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/productmange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/productmange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/signin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/signin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/CategoriesManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/CategoriesManagement.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use_cases/CustomersManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/CustomersManagement.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +81,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.All in softproj3 (1)">
+  <component name="RunManager" selected="JUnit.All in softproj3 (4)">
     <configuration name="All in softproj3 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softproj3" />
       <option name="PACKAGE_NAME" value="" />
@@ -114,7 +98,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in softproj3 (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in softproj3 (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softproj3" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -122,7 +106,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in softproj3 (5)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in softproj3 (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softproj3" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -180,18 +164,18 @@
       <item itemvalue="Diffblue Cover.Write tests for method Appointment.getCustomerCarDate" />
       <item itemvalue="Diffblue Cover.Write tests for method Appointment.scheduleAppointment (2)" />
       <item itemvalue="JUnit.All in softproj3" />
+      <item itemvalue="JUnit.All in softproj3 (3)" />
       <item itemvalue="JUnit.All in softproj3 (4)" />
-      <item itemvalue="JUnit.All in softproj3 (5)" />
       <item itemvalue="JUnit.All in softproj3 (1)" />
       <item itemvalue="JUnit.All in softproj3 (2)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in softproj3 (1)" />
-        <item itemvalue="JUnit.All in softproj3" />
-        <item itemvalue="JUnit.All in softproj3 (5)" />
-        <item itemvalue="JUnit.All in softproj3 (2)" />
         <item itemvalue="JUnit.All in softproj3 (4)" />
+        <item itemvalue="JUnit.All in softproj3 (3)" />
+        <item itemvalue="JUnit.All in softproj3" />
+        <item itemvalue="JUnit.All in softproj3 (2)" />
+        <item itemvalue="JUnit.All in softproj3 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -414,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703261698161</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="sonar pre-final stage">
+      <created>1703283390061</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1703283390061</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,18 +443,18 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__4_.ic" NAME="All in softproj3 (4) Coverage Results" MODIFIED="1703275744477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__4_.ic" NAME="All in softproj3 (4) Coverage Results" MODIFIED="1703288666194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/softproj3$AdminDashboard.ic" NAME="AdminDashboard Coverage Results" MODIFIED="1703028851764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
       <EXCLUDED_FILTER>najah.edu.acceptance.*</EXCLUDED_FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3.ic" NAME="All in softproj3 Coverage Results" MODIFIED="1703275176619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__1_.ic" NAME="All in softproj3 (1) Coverage Results" MODIFIED="1703282903368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__2_.ic" NAME="All in softproj3 (2) Coverage Results" MODIFIED="1703274975843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__3_.ic" NAME="All in softproj3 (3) Coverage Results" MODIFIED="1703275648985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3.ic" NAME="All in softproj3 Coverage Results" MODIFIED="1703288473232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__1_.ic" NAME="All in softproj3 (1) Coverage Results" MODIFIED="1703288336810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__2_.ic" NAME="All in softproj3 (2) Coverage Results" MODIFIED="1703288377992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__3_.ic" NAME="All in softproj3 (3) Coverage Results" MODIFIED="1703288585245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/softproj3$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1703268766454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>najah.edu.acceptance.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__5_.ic" NAME="All in softproj3 (5) Coverage Results" MODIFIED="1703275045513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__5_.ic" NAME="All in softproj3 (5) Coverage Results" MODIFIED="1703287126751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

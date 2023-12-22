@@ -4,14 +4,13 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import static org.example.Main.*;
-import static roles.Customer.getLoggedInCustomer;
 import static roles.Product.listProducts;
 
 public class Order {
     static String xchoice="Invalid choice. Please try again.";
-    public static boolean placeOrderr;
-    public static boolean listOrder;
-    public static boolean listCategories;
+    private static boolean placeOrderr;
+    private static boolean listOrder;
+    private static boolean listCategories;
 
     public static boolean isPlaceOrder() {
         return placeOrderr;
@@ -73,41 +72,17 @@ public class Order {
 
 
 
-    public static void orderstep1(String input){
+    public static void orderstep1(String input,List<Product> products){
         for (Product product : products) {
             if (product.getName().equalsIgnoreCase(input)&&product.getAvailablity()!=0) {
                 selectedProducts.add(product);
                 product.setAvailablity();
-                listProducts();
+                listProducts(products);
                 break;
             }else if (product.getAvailablity()==0){ logger.info("There is no enough");}
         }
     }
 
 
-    public static void listOrders() {
-        Customer customer = getLoggedInCustomer();
-        if (customer != null) {
-            logger.info("Orders for " + customer.getUsername() + ":");
-            List<Order> orders = customer.getOrders();
-            for (Order order : orders) {
-                logger.info("Order ID: " + order.getOrderId());
-                logger.info("Ordered Products:");
-                for (Product product : order.getOrderedProducts()) {
-                    logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
-                }
-                logger.info("Total Price: " + order.getTotalPrice());
-            }
-        } else {
-            logger.info("Orders for " + customer1.getUsername() + ":");
-            for (Order order : orderss) {
-                logger.info("Order ID: " + order.getOrderId());
-                logger.info("Ordered Products:");
-                for (Product product : order.getOrderedProducts()) {
-                    logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
-                }
-                logger.info("Total Price: " + order.getTotalPrice());
-            }
-        }
-    }
+
 }
