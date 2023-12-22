@@ -1,28 +1,21 @@
 
-n
-java:S1301–"KReplace this "switch" statement by "if" statements to increase readability.(îÇËúÿÿÿÿ8Èº°ïÁ1
 t
-java:S1104"RMake addcat a static final constant or non-public and provide accessors if needed.(ü¸ôşÿÿÿÿ8Éº°ïÁ1
-w
-java:S1104"UMake deletecat a static final constant or non-public and provide accessors if needed.(‹Ã˜ ÿÿÿÿÿ8Éº°ïÁ1
+java:S1104"WMake ADD_CATTEGO a static final constant or non-public and provide accessors if needed.(ƒØ¨ã8Ìü÷ŒÉ1
+s
+java:S1104"VMake delete_cat a static final constant or non-public and provide accessors if needed.(şüº²8Ìü÷ŒÉ1
 p
 java:S1104"SMake listcat a static final constant or non-public and provide accessors if needed.(µ¹ÍÎ8Éº°ïÁ1
 {
 java:S1104"YMake searchproduct a static final constant or non-public and provide accessors if needed.(îÓÍŒüÿÿÿÿ8Éº°ïÁ1
 N
-java:S1444",Make this "public static addcat" field final(ü¸ôşÿÿÿÿ8Éº°ïÁ1
-Q
-java:S1444"/Make this "public static deletecat" field final(‹Ã˜ ÿÿÿÿÿ8Éº°ïÁ1
+java:S1444"1Make this "public static ADD_CATTEGO" field final(ƒØ¨ã8Íü÷ŒÉ1
+M
+java:S1444"0Make this "public static delete_cat" field final(şüº²8Îü÷ŒÉ1
 J
 java:S1444"-Make this "public static listcat" field final(µ¹ÍÎ8Éº°ïÁ1
 U
 java:S1444"3Make this "public static searchproduct" field final(îÓÍŒüÿÿÿÿ8Éº°ïÁ1
 s
-java:S1845["QRename method "addcat" to prevent any misunderstanding/clash with field "addcat".(–©›ßøÿÿÿÿ8‡»°ïÁ1
-y
-java:S1845{"WRename method "deletecat" to prevent any misunderstanding/clash with field "deletecat".(€ÇÅ¦ûÿÿÿÿ8‡»°ïÁ1
-^	java:S125‰"<This block of commented-out lines of code should be removed.(¹òÁüÿÿÿÿ8Èš¼ïÁ1
-^	java:S125’"<This block of commented-out lines of code should be removed.(´ç«îûÿÿÿÿ8”»°ïÁ1
-n	java:S128—"LEnd this switch case with an unconditional break, return or throw statement.(ÜçÚ‹ÿÿÿÿÿ8”»°ïÁ1
-D	java:S131–""Add a default case to this switch.(îÇËúÿÿÿÿ8”»°ïÁ1
-M	java:S106µ"+Replace this use of System.out by a logger.(¶ÛÈ÷øÿÿÿÿ8—»°ïÁ1
+java:S3008"VRename this field "ADD_CATTEGO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒØ¨ã8Äı÷ŒÉ1
+r
+java:S3008"URename this field "delete_cat" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şüº²8Æı÷ŒÉ1

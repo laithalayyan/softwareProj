@@ -1,36 +1,18 @@
 
-†
-java:S1192"cDefine a constant instead of duplicating this literal "Installer registration successful!" 3 times.(ì‡îáûÿÿÿÿ8¢êšŠÂ1
 m
-java:S1301z"KReplace this "switch" statement by "if" statements to increase readability.(­†ñ´ÿÿÿÿÿ8£êšŠÂ1
+java:S1301x"KReplace this "switch" statement by "if" statements to increase readability.(­†ñ´ÿÿÿÿÿ8£êšŠÂ1
 n
-java:S1301”"KReplace this "switch" statement by "if" statements to increase readability.(­†ñ´ÿÿÿÿÿ8£êšŠÂ1
-u
-java:S1104"XMake regInstaller a static final constant or non-public and provide accessors if needed.(˜Ï½é8£êšŠÂ1
-u
-java:S1104"YMake listInstaller a static final constant or non-public and provide accessors if needed.(ïÆŠt8¥êšŠÂ1
-O
-java:S1444"2Make this "public static regInstaller" field final(˜Ï½é8¥êšŠÂ1
-O
-java:S1444"3Make this "public static listInstaller" field final(ïÆŠt8¥êšŠÂ1
-_
-java:S4973¦"<Strings and Boxed types should be compared using "equals()".(îéÔÅÿÿÿÿÿ8§êšŠÂ1
-_
-java:S4973¦"<Strings and Boxed types should be compared using "equals()".(îéÔÅÿÿÿÿÿ8§êšŠÂ1
+java:S1301’"KReplace this "switch" statement by "if" statements to increase readability.(­†ñ´ÿÿÿÿÿ8£êšŠÂ1
 {
-java:S1845 "]Rename method "reginstaller" to prevent any misunderstanding/clash with field "regInstaller".(±«îş8ÈêšŠÂ1
-X	java:S1251"<This block of commented-out lines of code should be removed.(ş•Ï™8ÌêšŠÂ1
+java:S1104"YMake regInstallerr a static final constant or non-public and provide accessors if needed.(ÔŸ“úÿÿÿÿ8óì÷ŒÉ1
+u
+java:S1104"YMake listInstaller a static final constant or non-public and provide accessors if needed.(ïÆŠt8¥êšŠÂ1
+U
+java:S1444"3Make this "public static regInstallerr" field final(ÔŸ“úÿÿÿÿ8ôì÷ŒÉ1
+O
+java:S1444"3Make this "public static listInstaller" field final(ïÆŠt8¥êšŠÂ1
+]	java:S125."<This block of commented-out lines of code should be removed.(ñ‰ß›şÿÿÿÿ8àí÷ŒÉ1
 F
-java:S3010A")Remove this assignment of "appointments".(Ä¬¤œ8°Ù›ŠÂ1
-Q
-java:S1172:"/Remove this unused method parameter "userType".(Êİºûûÿÿÿÿ8ÎêšŠÂ1
+java:S3010?")Remove this assignment of "appointments".(Ä¬¤œ8°Ù›ŠÂ1
 R
-java:S2209A"5Change this instance-reference to a static reference.(Ä¬¤œ8²Ù›ŠÂ1
-Y	java:S125"<This block of commented-out lines of code should be removed.(ú¶Â‹8×êšŠÂ1
-Y	java:S125´"<This block of commented-out lines of code should be removed.(–ı®Ğ8ØêšŠÂ1
-Y
-java:S1128"7Remove this unused import 'org.example.AdminDashboard'.(‹£Çºşÿÿÿÿ8ÀÙ›ŠÂ1
-T
-java:S1128"2Remove this unused import 'javax.xml.crypto.Data'.(¦¿çˆıÿÿÿÿ8ÀÙ›ŠÂ1
-H
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8ÀÙ›ŠÂ1
+java:S2209?"5Change this instance-reference to a static reference.(Ä¬¤œ8²Ù›ŠÂ1

@@ -9,7 +9,7 @@ import static roles.Product.searchProducts;
 
 public class Category {
     public static boolean ADD_CATTEGO;
-    public static boolean delete_cat;
+    public static boolean DELETE_CAT=true;
     public static boolean listcat;
     public static boolean searchproduct;
 
@@ -31,11 +31,11 @@ public class Category {
         return ADD_CATTEGO;
     }
     public static boolean isDeletecat() {
-        return delete_cat;
+        return DELETE_CAT;
     }
 
     public static void setDeletecat(boolean deletecat) {
-        Category.delete_cat = deletecat;
+        Category.DELETE_CAT = deletecat;
     }
 
 

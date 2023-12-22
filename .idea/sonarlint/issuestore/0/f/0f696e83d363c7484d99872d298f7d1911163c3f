@@ -1,22 +1,13 @@
 
-„
-java:S1192c"bDefine a constant instead of duplicating this literal "Invalid choice. Please try again." 4 times.(ó­¬úÿÿÿÿ8ªÉ‹‹Â1
-x
-java:S1104"VMake placeOrder a static final constant or non-public and provide accessors if needed.(¼ÎÇØúÿÿÿÿ8ªÉ‹‹Â1
+t
+java:S1104"WMake placeOrderr a static final constant or non-public and provide accessors if needed.(ŸÅê¤8Žï÷ŒÉ1
 r
-java:S1104"UMake listOrder a static final constant or non-public and provide accessors if needed.(Ó¸ý8ªÉ‹‹Â1
+java:S1104"UMake listOrder a static final constant or non-public and provide accessors if needed.(Ó¸ý8ªÉ‹‹Â1
 w
-java:S1104"ZMake listCategories a static final constant or non-public and provide accessors if needed.(ô¯ñ¹8ªÉ‹‹Â1
-R
-java:S1444"0Make this "public static placeOrder" field final(¼ÎÇØúÿÿÿÿ8ªÉ‹‹Â1
+java:S1104"ZMake listCategories a static final constant or non-public and provide accessors if needed.(ô¯ñ¹8ªÉ‹‹Â1
+N
+java:S1444"1Make this "public static placeOrderr" field final(ŸÅê¤8ï÷ŒÉ1
 L
-java:S1444"/Make this "public static listOrder" field final(Ó¸ý8ªÉ‹‹Â1
+java:S1444"/Make this "public static listOrder" field final(Ó¸ý8ªÉ‹‹Â1
 Q
-java:S1444"4Make this "public static listCategories" field final(ô¯ñ¹8¬É‹‹Â1
-{
-java:S1845h"YRename method "placeOrder" to prevent any misunderstanding/clash with field "placeOrder".(†‘¼Ðùÿÿÿÿ8àÊ‹‹Â1
-[
-java:S1117C">Rename "totalPrice" which hides the field declared at line 46.(ÞÈŽÞ8çÊ‹‹Â1
-L	java:S106|"+Replace this use of System.out by a logger.(ÊôÍíþÿÿÿÿ8îÊ‹‹Â1
-u
-java:S3776…"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ß€´˜øÿÿÿÿ8îÊ‹‹Â1
+java:S1444"4Make this "public static listCategories" field final(ô¯ñ¹8¬É‹‹Â1
