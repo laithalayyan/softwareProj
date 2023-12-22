@@ -70,35 +70,39 @@ public class Product {
     public int getAvailablity() {
         return availablity;
     }
-
-    public static void manageProducts() {
+    public static int manageProductsLists(){
         Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            logger.info("\nProduct Management\n1. Add Product\n2. Delete Product" +
-                    "\n3. List Products\n4. Back\nChoose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+        logger.info("\nProduct Management\n1. Add Product\n2. Delete Product" +
+                "\n3. List Products\n4. Back\nChoose an option: ");
+        int choice = scanner.nextInt();
+        manageProducts(choice);
+        return choice;
+    }
+    public static int manageProducts(int choice) {
 
             switch (choice) {
                 case 1:
                     setAddProduct(true);
                     addProduct();
-                    break;
+                    return 1;
+
                 case 2:
                     setDeleteProduct(true);
                     deleteProduct();
-                    break;
+                    return 2;
+
                 case 3:
                     setListProduct(true);
                     listProducts();
-                    break;
+                    return 3;
+
                 case 4:
-                    return;
+                    adminDashboard();
+                    return 4;
                 default:
                     logger.info("Invalid choice. Please try again.");
             }
-        }
+        return 5;
     }
     public static void productadd(String name,double price,String category,int amount){
         products.add(new Product(name, price, category,amount));

@@ -1,5 +1,13 @@
 Feature: Products Management
 
+  Scenario : choose from list
+    Given they have choices :Add Product or Delete Product or List Products or Back
+    When they choose AddProduct
+    And they choose DeleteProduct
+    And they choose ListProducts
+    And they choose Back
+    Then successfulyy done
+
   Scenario: adds a new product
     Given they choose Add Product
     When productt name is "miror"

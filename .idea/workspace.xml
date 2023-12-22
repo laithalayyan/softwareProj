@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonar pre-final stage">
+      <change afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/productmange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/ProductsManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/ProductsManagement.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +88,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Feature: ProductsManagement" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/use_cases/ProductsManagement.feature" />
+      <option name="GLUE" value="najah.edu.acceptance" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="softproj3" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: ProductsManagement" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AcceptanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softproj3" />
       <extension name="coverage">
@@ -101,35 +124,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in softproj3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="productmange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softproj3" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="najah.edu.acceptance.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="najah.edu.acceptance" />
+      <option name="MAIN_CLASS_NAME" value="najah.edu.acceptance.productmange" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Write tests for class Appointment" type="com.diffblue.cover.write-tests-run-configuration" factoryName="com.diffblue.cover.write-tests-run-configuration" activateToolWindowBeforeRun="false" temporary="true">
+    <configuration name="Write tests for method Product.manageProducts" type="com.diffblue.cover.write-tests-run-configuration" factoryName="com.diffblue.cover.write-tests-run-configuration" activateToolWindowBeforeRun="false" temporary="true">
       <module name="softproj3" />
-      <settings run-config-name="Write tests for class Appointment" include-system-env-vars="true">
+      <settings run-config-name="Write tests for method Product.manageProducts" include-system-env-vars="true">
         <jvm-args />
-        <selection-scope>class</selection-scope>
-        <selected-element key="roles.Appointment" />
+        <selection-scope>method</selection-scope>
+        <selected-element key="roles.Product.manageProducts:()V" />
       </settings>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.AdminDashboard" />
-      <item itemvalue="Diffblue Cover.Write tests for class Appointment" />
+      <item itemvalue="Cucumber Java.Feature: ProductsManagement" />
+      <item itemvalue="Diffblue Cover.Write tests for method Product.manageProducts" />
+      <item itemvalue="JUnit.productmange" />
       <item itemvalue="JUnit.AcceptanceTest" />
-      <item itemvalue="JUnit.All in softproj3" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AcceptanceTest" />
-        <item itemvalue="Diffblue Cover.Write tests for class Appointment" />
+        <item itemvalue="JUnit.productmange" />
         <item itemvalue="Application.AdminDashboard" />
-        <item itemvalue="JUnit.All in softproj3" />
+        <item itemvalue="Cucumber Java.Feature: ProductsManagement" />
+        <item itemvalue="Diffblue Cover.Write tests for method Product.manageProducts" />
       </list>
     </recent_temporary>
   </component>
@@ -331,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703256616571</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="sonar pre-final stage">
+      <created>1703257105333</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1703257105333</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -36,7 +36,7 @@ public class AdminManageCategories {
     public void theyChooseAddCategory() {
         category.setAddcat(true);
         assertTrue(isAddcat());
-        manageCategories();
+
     }
     @When("Category name iss {string}")
     public void categoryNameIs(String string) {

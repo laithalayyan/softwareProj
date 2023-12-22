@@ -5,8 +5,7 @@ import roles.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static roles.Installer.*;
 import static roles.Order.*;
 import static roles.Product.*;
@@ -28,7 +27,7 @@ public class ProductManagement {
     public static List<Product> productList=new ArrayList<>();
 
     @Given("they choose Add Product")
-    public void theyChooseAddProduct() {
+    public void theyChooseAdddProduct() {
         product.setAddProduct(true);
         assertTrue(isAddProduct());
     }
@@ -79,7 +78,7 @@ public class ProductManagement {
 
 
     @Given("they choose Delete Product")
-    public void theyChooseDeleteProduct() {
+    public void theyChooseDeleteeProduct() {
         product.setDeleteProduct(true);
         assertTrue(isDeleteProduct());
     }
@@ -99,13 +98,54 @@ public class ProductManagement {
 
 
     @Given("they choose List Products")
-    public void theyChooseListProducts() {
+    public void theyChooseListtProducts() {
         product.setListProduct(true);
         assertTrue(isListProduct());
     }
     @Then("they should see a list of available products")
     public void theyShouldSeeAListOfAvailableProducts() {
         listProducts();
+    }
+
+
+
+
+
+    @Given("they have choices :Add Product or Delete Product or List Products or Back")
+    public void theyHaveChoicesAddProductOrDeleteProductOrListProductsOrBack() {
+
+    }
+
+    @When("they choose AddProduct")
+    public void theyChooseAddProduct() {
+        //int result=manageProducts();
+        //assertTrue();
+        int choice = manageProducts(1);
+        assertEquals(choice,1);
+
+    }
+
+    @And("they choose DeleteProduct")
+    public void theyChooseDeleteProduct() {
+
+        int choice = manageProducts(2);
+        assertEquals(choice,2);
+    }
+
+    @And("they choose ListProducts")
+    public void theyChooseListProducts() {
+        int choice = manageProducts(3);
+        assertEquals(choice,3);
+    }
+
+    @And("they choose Back")
+    public void theyChooseBack() {
+        int choice = manageProducts(4);
+        assertEquals(choice,2);
+    }
+
+    @Then("successfulyy done")
+    public void successfulyyDone() {
     }
 
 

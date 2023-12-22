@@ -160,7 +160,7 @@ public class AdminDashboard {
                 switch (choice) {
 
                     case 1:
-                        manageProducts();
+                        manageProductsLists();
                         break;
                     case 2:
                         manageCategories();
