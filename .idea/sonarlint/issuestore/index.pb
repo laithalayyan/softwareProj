@@ -53,3 +53,9 @@ h
 8src/test/java/najah/edu/acceptance/OrdersManagement.java,5\b\5b3b4d3d7d0f42968b343baf145abfa52c2bf020
 i
 9src/test/java/najah/edu/acceptance/ProductManagement.java,5\e\5e492f32bd5d1ab3f49a388bb530bab303e5076b
+d
+4src/test/java/najah/edu/acceptance/productmange.java,d\3\d31ab3b06b5b1476e7c0d2f22754920e23faa06c
+e
+5src/test/java/najah/edu/acceptance/CustomerSteps.java,9\a\9af83fcf0f53edef57a4f4d0cf0520b737cf654b
+X
+(src/test/java/roles/AppointmentTest.java,a\5\a5077215d0ae7fd2d937f9ec6363fa34a4dfe561

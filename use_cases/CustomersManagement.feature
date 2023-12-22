@@ -1,11 +1,5 @@
 Feature: Customers Management
 
-  Scenario : choose from list
-    Given they have choices :Register Customer or List Customers or Back
-    When they choose Registerr Customer
-    And they choose Listt Customers
-    And they choose Backk
-    Then successfulyyy done
 
   Scenario: registers a new customer
     Given they choose Register Customer

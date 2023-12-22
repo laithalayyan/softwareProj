@@ -3,9 +3,8 @@ package roles;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.logging.Logger;
-import static org.example.AdminDashboard.*;
+import static org.example.Main.*;
 import static roles.Customer.customers;
 
 
@@ -130,30 +129,9 @@ public class User {
     public String getUserType() {
         return userType;
     }
-    public static void manageUserAccounts() {
-        Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            logger.info("User Account Management\n1. List User Accounts\n2. Delete User Account\n3. Back\nChoose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
 
-            switch (choice) {
-                case 1:
-                    listUserAccounts();
-                    break;
-                case 2:
-                    deleteUserAccount();
-                    break;
-                case 3:
-                    return;
-                default:
-                    logger.info("Invalid choice. Please try again.");
-            }
-        }
-    }
-
-    private static void listUserAccounts() {
+    public static void listUserAccounts() {
         logger.info("User Accounts:");
         for (User user : userDatabase) {
             logger.info("Username: " + user.getUsername() + ", Email: " + user.getEmail() + ", User Type: " + user.getUserType());
@@ -163,42 +141,8 @@ public class User {
         }
     }
 
-    private static void deleteUserAccount() {
-        Scanner scanner = new Scanner(System.in);
-        logger.info("Enter the email of the user account to delete: ");
-        String email = scanner.nextLine();
-
-        for (User user : userDatabase) {
-            if (user.getEmail().equals(email)) {
-                userDatabase.remove(user);
-                logger.info("User account deleted successfully.");
-                return;
-            }
-        }
-
-        logger.info("User account not found.");
-    }
-    public static void registerUser() {
-        setIssignedup(false);
-        Scanner scanner = new Scanner(System.in);
-
-        logger.info("Enter your username: ");
-        String username = scanner.nextLine();
-
-        logger.info("Enter your email: ");
-        String email = scanner.nextLine();
-
-        logger.info("Enter your password: ");
-        String password = scanner.nextLine();
-
-        logger.info("Enter your user type (customer, installer): ");
-        String userType = scanner.nextLine();
-
-        register(username,email,password,userType);
 
 
-
-    }
     public static void register(String username,String email,String password,String userType){
         User us = new User(username, email, password, userType);
         for (User user : userDatabase) {
@@ -224,21 +168,7 @@ public class User {
     }
 
 
-    public static void loginUser() {
-        setAdminislogged(false);
-        setInstallerislogged(false);
-        setCustomerislogged(false);
 
-            Scanner scanner = new Scanner(System.in);
-
-            logger.info("Enter your email: ");
-            String email = scanner.nextLine();
-
-            logger.info("Enter your password: ");
-            String password = scanner.nextLine();
-            signin(email,password);
-
-    }
     public static void adminsignin(User user){
 
         logger.info("Login successful. User type: " + user.getUserType());

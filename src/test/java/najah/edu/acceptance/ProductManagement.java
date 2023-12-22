@@ -5,6 +5,7 @@ import roles.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.Main.manageProducts;
 import static org.junit.jupiter.api.Assertions.*;
 import static roles.Installer.*;
 import static roles.Order.*;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
-import static org.example.AdminDashboard.*;
+import static org.example.Main.*;
 import static roles.Customer.getLoggedInCustomerName;
 import static roles.Installer.*;
 import static roles.Order.listOrders;
@@ -24,6 +24,9 @@ public class Appointment {
     }
     public static void setChooseSchedule(boolean chooseSchedule) {
         isChooseSchedule = chooseSchedule;
+    }
+    public static void addToIntallerList(Installer installer){
+        installersDatabase.add(installer);
     }
     private int appointmentId;
     private String customerName;
@@ -64,61 +67,26 @@ public class Appointment {
     }
 
 
-    public static void manageAppointments() {
-        Scanner scanner = new Scanner(System.in);
-
-            logger.info("Appointment Management\n1. List Appointments\n2. Back\nChoose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (choice) {
-                case 1:
-                    listAppointments();
-                    break;
-                case 2:
-                    return;
-
-                default:
-                    logger.info("Invalid choice. Please try again.");
-            }
-
-    }
-
 
     static Installer selectedInstaller = null;
-
-    public static void scheduleAppointment() {
-        setChooseSchedule(true);
-        Scanner scanner = new Scanner(System.in);
-        logger.info("what is your car model ?");
-        String carmodel = scanner.nextLine();
-        logger.info("what is your car date ?");
-        String cardate = scanner.nextLine();
-
-        logger.info("Choose the installer you want ");
-        logger.info("Available Installers:");
-        listInstallers();
-
-        logger.info("Enter the # of the installer date you want to schedule an appointment with: ");
-        int installerId = scanner.nextInt();
-        scanner.nextLine();
-
+    public static boolean scheduleAppointment(String carmodel,String carDate,int installerId,List<Installer> installersDatabase) {
         for(Installer installer:installersDatabase){
             if(installerId==installer.getId()){
                 selectedInstaller=installer;
                 setInstaller(installer);
-                scheduleAppointment();
-
-                Appointment appointment=new Appointment(getLoggedInCustomerName(), installer.getDate(),carmodel,cardate);
+                //scheduleAppointment();
+                Appointment appointment=new Appointment(getLoggedInCustomerName(), installer.getDate(),carmodel,carDate);
                 appointments2.add(appointment);
                 Installer.setAppointments(appointments2);
                 addAppintments(appointment);
                 logger.info("Appointment scheduled successfully!");
-                break;
+                return true;
+
             }
         }
         logger.info("There is no appointment available with this number!");
         listInstallers();
+        return false;
 
     }
 
@@ -129,24 +97,24 @@ public class Appointment {
     public static Installer getinstaller(){
         return selectedInstaller;
     }
-    public static void listAppointments() {
+    public static void listAppointments(Installer installer11,List<Installer> installersDatabase) {
         setListappointment(true);
-        Installer installer1 = getLoggedInInstaller();
         for(Installer installer:installersDatabase) {
-            if (installer.equals(installer1)) {
+            if ((installer.getId())==(installer11.getId())) {
                 logger.info("Appointments for " + installer.getUsername() + ":");
-                List<Appointment> appointments = installer.getAppointments();
-                for (Appointment appointment : appointments) {
-
-                    logger.info("Appointment ID: " + appointment.getAppointmentId() + "\n" + "Customer Name: " + appointment.getCustomerName() +
-                            "\n" + "Appointment Date: " + appointment.getAppointmentDate() + "\n" + "Customer Car Date: " + appointment.getCustomerCarDate() +
-                            "\n" + "Customer Car Model: " + appointment.getCustomerCarModel());
-                    logger.info("Products wanted: ");
-                    listOrders();
-                }
+                appointmentsList(installer11);
             }
         }
         logger.info("There is no apponintments for installer");
     }
-
+    public static void appointmentsList(Installer installer){
+        List<Appointment> appointments = getAppointments(installer);
+        for (Appointment appointment : appointments) {
+            logger.info("Appointment ID: " + appointment.getAppointmentId() + "\n" + "Customer Name: " + appointment.getCustomerName() +
+                    "\n" + "Appointment Date: " + appointment.getAppointmentDate() + "\n" + "Customer Car Date: " + appointment.getCustomerCarDate() +
+                    "\n" + "Customer Car Model: " + appointment.getCustomerCarModel());
+            logger.info("Products wanted: ");
+            listOrders();
+        }
+    }
 }

@@ -2,10 +2,9 @@ package roles;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.logging.Logger;
 
-import static org.example.AdminDashboard.*;
+import static org.example.Main.*;
 import static roles.User.*;
 
 public class Installer {
@@ -82,77 +81,14 @@ public class Installer {
         return userType;
     }
 
-    public List<Appointment> getAppointments() {
-        return appointments;
-    }
-    public List<AvailableDates> getAvailableDates() {
-        return availableDates;
+    public static List<Appointment> getAppointments(Installer installer) {
+        return installer.appointments;
     }
 
-    public static void manageInstallers() {
-        Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            logger.info("\nInstaller Management\n1. Register Installer\n2. List Installers" +
-                    "\n3. Back\nChoose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
 
-            switch (choice) {
-                case 1:
-                    setRegInstaller(true);
-                    registerInstaller();
-                    break;
-                case 2:
-                    setListInstaller(true);
-                    listInstallers();
-                    break;
-                case 3:
-                    return;
-                default:
-                    logger.info("Invalid choice. Please try again.");
-            }
-        }
-    }
-    public static void date(){
-        Scanner scanner = new Scanner(System.in);
-        String date = scanner.nextLine();
-        switch (date){
-            case "done":
-                break;
-            default:
-                availableDates.add(new AvailableDates(date,getLoggedIngetName()));
-                date();
-        }
-    }
 
-    private static void registerInstaller() {
-        Scanner scanner = new Scanner(System.in);
 
-        logger.info("Enter installer's id: ");
-        int id = scanner.nextInt();
-
-        logger.info("Enter installer's username: ");
-        String username = scanner.nextLine();
-
-        logger.info("Enter installer's email: ");
-        String email = scanner.nextLine();
-
-        logger.info("Enter installer's password: ");
-        String password = scanner.nextLine();
-
-        logger.info("Enter the dates you are available at(Write 'Done' When finish)");
-        String date = scanner.nextLine();
-        switch (date){
-            case "done":
-                break;
-            default:
-                installersDatabase.add(new Installer(id,username, email, password,"installer",date));
-                availableDates.add(new AvailableDates(date,getLoggedIngetName()));
-                date();
-        }
-        logger.info(INSTALLERSUCCESS);
-    }
     public static void reginstaller(int id,String username , String email,String password ,String type,String date){
         installersDatabase.add(new Installer(id,username, email, password,type,date));
         logger.info(INSTALLERSUCCESS);
@@ -188,4 +124,5 @@ public class Installer {
         }
         return null;
     }
+
 }

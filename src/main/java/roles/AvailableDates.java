@@ -1,9 +1,6 @@
 package roles;
 
 public class AvailableDates {
-
-
-
     private String date;
 
     private String installer;
@@ -14,19 +11,4 @@ public class AvailableDates {
         this.date = date;
         this.installer=installer;
     }
-
-
-    public String getDate() {
-        return date;
-    }
-
-
-
-
-    public String getInstaller() {
-        return installer;
-    }
-
-
-
 }

@@ -9,6 +9,7 @@ import roles.User;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.example.Main.manageCat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static roles.Appointment.*;
@@ -36,6 +37,7 @@ public class AdminManageCategories {
     public void theyChooseAddCategory() {
         category.setAddcat(true);
         assertTrue(isAddcat());
+        //manageCat(1);
 
     }
     @When("Category name iss {string}")
@@ -50,6 +52,7 @@ public class AdminManageCategories {
     public void theCategoryShouldBeAddedSuccessfully() {
         //category=new Category(categoryName);
 
+        //addcatTEG(categoryName);
         category=new Category(categoryName);
         category2=new Category(categoryName2);
         categoryList.add(category);
@@ -80,8 +83,9 @@ public class AdminManageCategories {
     public void theCategoryShouldBeRemovedSuccessfully() {
         //category=new Category(categoryName2);
         categoryList.remove(category);
+        deletecat(categoryName);
         //category.deletecat(categoryName);
-        assertTrue(deletecatTest(categoryName));
+        assertFalse(deletecatTest(categoryName));
         //deletenoti();
         //listCategoriesTest();
     }

@@ -1,10 +1,9 @@
 package roles;
 
 
-import java.util.Scanner;
 import java.util.logging.Logger;
 
-import static org.example.AdminDashboard.*;
+import static org.example.Main.*;
 
 public class Product {
     public static boolean addProduct;
@@ -70,40 +69,8 @@ public class Product {
     public int getAvailablity() {
         return availablity;
     }
-    public static int manageProductsLists(){
-        Scanner scanner = new Scanner(System.in);
-        logger.info("\nProduct Management\n1. Add Product\n2. Delete Product" +
-                "\n3. List Products\n4. Back\nChoose an option: ");
-        int choice = scanner.nextInt();
-        manageProducts(choice);
-        return choice;
-    }
-    public static int manageProducts(int choice) {
 
-            switch (choice) {
-                case 1:
-                    setAddProduct(true);
-                    addProduct();
-                    return 1;
 
-                case 2:
-                    setDeleteProduct(true);
-                    deleteProduct();
-                    return 2;
-
-                case 3:
-                    setListProduct(true);
-                    listProducts();
-                    return 3;
-
-                case 4:
-                    adminDashboard();
-                    return 4;
-                default:
-                    logger.info("Invalid choice. Please try again.");
-            }
-        return 5;
-    }
     public static void productadd(String name,double price,String category,int amount){
         products.add(new Product(name, price, category,amount));
         logger.info("Product added successfully.");
@@ -143,27 +110,9 @@ public class Product {
 
     }
 
-    private static void addProduct() {
-        Scanner scanner = new Scanner(System.in);
-        logger.info("Enter product name: ");
-        String name = scanner.nextLine();
-        logger.info("Enter product price: ");
-        double price = scanner.nextDouble();
-        logger.info("Enter category name: ");
-        String category = scanner.nextLine();
-        logger.info("Enter product amount: ");
-        int ava = scanner.nextInt();
-        productadd(name,price,category,ava);
 
-    }
 
-    private static void deleteProduct() {
-        Scanner scanner = new Scanner(System.in);
-        logger.info("Enter the product name to delete: ");
-        String name = scanner.nextLine();
-        productdelete(name);
 
-    }
 
     public static void listProducts() {
         logger.info("Products:");
@@ -179,13 +128,7 @@ public class Product {
             }
         }
     }
-    public static void searchProducts(){
-        Scanner scanner = new Scanner(System.in);
-        logger.info("Search for specific product by name:");
-        String pro = scanner.nextLine();
-        productsearch(pro);
 
-    }
 
 
 

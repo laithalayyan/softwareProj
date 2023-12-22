@@ -1,89 +1,89 @@
 
 
-java:S1319"lThe type of "userDatabase" should be an interface such as "List" rather than the implementation "ArrayList".(ã’àÕúÿÿÿÿ8Öù÷ŒÉ1
+java:S1319"lThe type of "userDatabase" should be an interface such as "List" rather than the implementation "ArrayList".(ã’àÕúÿÿÿÿ8¶­ñ–É1
 ’
-java:S13190"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(àÂ÷ûøÿÿÿÿ8Öù÷ŒÉ1
+java:S13193"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(àÂ÷ûøÿÿÿÿ8·­ñ–É1
 z
-java:S1104"XMake userDatabase a static final constant or non-public and provide accessors if needed.(ã’àÕúÿÿÿÿ8×ù÷ŒÉ1
+java:S1104"XMake userDatabase a static final constant or non-public and provide accessors if needed.(ã’àÕúÿÿÿÿ8·­ñ–É1
 q
-java:S1104"TMake products a static final constant or non-public and provide accessors if needed.(ÒÁù8×ù÷ŒÉ1
+java:S1104"TMake products a static final constant or non-public and provide accessors if needed.(ÒÁù8¸­ñ–É1
 x
-java:S1104"VMake categories a static final constant or non-public and provide accessors if needed.(¾îÒ¡üÿÿÿÿ8×ù÷ŒÉ1
+java:S1104"VMake categories a static final constant or non-public and provide accessors if needed.(¾îÒ¡üÿÿÿÿ8¸­ñ–É1
 {
-java:S1104"^Make installersDatabase a static final constant or non-public and provide accessors if needed.(´ôÚÚ8Øù÷ŒÉ1
+java:S1104"^Make installersDatabase a static final constant or non-public and provide accessors if needed.(´ôÚÚ8¸­ñ–É1
 |
-java:S1104"ZMake availableDates a static final constant or non-public and provide accessors if needed.(í§Ìúÿÿÿÿ8Øù÷ŒÉ1
+java:S1104 "ZMake availableDates a static final constant or non-public and provide accessors if needed.(í§Ìúÿÿÿÿ8¸­ñ–É1
 |
-java:S1104"ZMake availabledate1 a static final constant or non-public and provide accessors if needed.(ïÛß®úÿÿÿÿ8Øù÷ŒÉ1
+java:S1104""ZMake availabledate1 a static final constant or non-public and provide accessors if needed.(ïÛß®úÿÿÿÿ8¸­ñ–É1
 w
-java:S1104 "ZMake availabledate2 a static final constant or non-public and provide accessors if needed.(ô±ò8Øù÷ŒÉ1
+java:S1104#"ZMake availabledate2 a static final constant or non-public and provide accessors if needed.(ô±ò8¸­ñ–É1
 |
-java:S1104!"ZMake availabledate3 a static final constant or non-public and provide accessors if needed.(ñÕ¬Ñşÿÿÿÿ8Øù÷ŒÉ1
+java:S1104$"ZMake availabledate3 a static final constant or non-public and provide accessors if needed.(ñÕ¬Ñşÿÿÿÿ8¸­ñ–É1
 v
-java:S1104""ZMake availabledate4 a static final constant or non-public and provide accessors if needed.(«Û’'8Øù÷ŒÉ1
+java:S1104%"ZMake availabledate4 a static final constant or non-public and provide accessors if needed.(«Û’'8¸­ñ–É1
 v
-java:S1104#"ZMake orderIdCounter a static final constant or non-public and provide accessors if needed.(íËÜ8Øù÷ŒÉ1
+java:S1104&"ZMake orderIdCounter a static final constant or non-public and provide accessors if needed.(íËÜ8¸­ñ–É1
 }
-java:S1104$"`Make appointmentIdCounter a static final constant or non-public and provide accessors if needed.(ª°¦›8Øù÷ŒÉ1
+java:S1104'"`Make appointmentIdCounter a static final constant or non-public and provide accessors if needed.(ª°¦›8¸­ñ–É1
 r
-java:S1104%"UMake adminUser a static final constant or non-public and provide accessors if needed.(÷¤íÑ8Ùù÷ŒÉ1
+java:S1104("UMake adminUser a static final constant or non-public and provide accessors if needed.(÷¤íÑ8¸­ñ–É1
 u
-java:S1104&"XMake customerUser a static final constant or non-public and provide accessors if needed.(ü—›¬8Ùù÷ŒÉ1
+java:S1104)"XMake customerUser a static final constant or non-public and provide accessors if needed.(ü—›¬8¸­ñ–É1
 {
-java:S1104'"YMake customerUser2 a static final constant or non-public and provide accessors if needed.(„¯¬ûøÿÿÿÿ8Ùù÷ŒÉ1
+java:S1104*"YMake customerUser2 a static final constant or non-public and provide accessors if needed.(„¯¬ûøÿÿÿÿ8¸­ñ–É1
 {
-java:S1104("YMake installerUser a static final constant or non-public and provide accessors if needed.(ò¦••ÿÿÿÿÿ8Ùù÷ŒÉ1
+java:S1104+"YMake installerUser a static final constant or non-public and provide accessors if needed.(ò¦••ÿÿÿÿÿ8¹­ñ–É1
 |
-java:S1104)"ZMake installerUser2 a static final constant or non-public and provide accessors if needed.(ÁÔäÏüÿÿÿÿ8Úù÷ŒÉ1
+java:S1104,"ZMake installerUser2 a static final constant or non-public and provide accessors if needed.(ÁÔäÏüÿÿÿÿ8¹­ñ–É1
 u
-java:S1104*"SMake product a static final constant or non-public and provide accessors if needed.(¾ö¨ïúÿÿÿÿ8Úù÷ŒÉ1
+java:S1104-"SMake product a static final constant or non-public and provide accessors if needed.(¾ö¨ïúÿÿÿÿ8¹­ñ–É1
 r
-java:S1104+"UMake categoryy a static final constant or non-public and provide accessors if needed.(¦¬ì8Úù÷ŒÉ1
+java:S1104."UMake categoryy a static final constant or non-public and provide accessors if needed.(¦¬ì8¹­ñ–É1
 T
-java:S1444"2Make this "public static userDatabase" field final(ã’àÕúÿÿÿÿ8Úù÷ŒÉ1
+java:S1444"2Make this "public static userDatabase" field final(ã’àÕúÿÿÿÿ8¹­ñ–É1
 K
-java:S1444".Make this "public static products" field final(ÒÁù8Úù÷ŒÉ1
+java:S1444".Make this "public static products" field final(ÒÁù8¹­ñ–É1
 R
-java:S1444"0Make this "public static categories" field final(¾îÒ¡üÿÿÿÿ8Ûù÷ŒÉ1
+java:S1444"0Make this "public static categories" field final(¾îÒ¡üÿÿÿÿ8¹­ñ–É1
 U
-java:S1444"8Make this "public static installersDatabase" field final(´ôÚÚ8Ûù÷ŒÉ1
+java:S1444"8Make this "public static installersDatabase" field final(´ôÚÚ8¹­ñ–É1
 V
-java:S1444"4Make this "public static availableDates" field final(í§Ìúÿÿÿÿ8Ûù÷ŒÉ1
+java:S1444 "4Make this "public static availableDates" field final(í§Ìúÿÿÿÿ8¹­ñ–É1
 V
-java:S1444"4Make this "public static availabledate1" field final(ïÛß®úÿÿÿÿ8Ûù÷ŒÉ1
+java:S1444""4Make this "public static availabledate1" field final(ïÛß®úÿÿÿÿ8º­ñ–É1
 Q
-java:S1444 "4Make this "public static availabledate2" field final(ô±ò8Ûù÷ŒÉ1
+java:S1444#"4Make this "public static availabledate2" field final(ô±ò8º­ñ–É1
 V
-java:S1444!"4Make this "public static availabledate3" field final(ñÕ¬Ñşÿÿÿÿ8Ûù÷ŒÉ1
+java:S1444$"4Make this "public static availabledate3" field final(ñÕ¬Ñşÿÿÿÿ8º­ñ–É1
 P
-java:S1444""4Make this "public static availabledate4" field final(«Û’'8Ûù÷ŒÉ1
+java:S1444%"4Make this "public static availabledate4" field final(«Û’'8º­ñ–É1
 P
-java:S1444#"4Make this "public static orderIdCounter" field final(íËÜ8Ûù÷ŒÉ1
+java:S1444&"4Make this "public static orderIdCounter" field final(íËÜ8º­ñ–É1
 W
-java:S1444$":Make this "public static appointmentIdCounter" field final(ª°¦›8Üù÷ŒÉ1
+java:S1444'":Make this "public static appointmentIdCounter" field final(ª°¦›8º­ñ–É1
 L
-java:S1444%"/Make this "public static adminUser" field final(÷¤íÑ8Üù÷ŒÉ1
+java:S1444("/Make this "public static adminUser" field final(÷¤íÑ8º­ñ–É1
 O
-java:S1444&"2Make this "public static customerUser" field final(ü—›¬8Üù÷ŒÉ1
+java:S1444)"2Make this "public static customerUser" field final(ü—›¬8º­ñ–É1
 U
-java:S1444'"3Make this "public static customerUser2" field final(„¯¬ûøÿÿÿÿ8Üù÷ŒÉ1
+java:S1444*"3Make this "public static customerUser2" field final(„¯¬ûøÿÿÿÿ8º­ñ–É1
 U
-java:S1444("3Make this "public static installerUser" field final(ò¦••ÿÿÿÿÿ8Üù÷ŒÉ1
+java:S1444+"3Make this "public static installerUser" field final(ò¦••ÿÿÿÿÿ8º­ñ–É1
 V
-java:S1444)"4Make this "public static installerUser2" field final(ÁÔäÏüÿÿÿÿ8Üù÷ŒÉ1
+java:S1444,"4Make this "public static installerUser2" field final(ÁÔäÏüÿÿÿÿ8º­ñ–É1
 O
-java:S1444*"-Make this "public static product" field final(¾ö¨ïúÿÿÿÿ8Üù÷ŒÉ1
+java:S1444-"-Make this "public static product" field final(¾ö¨ïúÿÿÿÿ8º­ñ–É1
 L
-java:S1444+"/Make this "public static categoryy" field final(¦¬ì8Üù÷ŒÉ1
+java:S1444."/Make this "public static categoryy" field final(¦¬ì8º­ñ–É1
 ?
-java:S2386"Make this member "protected".(ã’àÕúÿÿÿÿ8‡ü÷ŒÉ1
+java:S2386"Make this member "protected".(ã’àÕúÿÿÿÿ8ğ®ñ–É1
 :
-java:S2386"Make this member "protected".(ÒÁù8ˆü÷ŒÉ1
+java:S2386"Make this member "protected".(ÒÁù8ğ®ñ–É1
 ?
-java:S2386"Make this member "protected".(¾îÒ¡üÿÿÿÿ8ˆü÷ŒÉ1
+java:S2386"Make this member "protected".(¾îÒ¡üÿÿÿÿ8ğ®ñ–É1
 :
-java:S2386"Make this member "protected".(´ôÚÚ8ˆü÷ŒÉ1
+java:S2386"Make this member "protected".(´ôÚÚ8ğ®ñ–É1
 ?
-java:S2386"Make this member "protected".(í§Ìúÿÿÿÿ8ˆü÷ŒÉ1
+java:S2386 "Make this member "protected".(í§Ìúÿÿÿÿ8ğ®ñ–É1
 E
-java:S1125š"'Remove the unnecessary boolean literal.(½ûÛë8£ü÷ŒÉ1
+java:S1125"'Remove the unnecessary boolean literal.(½ûÛë8€¯ñ–É1

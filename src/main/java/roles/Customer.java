@@ -2,16 +2,14 @@ package roles;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.logging.Logger;
 
-import static org.example.AdminDashboard.*;
+import static org.example.Main.*;
 import static roles.User.getLoggedIngetEmailCustomer;
-
-import roles.User;
 
 
 public class Customer {
+
     public static boolean regCustomer;
     public static boolean listCustomer;
 
@@ -81,47 +79,28 @@ public class Customer {
         return orders;
     }
 
-    public static int manageCustomersList(){
-        Scanner scanner = new Scanner(System.in);
 
 
-            logger.info("\nCustomer Management\n1. Register Customer\n2. List Customers" +
-                    "\n3. Back\nChoose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
 
-            manageCustomers(choice);
-            return choice;
-    }
-    public static int manageCustomers(int choice){
-
-            switch (choice) {
-                case 1:
-                    setRegCustomer(true);
-                    registerCustomer();
-                    return 1;
-                case 2:
-                    setListCustomer(true);
-                    listCustomers();
-                    return 2;
-                case 3:
-                    return 3;
-                default:
-                    logger.info("Invalid choice. Please try again.");
-            }
-            return 5;
-        }
-
-
-    public static void regCust(String username,String email,String password,String type){
-        User us = new User(username, email, password, type);
+    public static boolean regCust(String username,String email,String password,String type){
+        /*User us = new User(username, email, password, type);
         for (User user : userDatabase) {
             if (email.equals(user.getEmail())) {
                 logger.info("this user already exist");
                 return ;}
         }
         userDatabase.add(us);
-        logger.info("Customer registration successful!");
+        logger.info("Customer registration successful!");*/
+        //User user = new User(username, email, password, type);
+        User user = new User(username, email, password, type);
+        if (!userDatabase.contains(user)) {
+            userDatabase.add(user);
+            logger.info("Customer registration successful!");
+            return true;  // Registration successful
+        } else {
+            logger.info("Customer registration failed. User with the same email already exists.");
+            return false;  // Registration failed
+        }
     }
     public static boolean regCustTest(String username,String email,String password,String type){
         User us = new User(username, email, password, type);
@@ -134,33 +113,29 @@ public class Customer {
         logger.info("Customer registration successful!");
         return true;
     }
-    public static void registerCustomer() {
-        Scanner scanner = new Scanner(System.in);
-
-        logger.info("Enter customer's username: ");
-        String username = scanner.nextLine();
-
-        logger.info("Enter customer's email: ");
-        String email = scanner.nextLine();
-
-        logger.info("Enter customer's password: ");
-        String password = scanner.nextLine();
-
-        regCust(username,email,password,CUSTOMERU);
 
 
 
 
-    }
+    public static String listCustomers() {
+        StringBuilder customerList = new StringBuilder("Customers:\n");
 
-    public static void listCustomers() {
-        logger.info("Customers:");
+        // Debugging information
+        System.out.println("Number of users in userDatabase: " + userDatabase.size());
+
         for (User user : userDatabase) {
-            if(user.getUserType().equalsIgnoreCase(CUSTOMERU)){
-                logger.info("Username: " + user.getUsername() + ", Email: " + user.getEmail());
-            }
+            // Debugging information
+            System.out.println("User Type: " + user.getUserType());
 
+            if (user.getUserType().equalsIgnoreCase(CUSTOMERU)) {
+                customerList.append("Username: ").append(user.getUsername()).append(", Email: ").append(user.getEmail()).append("\n");
+            }
         }
+
+        // Debugging information
+        System.out.println("Generated Customer List: " + customerList.toString());
+
+        return customerList.toString();
     }
 
     public static Customer getLoggedInCustomer() {

@@ -1,10 +1,8 @@
 package najah.edu.acceptance;
 
 import io.cucumber.java.en.*;
-import org.example.AdminDashboard;
 import roles.Customer;
 import roles.Installer;
-import roles.Product;
 import roles.User;
 
 import java.util.ArrayList;

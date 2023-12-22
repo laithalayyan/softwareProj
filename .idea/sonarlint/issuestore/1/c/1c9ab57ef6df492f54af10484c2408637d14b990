@@ -1,41 +1,4 @@
 
-s
-java:S1104"VMake ordersuser a static final constant or non-public and provide accessors if needed.(ŞÌ²„8ÈÎ€‹Â1
-x
-java:S1104"VMake issignedup a static final constant or non-public and provide accessors if needed.(ªÎªÉøÿÿÿÿ8¬ì·îÁ1
-v
-java:S1104"YMake Adminislogged a static final constant or non-public and provide accessors if needed.(£çâ8¬ì·îÁ1
-y
-java:S1104"]Make Installerislogged a static final constant or non-public and provide accessors if needed.(ş×r8¬ì·îÁ1
-y
-java:S1104"\Make Customerislogged a static final constant or non-public and provide accessors if needed.(øÓ÷Ş8­ì·îÁ1
-{
-java:S1104E"YMake customerOrder a static final constant or non-public and provide accessors if needed.(İ¡Æüÿÿÿÿ8­ì·îÁ1
-~
-java:S1104I"\Make loggedIngetEmail a static final constant or non-public and provide accessors if needed.(ÃŠ®’ùÿÿÿÿ8­ì·îÁ1
-x
-java:S1104J"[Make loggedIngetName a static final constant or non-public and provide accessors if needed.(†òãŠ8­ì·îÁ1
-
-java:S1104K"dMake loggedIngetEmailCustomer a static final constant or non-public and provide accessors if needed.(ğ­Ú½8­ì·îÁ1
-R
-java:S1444"0Make this "public static issignedup" field final(ªÎªÉøÿÿÿÿ8®ì·îÁ1
-P
-java:S1444"3Make this "public static Adminislogged" field final(£çâ8®ì·îÁ1
+]	java:S125"<This block of commented-out lines of code should be removed.(¡¾æŠøÿÿÿÿ8§ó“É1
 S
-java:S1444"7Make this "public static Installerislogged" field final(ş×r8¯ì·îÁ1
-S
-java:S1444"6Make this "public static Customerislogged" field final(øÓ÷Ş8¯ì·îÁ1
-U
-java:S1444E"3Make this "public static customerOrder" field final(İ¡Æüÿÿÿÿ8¯ì·îÁ1
-X
-java:S1444I"6Make this "public static loggedIngetEmail" field final(ÃŠ®’ùÿÿÿÿ8¯ì·îÁ1
-R
-java:S1444J"5Make this "public static loggedIngetName" field final(†òãŠ8¯ì·îÁ1
-[
-java:S1444K">Make this "public static loggedIngetEmailCustomer" field final(ğ­Ú½8°ì·îÁ1
-u
-java:S3008"XRename this field "Adminislogged" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£çâ8„ñ·îÁ1
-x
-java:S3008"\Rename this field "Installerislogged" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş×r8„ñ·îÁ1
-x
-java:S3008"[Rename this field "Customerislogged" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÓ÷Ş8„ñ·îÁ1
+java:S1068C"1Remove this unused "customerOrder" private field.(ÌÔ·‡şÿÿÿÿ8Ãó“É1

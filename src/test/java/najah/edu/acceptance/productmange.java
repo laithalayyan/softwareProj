@@ -7,7 +7,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import static org.junit.Assert.assertEquals;
-import static roles.Product.manageProducts;
 
 public class productmange {
 /*

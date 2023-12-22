@@ -1,11 +1,8 @@
 package roles;
 
-import java.util.Scanner;
 import java.util.logging.Logger;
-
-import static org.example.AdminDashboard.categories;
-import static org.example.AdminDashboard.products;
-import static roles.Product.searchProducts;
+import static org.example.Main.categories;
+import static org.example.Main.products;
 
 public class Category {
     private static boolean addCattego;
@@ -55,40 +52,8 @@ public class Category {
         return name;
     }
 
-    public static void manageCategories() {
-        Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            logger.info("\nCategory Management\n1. Add Category\n2. Delete Category" +
-                    "\n3. List Categories\n4. Search Product\n5. Back\nChoose an option: ");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (choice) {
-                case 1:
-                    setAddcat(true);
-                    addCategory();
-                    break;
-                case 2:
-                    setDeletecat(true);
-                    deleteCategory();
-                    break;
-                case 3:
-                    setListcat(true);
-                    listCategories();
-                    break;
-                case 4:
-                    setSearchproduct(true);
-                    searchProducts();
-                    break;
-                case 5:
-                    return;
-                default:
-                    logger.info("Invalid choice. Please try again.");
-            }
-        }
-    }
 
     public static void addcatTEG(String name){
         categories.add(new Category(name));
@@ -141,42 +106,10 @@ public class Category {
         }
 
     }
-    private static void addCategory() {
-        Scanner scanner = new Scanner(System.in);
-        logger.info("Enter category name: ");
-        String name = scanner.nextLine();
-        addcatTEG(name);
 
 
-        logger.info("Do you want to add products to this Category(y) , or leave it empty(n) ? ");
-        String c = scanner.nextLine();
-        switch (c) {
-            case "y":
-                logger.info("Enter product name: ");
-                String pname = scanner.nextLine();
-                logger.info("Enter product price: ");
-                double price = scanner.nextDouble();
-                logger.info("Enter product availability: ");
-                int ava = scanner.nextInt();
-                products.add(new Product(pname, price, name,ava));
-                logger.info("Product added successfully.");
-                break;
-            case "n":
-                addnoti();
-                break;
-            default:
-                logger.info("Wrong choice!");
 
-        }
 
-    }
-
-    private static void deleteCategory() {
-        Scanner scanner = new Scanner(System.in);
-        logger.info("Enter the category name to delete: ");
-        String name = scanner.nextLine();
-        deletecat(name);
-    }
 
     public static void listCategoriesTest(){
         for (Category category : categories) {
@@ -184,22 +117,7 @@ public class Category {
             logger.info( category.getName()  );
         }
     }
-    public static void listCategories() {
-        logger.info("Categories:");
-        for (Category category : categories) {
 
-            logger.info( category.getName()  );
-        }
-
-        Scanner scanner = new Scanner(System.in);
-        logger.info("Select Category to Show category products: ");
-        String cat = scanner.nextLine();
-        for(Product product:products) {
-            if (product.getCategory().equalsIgnoreCase(cat)) {
-                logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
-            }
-        }
-    }
 
 
 }
