@@ -107,6 +107,7 @@ public class Appointment {
             if(installerId==installer.getId()){
                 selectedInstaller=installer;
                 setInstaller(installer);
+                scheduleAppointment();
 
                 Appointment appointment=new Appointment(getLoggedInCustomerName(), installer.getDate(),carmodel,cardate);
                 appointments2.add(appointment);
