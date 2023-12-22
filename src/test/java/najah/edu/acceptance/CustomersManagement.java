@@ -6,6 +6,7 @@ import roles.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static roles.Customer.*;
 
@@ -74,4 +75,34 @@ public class CustomersManagement {
     }
 
 
+    
+    
+    
+    @Given("they have choices :Register Customer or List Customers or Back")
+    public void theyHaveChoicesRegisterCustomerOrListCustomersOrBack() {
+        int choice = manageCustomers(1);
+        assertEquals(choice,1);
+    }
+
+    @When("they choose Registerr Customer")
+    public void theyChooseRegisterrCustomer() {
+        int choice = manageCustomers(2);
+        assertEquals(choice,2);
+    }
+
+    @And("they choose Listt Customers")
+    public void theyChooseListtCustomers() {
+        int choice = manageCustomers(3);
+        assertEquals(choice,3);
+    }
+
+    @And("they choose Backk")
+    public void theyChooseBackk() {
+        int choice = manageCustomers(4);
+        assertEquals(choice,4);
+    }
+
+    @Then("successfulyyy done")
+    public void successfulyyyDone() {
+    }
 }

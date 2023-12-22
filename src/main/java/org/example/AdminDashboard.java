@@ -12,6 +12,7 @@ import static roles.Appointment.*;
 import static roles.Category.listCategories;
 import static roles.Category.manageCategories;
 import static roles.Customer.manageCustomers;
+import static roles.Customer.manageCustomersList;
 import static roles.Installer.manageInstallers;
 import static roles.Order.*;
 import static roles.Product.*;
@@ -169,7 +170,7 @@ public class AdminDashboard {
                         manageUserAccounts();
                         break;
                     case 4:
-                        manageCustomers();
+                        manageCustomersList();
                         break;
                     case 5:
                         manageInstallers();

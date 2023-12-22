@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonar pre-final stage">
-      <change afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/productmange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AdminDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/ProductsManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/ProductsManagement.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomersManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomersManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/CustomersManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/CustomersManagement.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,8 +156,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AcceptanceTest" />
-        <item itemvalue="JUnit.productmange" />
         <item itemvalue="Application.AdminDashboard" />
+        <item itemvalue="JUnit.productmange" />
         <item itemvalue="Cucumber Java.Feature: ProductsManagement" />
         <item itemvalue="Diffblue Cover.Write tests for method Product.manageProducts" />
       </list>
@@ -370,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703257105333</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="sonar pre-final stage">
+      <created>1703260215185</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1703260215185</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

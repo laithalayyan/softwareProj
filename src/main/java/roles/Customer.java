@@ -81,31 +81,37 @@ public class Customer {
         return orders;
     }
 
-    public static void manageCustomers() {
+    public static int manageCustomersList(){
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+
             logger.info("\nCustomer Management\n1. Register Customer\n2. List Customers" +
                     "\n3. Back\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
+            manageCustomers(choice);
+            return choice;
+    }
+    public static int manageCustomers(int choice){
+
             switch (choice) {
                 case 1:
                     setRegCustomer(true);
                     registerCustomer();
-                    break;
+                    return 1;
                 case 2:
                     setListCustomer(true);
                     listCustomers();
-                    break;
+                    return 2;
                 case 3:
-                    return;
+                    return 3;
                 default:
                     logger.info("Invalid choice. Please try again.");
             }
+            return 5;
         }
-    }
+
 
     public static void regCust(String username,String email,String password,String type){
         User us = new User(username, email, password, type);
