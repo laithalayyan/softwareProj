@@ -6,7 +6,9 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 import static org.example.AdminDashboard.*;
-import static roles.User.loggedIngetEmailCustomer;
+import static roles.User.getLoggedIngetEmailCustomer;
+
+import roles.User;
 
 
 public class Customer {
@@ -158,7 +160,7 @@ public class Customer {
     public static Customer getLoggedInCustomer() {
         for (Customer customer : customers) {
 
-            if (customer.getEmail().equals(loggedIngetEmailCustomer)) {
+            if (customer.getEmail().equals(getLoggedIngetEmailCustomer())) {
                 return customer;
             }
         }
@@ -166,7 +168,7 @@ public class Customer {
     }
     public static String getLoggedInCustomerName() {
         for (Customer customer : customers) {
-            if (customer.getEmail().equals(loggedIngetEmailCustomer)) {
+            if (customer.getEmail().equals(getLoggedIngetEmailCustomer())) {
                 return customer.getUsername();
             }
         }

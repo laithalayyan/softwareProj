@@ -10,69 +10,98 @@ import static roles.Customer.customers;
 
 
 public class User {
-    public List<roles.Order> ordersuser;
+    /*private List<roles.Order> ordersuser;
     public List<Order> getOrders() {
         return ordersuser;
-    }
+    }*/
 
-    public static boolean issignedup;
+    private static boolean isSignedup;
 
 
     public static boolean isIssignedup() {
-        return issignedup;
+        return isSignedup;
     }
 
     public static void setIssignedup(boolean issignedup) {
-        User.issignedup = issignedup;
+        User.isSignedup = issignedup;
     }
 
-    public static boolean Adminislogged;
-    public static boolean Installerislogged;
-    public static boolean Customerislogged;
+    private static boolean adminIslogged;
+    private static boolean installerIslogged;
+    private static boolean customerIslogged;
     public static final String INSTALLERUT="installer";
     public static final String ADMINUT="installer";
     public static final String CUSTOMERUT="installer";
 
     public static boolean isAdminislogged() {
-        return Adminislogged;
+        return adminIslogged;
     }
 
     public static void setAdminislogged(boolean adminislogged) {
-        Adminislogged = adminislogged;
+        adminIslogged = adminislogged;
     }
 
     public static boolean isInstallerislogged() {
-        return Installerislogged;
+        return installerIslogged;
     }
 
     public static void setInstallerislogged(boolean installerislogged) {
-        Installerislogged = installerislogged;
+        installerIslogged = installerislogged;
     }
 
     public static boolean isCustomerislogged() {
-        return Customerislogged;
+        return customerIslogged;
     }
 
     public static void setCustomerislogged(boolean customerislogged) {
-        Customerislogged = customerislogged;
+        customerIslogged = customerislogged;
     }
 
     private String username;
 
-    private String email;
-    private String password;
-    private String userType;
+    private  String email;
+    private  String password;
+    private  String userType;
 
 
+    private static String customerOrder;
+    public static void setCustomerOrder(String customerOrder) {
+        User.customerOrder = customerOrder;
+    }
 
 
-    public static String customerOrder;
     private static Logger logger = Logger.getLogger(User.class.getName());
 
 
-    public static String loggedIngetEmail;
-    public static String loggedIngetName;
-    public static String loggedIngetEmailCustomer;
+    public static String getLoggedIngetEmail() {
+        return loggedIngetEmail;
+    }
+
+    public static void setLoggedIngetEmail(String loggedIngetEmail) {
+        User.loggedIngetEmail = loggedIngetEmail;
+    }
+
+    private static String loggedIngetEmail;
+
+    public static String getLoggedIngetName() {
+        return loggedIngetName;
+    }
+
+    public static void setLoggedIngetName(String loggedIngetName) {
+        User.loggedIngetName = loggedIngetName;
+    }
+
+    private static String loggedIngetName;
+
+    public static String getLoggedIngetEmailCustomer() {
+        return loggedIngetEmailCustomer;
+    }
+
+    public static void setLoggedIngetEmailCustomer(String loggedIngetEmailCustomer) {
+        User.loggedIngetEmailCustomer = loggedIngetEmailCustomer;
+    }
+
+    private static String loggedIngetEmailCustomer;
 
 
     public User(String username, String email, String password, String userType) {
@@ -221,6 +250,7 @@ public class User {
         customers.add(customer);
         loggedIngetEmailCustomer = user.getEmail();
         customerOrder = user.getEmail();
+        setCustomerOrder(user.getEmail());
         logger.info("Login successful. User type: " + user.getUserType());
         setCustomerislogged(true);
 

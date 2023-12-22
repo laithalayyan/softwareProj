@@ -8,10 +8,15 @@ import static org.example.AdminDashboard.products;
 import static roles.Product.searchProducts;
 
 public class Category {
-    public static boolean ADD_CATTEGO;
-    public static boolean DELETE_CAT=true;
-    public static boolean listcat;
-    public static boolean searchproduct;
+    private static boolean addCattego;
+    private static boolean deleteCat;
+    private static boolean listcat;
+
+    public static boolean isSearchproduct() {
+        return searchproduct;
+    }
+
+    private static boolean searchproduct;
 
     public static void setSearchproduct(boolean searchproduct) {
         Category.searchproduct = searchproduct;
@@ -24,18 +29,18 @@ public class Category {
         Category.listcat = listcat;
     }
     public static void setAddcat(boolean addcat) {
-        Category.ADD_CATTEGO = addcat;
+        Category.addCattego = addcat;
     }
 
     public static boolean isAddcat() {
-        return ADD_CATTEGO;
+        return addCattego;
     }
     public static boolean isDeletecat() {
-        return DELETE_CAT;
+        return deleteCat;
     }
 
     public static void setDeletecat(boolean deletecat) {
-        Category.DELETE_CAT = deletecat;
+        Category.deleteCat = deletecat;
     }
 
 

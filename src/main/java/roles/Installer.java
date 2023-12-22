@@ -121,7 +121,7 @@ public class Installer {
             case "done":
                 break;
             default:
-                availableDates.add(new AvailableDates(date,loggedIngetName));
+                availableDates.add(new AvailableDates(date,getLoggedIngetName()));
                 date();
         }
     }
@@ -148,7 +148,7 @@ public class Installer {
                 break;
             default:
                 installersDatabase.add(new Installer(id,username, email, password,"installer",date));
-                availableDates.add(new AvailableDates(date,loggedIngetName));
+                availableDates.add(new AvailableDates(date,getLoggedIngetName()));
                 date();
         }
         logger.info(INSTALLERSUCCESS);
@@ -182,7 +182,7 @@ public class Installer {
     public static Installer getLoggedInInstaller() {
 
         for (Installer installer : installersDatabase) {
-            if (installer.getEmail().equals(loggedIngetEmail)) {
+            if (installer.getEmail().equals(getLoggedIngetEmail())) {
                 return installer;
             }
         }
