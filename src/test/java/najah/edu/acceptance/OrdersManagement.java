@@ -39,9 +39,9 @@ public class OrdersManagement {
         //System.out.println(n);
         orderedProducts1.add(product);
         Order order1=new Order(1,orderedProducts1);
-        product.listProductsOrder();
+        Main.listProductsOrder();
         Main.listProducts(orderedProducts1);
-        Product.productsearch(name);
+        Main.productsearch(name);
         orderstep1(name,orderedProducts1);
     }
 

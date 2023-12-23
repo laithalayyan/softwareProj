@@ -18,7 +18,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static roles.Appointment.*;
 import static roles.Category.*;
-import static roles.Product.productsearch;
 
 public class AdminManageCategories {
 

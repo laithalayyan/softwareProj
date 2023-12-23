@@ -787,5 +787,18 @@ public class Main {
             logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
         }
     }
+    public static void productsearch(String name){
+        for (Product product : products) {
+            if (product.getName().equalsIgnoreCase(name)) {
+                logger.info("Name: " + product.getName() + ", Price: " + product.getPrice());
+            }
+        }
+    }
+    public static void listProductsOrder() {
+        logger.info("Products:");
+        for (Product product : products) {
+            logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
+        }
+    }
 }
 
