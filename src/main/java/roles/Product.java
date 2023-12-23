@@ -66,16 +66,6 @@ public class Product {
         logger.info("Product added successfully.");
         return true;
     }
-    public static void productdelete(String name){
-        for (Product product : products) {
-            if (product.getName().equals(name)) {
-                products.remove(product);
-                logger.info("Product deleted successfully.");
-                return;
-            }
-        }
-        logger.info("Product not found.");
-    }
     public static boolean productdeleteTest(String name){
         for (Product product : products) {
             if (product.getName().equals(name)) {

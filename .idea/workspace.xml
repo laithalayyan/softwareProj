@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonar pre-final stage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/roles/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/AdminManageCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/OrdersManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/OrdersManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,7 +471,21 @@
       <option name="project" value="LOCAL" />
       <updated>1703292155872</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="sonar pre-final stage">
+      <created>1703292376270</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1703292376270</updated>
+    </task>
+    <task id="LOCAL-00043" summary="sonar pre-final stage">
+      <created>1703292487563</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1703292487564</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
