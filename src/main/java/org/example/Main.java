@@ -253,13 +253,13 @@ public class Main {
         String category = scanner.nextLine();
         logger.info("Enter product amount: ");
         int ava = scanner.nextInt();
-        productadd(name,price,category,ava);
+        productaddTest(name,price,category,ava);
     }
     public static void deleteProduct() {
         Scanner scanner = new Scanner(System.in);
         logger.info("Enter the product name to delete: ");
         String name = scanner.nextLine();
-        productdelete(name);
+        productdeleteTest(name);
     }
     /////////////////////////////////////////////////////////////////
     ///////////////////////////MANAGE CATIGORIES/////////////////////

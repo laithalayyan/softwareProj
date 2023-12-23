@@ -20,10 +20,23 @@ Feature: Products Management
     And product2 amount is 200
     Then the product should be added successfully
 
+  Scenario: adds a product existed
+    Given they choose Add Product
+    When productt name is "miror"
+    And product price is 20
+    And product category is "miror"
+    And product amount is 20
+    Then the product should not be added
+
   Scenario: deletes a product
     Given they choose Delete Product
     When product to delete name is "miror"
     Then the product should be removed successfully
+
+  Scenario: deletes a product not existed
+    Given they choose Delete Product
+    When product to delete name is "miror"
+    Then the product should not be removed
 
   Scenario: lists products
     Given they choose List Products

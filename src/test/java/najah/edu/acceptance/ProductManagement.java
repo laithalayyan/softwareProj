@@ -70,6 +70,7 @@ public class ProductManagement {
         product2=new Product(product2Name,product2Price,product2Category,product2Amount);
         productList.add(product);
         productList.add(product2);
+
         //productadd(productName,productPrice,productCategory,productAmount);
         //productadd(product2Name,product2Price,product2Category,product2Amount);
         assertTrue(productaddTest(productName,productPrice,productCategory,productAmount));
@@ -142,7 +143,7 @@ public class ProductManagement {
     @And("they choose Back")
     public void theyChooseBack() {
         int choice = manageProducts(4);
-        assertEquals(choice,2);
+        assertEquals(choice,4);
     }
 
     @Then("successfulyy done")
@@ -150,4 +151,19 @@ public class ProductManagement {
     }
 
 
+    @Then("the product should not be added")
+    public void theProductShouldNotBeAdded() {
+        product=new Product(productName,productPrice,productCategory,productAmount);
+        productList.add(product);
+        productaddTest(productName,productPrice,productCategory,productAmount);
+        assertFalse(productaddTest(productName,productPrice,productCategory,productAmount));
+    }
+
+    @Then("the product should not be removed")
+    public void theProductShouldNotBeRemoved() {
+        productList.remove(productdelete);
+        //productdelete(productdelete);
+
+        assertFalse(productdeleteTest(productdelete));
+    }
 }

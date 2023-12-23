@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonar pre-final stage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Installer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/InstallerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/InstallerManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use_cases/InstallersManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/InstallersManagement.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/ProductManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/productmange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/ProductsManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/ProductsManagement.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
       <recent name="D:\4th year\سوفتوير\finalproj\softproj3\src\test\java\najah\edu\acceptance" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in softproj3 (2)">
+  <component name="RunManager" selected="JUnit.All in softproj3 (3)">
     <configuration name="AcceptanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softproj3" />
       <extension name="coverage">
@@ -113,7 +115,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in softproj3 (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in softproj3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="softproj3" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -163,18 +165,18 @@
       <item itemvalue="Diffblue Cover.Write tests for method Appointment.getCustomerCarDate" />
       <item itemvalue="Diffblue Cover.Write tests for method Appointment.scheduleAppointment (2)" />
       <item itemvalue="JUnit.AcceptanceTest" />
+      <item itemvalue="JUnit.All in softproj3" />
       <item itemvalue="JUnit.All in softproj3 (3)" />
-      <item itemvalue="JUnit.All in softproj3 (4)" />
       <item itemvalue="JUnit.All in softproj3 (1)" />
       <item itemvalue="JUnit.All in softproj3 (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in softproj3 (3)" />
+        <item itemvalue="JUnit.All in softproj3" />
         <item itemvalue="JUnit.All in softproj3 (2)" />
         <item itemvalue="JUnit.All in softproj3 (1)" />
         <item itemvalue="JUnit.AcceptanceTest" />
-        <item itemvalue="JUnit.All in softproj3 (4)" />
-        <item itemvalue="JUnit.All in softproj3 (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -446,7 +448,21 @@
       <option name="project" value="LOCAL" />
       <updated>1703290531632</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="sonar pre-final stage">
+      <created>1703290841706</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1703290841706</updated>
+    </task>
+    <task id="LOCAL-00039" summary="sonar pre-final stage">
+      <created>1703290978447</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1703290978447</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -489,7 +505,7 @@
       <FILTER>org.example.*</FILTER>
       <EXCLUDED_FILTER>najah.edu.acceptance.*</EXCLUDED_FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3.ic" NAME="All in softproj3 Coverage Results" MODIFIED="1703288473232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3.ic" NAME="All in softproj3 Coverage Results" MODIFIED="1703291067761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__1_.ic" NAME="All in softproj3 (1) Coverage Results" MODIFIED="1703289931523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__2_.ic" NAME="All in softproj3 (2) Coverage Results" MODIFIED="1703289981735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/softproj3$All_in_softproj3__3_.ic" NAME="All in softproj3 (3) Coverage Results" MODIFIED="1703288585245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
