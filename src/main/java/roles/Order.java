@@ -61,14 +61,5 @@ public class Order {
         }
         return totalPrice;
     }
-    public static void orderstep1(String input,List<Product> products){
-        for (Product product : products) {
-            if (product.getName().equalsIgnoreCase(input)&&product.getAvailablity()!=0) {
-                selectedProducts.add(product);
-                product.setAvailablity();
-                listProducts(products);
-                break;
-            }else if (product.getAvailablity()==0){ logger.info("There is no enough");}
-        }
-    }
+
 }
