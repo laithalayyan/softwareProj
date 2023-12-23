@@ -9,11 +9,6 @@ import static roles.Customer.customers;
 
 
 public class User {
-    /*private List<roles.Order> ordersuser;
-    public List<Order> getOrders() {
-        return ordersuser;
-    }*/
-
     private static boolean isSignedup;
 
 

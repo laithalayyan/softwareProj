@@ -32,7 +32,7 @@ public class Product {
     private double price;
     private String category;
     private int availablity;
-    private static Logger logger = Logger.getLogger(Product.class.getName());
+    private static final Logger logger = Logger.getLogger(Product.class.getName());
     public Product(String name, double price,String category,int availablity ) {
         this.name = name;
         this.price = price;
