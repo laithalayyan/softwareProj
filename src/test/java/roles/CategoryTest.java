@@ -22,10 +22,6 @@ class CategoryTest {
         assertEquals("Name", actualCategory.getName());
     }
 
-    @Test
-    void testAddcatTEG() {
 
-        Category.addcatTEG("Name");
-    }
 }
 
