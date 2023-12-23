@@ -100,6 +100,7 @@ public class signin {
         userList.add(user3);
         //installersignin(InstallerEmail,InstallerPass);
         //assertFalse(isInstallerislogged());
+        installersignin(InstallerEmail,InstallerPass);
         this.userList2=User.getlist();
         assertTrue(logininstaller(InstallerEmail,InstallerPass,userList2));
     }

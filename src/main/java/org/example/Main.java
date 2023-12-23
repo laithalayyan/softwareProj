@@ -800,5 +800,20 @@ public class Main {
             logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
         }
     }
+    public static void isCustLogged(){
+        if (isCustomerLoggedIn()) {
+            customerDashboard();
+        }
+    }
+    public static void isAdminLogged(){
+        if (isAdminislogged()) {
+            adminDashboard();
+        } else logger.info("You need to log in correctly");
+    }
+    public static void isInstallerLogged(){
+        while (isInstallerislogged()) {
+            installerDashboard();
+        }
+    }
 }
 

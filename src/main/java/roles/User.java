@@ -244,19 +244,5 @@ public class User {
         logger.info("Login failed. Please check your email and password.");
     }
 
-    public static void isCustLogged(){
-        if (isCustomerLoggedIn()) {
-            customerDashboard();
-        }
-    }
-    public static void isAdminLogged(){
-        if (isAdminislogged()) {
-            adminDashboard();
-        } else logger.info("You need to log in correctly");
-    }
-    public static void isInstallerLogged(){
-        while (isInstallerislogged()) {
-            installerDashboard();
-        }
-    }
+
 }
