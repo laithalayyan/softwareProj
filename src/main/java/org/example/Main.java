@@ -768,5 +768,8 @@ public class Main {
         }
         return null ;
     }
+    public static void addcatTEG(String name){
+        categories.add(new Category(name));
+    }
 }
 

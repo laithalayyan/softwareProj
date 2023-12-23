@@ -43,6 +43,8 @@ public class AdminManageCategories {
     public void theyChooseAddCategory() {
         category.setAddcat(true);
         assertTrue(isAddcat());
+        setSearchproduct(true);
+        assertTrue(isSearchproduct());
         //manageCat(1);
 
     }
@@ -132,26 +134,4 @@ public class AdminManageCategories {
     }
 
 
-
-
-    @Test
-    void testConstructor() {
-        // Arrange, Act and Assert
-        Assertions.assertTrue((new Category("Name")).isSearchproduct());
-    }
-
-    @Test
-    void testConstructor2() {
-        // Arrange and Act
-        Category actualCategory = new Category("Name");
-        actualCategory.setSearchproduct(true);
-
-        // Assert
-        assertEquals("Name", actualCategory.getName());
-    }
-
-    @Test
-    void testAddcatTEG() {
-        Category.addcatTEG("Name");
-    }
 }

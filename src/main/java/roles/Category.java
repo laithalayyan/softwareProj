@@ -55,9 +55,7 @@ public class Category {
 
 
 
-    public static void addcatTEG(String name){
-        categories.add(new Category(name));
-    }
+
 
     public static boolean addcatTest(String name){
         for (Category category : categories) {
