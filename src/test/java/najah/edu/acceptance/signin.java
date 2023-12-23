@@ -72,7 +72,7 @@ public class signin {
     public void theCustomerLogin() {
         user2=new User("customer",CustomerEmail,CustomerPass,"customer");
         userList.add(user2);
-        //setUserDatabasee();
+        String ss=getLoggedIngetName();
         this.userList2=User.getlist();
         assertFalse(logincustomer(CustomerEmail,CustomerPass,userList2));
     }

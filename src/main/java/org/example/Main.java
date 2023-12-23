@@ -825,5 +825,17 @@ public class Main {
             }else if (product.getAvailablity()==0){ logger.info("There is no enough");}
         }
     }
+    public static void register(String username,String email,String password,String userType){
+        User us = new User(username, email, password, userType);
+        for (User user : userDatabase) {
+            if (email.equals(user.getEmail())) {
+                logger.info("this user already exist");
+                return ;}
+        }
+        logger.info("Registration successful!");
+        userDatabase.add(us);
+        logger.info("Now you can login!");
+        loginUser();
+    }
 }
 

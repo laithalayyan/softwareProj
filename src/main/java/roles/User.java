@@ -1,131 +1,81 @@
 package roles;
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import static org.example.Main.*;
 import static roles.Customer.customers;
-
-
 public class User {
     private static boolean isSignedup;
-
-
     public static boolean isIssignedup() {
         return isSignedup;
     }
-
     public static void setIssignedup(boolean issignedup) {
         User.isSignedup = issignedup;
     }
-
     private static boolean adminIslogged;
     private static boolean installerIslogged;
     private static boolean customerIslogged;
     public static final String INSTALLERUT="installer";
     public static final String ADMINUT="installer";
     public static final String CUSTOMERUT="installer";
-
     public static boolean isAdminislogged() {
         return adminIslogged;
     }
-
     public static void setAdminislogged(boolean adminislogged) {
         adminIslogged = adminislogged;
     }
-
     public static boolean isInstallerislogged() {
         return installerIslogged;
     }
-
     public static void setInstallerislogged(boolean installerislogged) {
         installerIslogged = installerislogged;
     }
-
     public static boolean isCustomerislogged() {
         return customerIslogged;
     }
-
     public static void setCustomerislogged(boolean customerislogged) {
         customerIslogged = customerislogged;
     }
-
     private String username;
-
     private  String email;
     private  String password;
     private  String userType;
-
-
     private static String customerOrder;
     public static void setCustomerOrder(String customerOrder) {
         User.customerOrder = customerOrder;
     }
-
-
     private static Logger logger = Logger.getLogger(User.class.getName());
-
-
     public static String getLoggedIngetEmail() {
         return loggedIngetEmail;
     }
-
-    public static void setLoggedIngetEmail(String loggedIngetEmail) {
-        User.loggedIngetEmail = loggedIngetEmail;
-    }
-
     private static String loggedIngetEmail;
-
     public static String getLoggedIngetName() {
         return loggedIngetName;
     }
-
-    public static void setLoggedIngetName(String loggedIngetName) {
-        User.loggedIngetName = loggedIngetName;
-    }
-
     private static String loggedIngetName;
-
     public static String getLoggedIngetEmailCustomer() {
         return loggedIngetEmailCustomer;
     }
-
-    public static void setLoggedIngetEmailCustomer(String loggedIngetEmailCustomer) {
-        User.loggedIngetEmailCustomer = loggedIngetEmailCustomer;
-    }
-
     private static String loggedIngetEmailCustomer;
-
-
     public User(String username, String email, String password, String userType) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.userType = userType;
     }
-
     protected static ArrayList<User> userDatabasee = new ArrayList<>();
-
-
-
     public String getUsername() {
         return username;
     }
-
     public String getEmail() {
         return email;
     }
-
     public String getPassword() {
         return password;
     }
-
     public String getUserType() {
         return userType;
     }
-
-
     public static void listUserAccounts() {
         logger.info("User Accounts:");
         for (User user : userDatabase) {
@@ -134,21 +84,6 @@ public class User {
         for (Installer installer : installersDatabase) {
             logger.info("Username: " + installer.getUsername() + ", Email: " + installer.getEmail() + ", User Type: " + installer.getUserType());
         }
-    }
-
-
-
-    public static void register(String username,String email,String password,String userType){
-        User us = new User(username, email, password, userType);
-        for (User user : userDatabase) {
-            if (email.equals(user.getEmail())) {
-                logger.info("this user already exist");
-                return ;}
-        }
-        logger.info("Registration successful!");
-        userDatabase.add(us);
-        logger.info("Now you can login!");
-        loginUser();
     }
     public static boolean registerTest(String username,String email,String password,String userType){
         User us = new User(username, email, password, userType);
