@@ -172,21 +172,6 @@ public class User {
         }
         return false;
     }
-    public static void signin(String email,String password){
-        for (User user : userDatabase) {
-            if (user.getEmail().equals(email) && user.getPassword().equals(password) && user.getUserType().equalsIgnoreCase("admin")) {
-                adminsignin(user);
-                isAdminLogged();
-            } else if (user.getEmail().equals(email) && user.getPassword().equals(password) && user.getUserType().equalsIgnoreCase("customer")) {
-                customersignin(user);
-                isCustLogged();
-            } else {
-                installersignin(email, password);
-                isInstallerLogged();
-            }
-        }
-        logger.info("Login failed. Please check your email and password.");
-    }
 
 
 }
