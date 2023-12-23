@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import static org.example.Main.*;
 
 public class Order {
-    static String xchoice="Invalid choice. Please try again.";
+    static String xchoice="Invalidd choice. Please try again.";
     private static boolean placeOrderr;
     private static boolean listOrder;
     private static boolean listCategories;
