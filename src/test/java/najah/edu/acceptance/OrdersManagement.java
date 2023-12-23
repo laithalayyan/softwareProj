@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.example.Main.getproductList;
+import static org.example.Main.orderstep1;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static roles.Installer.*;
 import static roles.Order.*;
