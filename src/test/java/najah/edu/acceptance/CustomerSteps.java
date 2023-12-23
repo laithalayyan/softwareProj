@@ -25,7 +25,7 @@ public class CustomerSteps {
 
     @Given("I am managing customers")
     public void setUpCustomerManagement() {
-        customer = new Customer();
+        //customer = new Customer();
         setRegCustomer(false);
         setListCustomer(false);
     }

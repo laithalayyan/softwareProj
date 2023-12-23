@@ -48,10 +48,8 @@ public class Installer {
         appointments.add(appointment);
     }
 
-
     private static Logger logger = Logger.getLogger(Installer.class.getName());
 
-    public Installer(){}
     public Installer(int id ,String username, String email, String password,String userType,String date) {
         this.id=id;
         this.username = username;
@@ -115,14 +113,6 @@ public class Installer {
         }
     }
 
-    public static Installer getLoggedInInstaller() {
 
-        for (Installer installer : installersDatabase) {
-            if (installer.getEmail().equals(getLoggedIngetEmail())) {
-                return installer;
-            }
-        }
-        return null;
-    }
 
 }

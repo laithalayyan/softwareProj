@@ -771,5 +771,15 @@ public class Main {
     public static void addcatTEG(String name){
         categories.add(new Category(name));
     }
+
+    public static Installer getLoggedInInstaller() {
+
+        for (Installer installer : installersDatabase) {
+            if (installer.getEmail().equals(getLoggedIngetEmail())) {
+                return installer;
+            }
+        }
+        return null;
+    }
 }
 
