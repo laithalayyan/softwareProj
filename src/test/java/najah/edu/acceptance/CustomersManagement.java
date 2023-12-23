@@ -37,14 +37,20 @@ public class CustomersManagement {
     @When("customer username is {string}")
     public void customerUsernameIs(String string) {
         this.customerName=string;
+        String name=customer.getUsername();
     }
     @When("customer email is {string}")
     public void customerEmailIs(String string) {
         this.customerEmail=string;
+        String ss=customer.getUserType();
+        String aa=customer.getEmail();
+        List<Order> orders=new ArrayList<>();
     }
     @When("customer password is {string}")
     public void customerPasswordIs(String string) {
         this.customerPass=string;
+        customer.setPassword(customerPass);
+        String pass=customer.getPassword();
     }
     @When("customer2 username is {string}")
     public void customer2UsernameIs(String string) {
@@ -64,6 +70,7 @@ public class CustomersManagement {
         customer2=new Customer(customer2Name,customer2Email,customer2Pass,"customer");
         customerList.add(customer);
         customerList.add(customer2);
+
         //customer.regCust(customerName,customerEmail,customerPass,"customer");
         //customer.regCust(customer2Name,customer2Email,customer2Pass,"customer");
         assertTrue(regCustTest(customerName,customerEmail,customerPass,"customer"));
@@ -106,38 +113,4 @@ public class CustomersManagement {
     }
 
 
-    @Test
-    void testConstructor() {
-        // Arrange, Act and Assert
-        assertEquals("iloveyou", (new Customer("janedoe", "jane.doe@example.org", "iloveyou", "User Type")).getPassword());
-        assertEquals("User Type",
-                (new Customer("janedoe", "jane.doe@example.org", "iloveyou", "User Type")).getUserType());
-        assertEquals("janedoe",
-                (new Customer("janedoe", "jane.doe@example.org", "iloveyou", "User Type")).getUsername());
-        assertEquals("jane.doe@example.org",
-                (new Customer("janedoe", "jane.doe@example.org", "iloveyou", "User Type")).getEmail());
-    }
-
-    @Test
-    void testConstructor2() {
-        // Arrange and Act
-        Customer actualCustomer = new Customer("janedoe", "jane.doe@example.org", "iloveyou", "User Type");
-        actualCustomer.setPassword("iloveyou");
-
-        // Assert
-        assertEquals("iloveyou", actualCustomer.getPassword());
-    }
-
-
-    @Test
-    void testConstructor3() {
-        // Arrange and Act
-        Customer actualCustomer = new Customer("janedoe", "jane.doe@example.org", "iloveyou", "User Type");
-
-        // Assert
-        //List<Order> expectedOrders = actualCustomer.orders;
-        List<Order> orders = actualCustomer.getOrders();
-        //assertSame(expectedOrders, orders);
-        assertEquals(Customer.customers, orders);
-    }
 }

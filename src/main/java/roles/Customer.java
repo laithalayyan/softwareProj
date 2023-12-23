@@ -37,7 +37,6 @@ public class Customer {
     private List<roles.Order> orders;
     public static final List<Customer> customers = new ArrayList<>();
     private static final Logger logger = Logger.getLogger(Customer.class.getName());
-    public Customer(){}
     public static final String CUSTOMERU="customer";
     public Customer(String username, String email, String password,String userType) {
         this.username = username;
