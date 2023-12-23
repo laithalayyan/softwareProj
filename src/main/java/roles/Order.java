@@ -11,7 +11,6 @@ public class Order {
     private static boolean placeOrderr;
     private static boolean listOrder;
     private static boolean listCategories;
-
     public static boolean isPlaceOrder() {
         return placeOrderr;
     }
@@ -27,8 +26,6 @@ public class Order {
     public static void setListOrder(boolean listOrder) {
         Order.listOrder = listOrder;
     }
-
-
     public static boolean isListCategories() {
         return listCategories;
     }
@@ -36,7 +33,6 @@ public class Order {
     public static void setListCategories(boolean listCategories) {
         Order.listCategories = listCategories;
     }
-
     private int orderId;
     private List<Product> orderedProducts;
     private double totalPrice;
@@ -66,12 +62,6 @@ public class Order {
         }
         return totalPrice;
     }
-
-
-
-
-
-
     public static void orderstep1(String input,List<Product> products){
         for (Product product : products) {
             if (product.getName().equalsIgnoreCase(input)&&product.getAvailablity()!=0) {
@@ -82,7 +72,4 @@ public class Order {
             }else if (product.getAvailablity()==0){ logger.info("There is no enough");}
         }
     }
-
-
-
 }
