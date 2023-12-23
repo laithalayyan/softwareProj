@@ -5,6 +5,15 @@ import java.util.logging.Logger;
 import static org.example.Main.*;
 import static roles.Customer.customers;
 public class User {
+    public static boolean isListAcc() {
+        return listAcc;
+    }
+
+    public static void setListAcc(boolean listAcc) {
+        User.listAcc = listAcc;
+    }
+
+    private static boolean listAcc;
     private static boolean isSignedup;
     public static boolean isIssignedup() {
         return isSignedup;
