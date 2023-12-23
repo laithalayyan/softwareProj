@@ -7,6 +7,7 @@ import roles.Installer;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static roles.Installer.*;
 
@@ -51,6 +52,8 @@ public class InstallerManagement {
     public void theInstallerShouldBeRegisteredSuccessfully() {
         installer=new Installer(id,username,email,pass,"installer","");
         installerList.add(installer);
+        String aa=installer.getPassword();
+        String bb=installer.getUserType();
         //reginstaller(id,username,email,pass,"installer");
         availableDate=new AvailableDates(av,installer.getUsername());
         reginstallerav(av,installer.getUsername());
@@ -69,4 +72,10 @@ public class InstallerManagement {
     }
 
 
+    @Then("the installer should not be registered")
+    public void theInstallerShouldNotBeRegistered() {
+        installer=new Installer(id,username,email,pass,"installer","");
+        installerList.add(installer);
+        assertFalse(reginstallerTest(id,username,email,pass,"installer",""));
+    }
 }

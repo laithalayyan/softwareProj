@@ -83,14 +83,6 @@ public class Installer {
         return installer.appointments;
     }
 
-
-
-
-
-    public static void reginstaller(int id,String username , String email,String password ,String type,String date){
-        installersDatabase.add(new Installer(id,username, email, password,type,date));
-        logger.info(INSTALLERSUCCESS);
-    }
     public static boolean reginstallerTest(int id,String username , String email,String password ,String type,String date){
             for(Installer installer:installersDatabase){
                 if(installer.getEmail().equals(email)&&installer.getUsername().equals(username)){

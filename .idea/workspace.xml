@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="068c800a-49d1-4e19-b9ad-74713a5c36ae" name="Changes" comment="sonar pre-final stage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomersManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/CustomersManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/roles/AppointmentTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/roles/AvailableDatesTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/roles/CategoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/roles/CustomerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/roles/OrderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/roles/Installer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/roles/Installer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/InstallerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/najah/edu/acceptance/InstallerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use_cases/InstallersManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/use_cases/InstallersManagement.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -436,7 +432,21 @@
       <option name="project" value="LOCAL" />
       <updated>1703289775354</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="sonar pre-final stage">
+      <created>1703290342005</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1703290342005</updated>
+    </task>
+    <task id="LOCAL-00037" summary="sonar pre-final stage">
+      <created>1703290531632</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1703290531632</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
