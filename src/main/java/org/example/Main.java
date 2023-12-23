@@ -781,5 +781,11 @@ public class Main {
         }
         return null;
     }
+    public static void listProducts(List<Product> products) {
+        logger.info("Products:");
+        for (Product product : products) {
+            logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
+        }
+    }
 }
 

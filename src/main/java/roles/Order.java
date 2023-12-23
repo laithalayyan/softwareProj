@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import static org.example.Main.*;
-import static roles.Product.listProducts;
 
 public class Order {
     static String xchoice="Invalid choice. Please try again.";

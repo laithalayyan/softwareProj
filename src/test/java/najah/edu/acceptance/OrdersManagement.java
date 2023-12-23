@@ -1,5 +1,6 @@
 package najah.edu.acceptance;
 import io.cucumber.java.en.*;
+import org.example.Main;
 import roles.*;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class OrdersManagement {
         orderedProducts1.add(product);
         Order order1=new Order(1,orderedProducts1);
         product.listProductsOrder();
-        Product.listProducts(orderedProducts1);
+        Main.listProducts(orderedProducts1);
         Product.productsearch(name);
         orderstep1(name,orderedProducts1);
     }

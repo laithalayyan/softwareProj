@@ -4,12 +4,12 @@ package roles;
 import java.util.logging.Logger;
 
 import static org.example.Main.*;
-import java.util.List;
+
 
 public class Product {
-    public static boolean addProduct;
-    public static boolean deleteProduct;
-    public static boolean listProduct;
+    private static boolean addProduct;
+    private static boolean deleteProduct;
+    private static boolean listProduct;
     public static boolean isAddProduct() {
         return addProduct;
     }
@@ -66,6 +66,16 @@ public class Product {
         logger.info("Product added successfully.");
         return true;
     }
+    public static void productdelete(String name){
+        for (Product product : products) {
+            if (product.getName().equals(name)) {
+                products.remove(product);
+                logger.info("Product deleted successfully.");
+                return;
+            }
+        }
+        logger.info("Product not found.");
+    }
     public static boolean productdeleteTest(String name){
         for (Product product : products) {
             if (product.getName().equals(name)) {
@@ -84,12 +94,8 @@ public class Product {
             logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
         }
     }
-    public static void listProducts(List<Product> products) {
-        logger.info("Products:");
-        for (Product product : products) {
-            logger.info("Name: " + product.getName() + ", Price: " + product.getPrice() +", Category: " + product.getCategory() + ", Availability: " + product.getAvailablity() );
-        }
-    }
+
+
     public static void productsearch(String name){
         for (Product product : products) {
             if (product.getName().equalsIgnoreCase(name)) {
