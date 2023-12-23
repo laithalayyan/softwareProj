@@ -50,6 +50,7 @@ public class signin {
         user=new User("admin",AdminEmail,AdminPass,"admin");
         userList.add(user);
         this.userList2=User.getlist();
+        loginadmin(AdminEmail,AdminPass,userList);
         assertFalse(loginadmin(AdminEmail,AdminPass,userList2));
     }
 

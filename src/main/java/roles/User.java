@@ -105,15 +105,10 @@ public class User {
         userDatabase.add(us);
         return true;
     }
-
-
-
     public static void adminsignin(User user){
-
         logger.info("Login successful. User type: " + user.getUserType());
         setAdminislogged(true);
     }
-
     public static void customersignin(User user){
         Customer customer = new Customer(user.getUsername(), user.getEmail(), user.getPassword(), user.getUserType());
         customers.add(customer);
@@ -122,8 +117,6 @@ public class User {
         setCustomerOrder(user.getEmail());
         logger.info("Login successful. User type: " + user.getUserType());
         setCustomerislogged(true);
-
-
     }
     public static void installersignin(String email ,String password){
         for (Installer installer : installersDatabase) {
@@ -135,7 +128,6 @@ public class User {
         }
         logger.info("Login successful. User type: installer");
     }
-
     public static List<User> getlist(){
         User customerUser= new User(CUSTOMERUT, "customer@customer.com", "123", CUSTOMERUT);
         userDatabasee.add(customerUser);
@@ -172,6 +164,4 @@ public class User {
         }
         return false;
     }
-
-
 }
