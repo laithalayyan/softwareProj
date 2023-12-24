@@ -2,15 +2,14 @@ package roles;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.logging.Logger;
 import static org.example.Main.*;
 import static roles.Installer.*;
 
 
 public class Appointment {
-    public static boolean listappointment;
-    public static boolean isChooseSchedule ;
+    private static boolean listappointment;
+    private static boolean isChooseSchedule ;
     public static boolean isListappointment() {
         return listappointment;
     }
@@ -72,7 +71,6 @@ public class Appointment {
             if(installerId==installer.getId()){
                 selectedInstaller=installer;
                 setInstaller(installer);
-                //scheduleAppointment();
                 Appointment appointment=new Appointment(getLoggedInCustomerName(), installer.getDate(),carmodel,carDate);
                 appointments2.add(appointment);
                 Installer.setAppointments(appointments2);
@@ -103,7 +101,6 @@ public class Appointment {
                 appointmentsList(installer11);
             }
         }
-        logger.info("There is no apponintments for installer");
     }
     public static void appointmentsList(Installer installer){
         List<Appointment> appointments = getAppointments(installer);

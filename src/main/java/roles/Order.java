@@ -1,9 +1,6 @@
 package roles;
 
 import java.util.List;
-import java.util.logging.Logger;
-
-import static org.example.Main.*;
 
 public class Order {
     static String xchoice="Invalidd choice. Please try again.";
@@ -35,7 +32,6 @@ public class Order {
     private int orderId;
     private List<Product> orderedProducts;
     private double totalPrice;
-    private static Logger logger = Logger.getLogger(Order.class.getName());
     public Order(int orderId, List<Product> orderedProducts) {
         this.orderId = orderId;
         this.orderedProducts = orderedProducts;

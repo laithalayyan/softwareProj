@@ -7,8 +7,6 @@ M
 src/main/java/roles/User.java,1\c\1c9ab57ef6df492f54af10484c2408637d14b990
 J
 use_cases/regester.feature,b\1\b1dbdeae29d51aaabbf4b993ed314a7989fbe25e
-]
--src/main/java/org/example/AdminDashboard.java,a\9\a90287866d248700a86fa89d53cb0afed83dc6a2
 f
 6src/test/java/najah/edu/acceptance/AcceptanceTest.java,4\6\46167c098e7c7e82c6b212aedea229b0821f9ac5
 [
@@ -53,9 +51,15 @@ k
 ;src/test/java/najah/edu/acceptance/CustomersManagement.java,6\e\6e3677113a8c3ea2baddcdc0f6fc1ebfc36735c6
 m
 =src/test/java/najah/edu/acceptance/AdminManageCategories.java,0\4\046a04f5ade425541508c67b56a0e9c68edfa08e
-d
-4src/test/java/najah/edu/acceptance/productmange.java,d\3\d31ab3b06b5b1476e7c0d2f22754920e23faa06c
 e
 5src/test/java/najah/edu/acceptance/CustomerSteps.java,9\a\9af83fcf0f53edef57a4f4d0cf0520b737cf654b
-X
-(src/test/java/roles/AppointmentTest.java,a\5\a5077215d0ae7fd2d937f9ec6363fa34a4dfe561
+Å
+Q.idea/sonarlint/securityhotspotstore/9/a/9af83fcf0f53edef57a4f4d0cf0520b737cf654b,2\a\2a43eeea16b8dc52daec069863833d2c2d8e962e
+w
+G.idea/sonarlint/issuestore/9/a/9af83fcf0f53edef57a4f4d0cf0520b737cf654b,6\8\685352fe10a934f15fafc91f6688e7d218b3d3c3
+G
+use_cases/Users.feature,7\e\7efc36ea1e7d6da976dd93c02a8cd3f24d2851f7
+d
+4src/test/java/najah/edu/acceptance/UserAccounts.java,0\e\0e47bb824d2c805b169f7cc3f5409b703a81334f
+S
+#src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b

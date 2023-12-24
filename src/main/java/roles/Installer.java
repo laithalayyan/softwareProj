@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import static org.example.Main.*;
-import static roles.User.*;
 
 public class Installer {
     public static boolean regInstallerr;

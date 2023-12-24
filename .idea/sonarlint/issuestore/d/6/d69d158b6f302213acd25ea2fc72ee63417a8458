@@ -1,12 +1,15 @@
 
 x
-java:S1104"[Make listappointment a static final constant or non-public and provide accessors if needed.(—¦ö8Ä¦Ç—É1
+java:S1104"[Make listappointment a static final constant or non-public and provide accessors if needed.(—¦ö8«Í¿æÉ1
 y
-java:S1104"\Make isChooseSchedule a static final constant or non-public and provide accessors if needed.(ääëõ8Å¦Ç—É1
+java:S1104"\Make isChooseSchedule a static final constant or non-public and provide accessors if needed.(ääëõ8¬Í¿æÉ1
 R
-java:S1444"5Make this "public static listappointment" field final(—¦ö8Å¦Ç—É1
+java:S1444"5Make this "public static listappointment" field final(—¦ö8¬Í¿æÉ1
 S
-java:S1444"6Make this "public static isChooseSchedule" field final(ääëõ8Å¦Ç—É1
+java:S1444"6Make this "public static isChooseSchedule" field final(ääëõ8¬Í¿æÉ1
 :
-java:S2386&"Make this member "protected".(×»ê„8ã¦Ç—É1
-]	java:S125]"<This block of commented-out lines of code should be removed.(ï¯Ä£şÿÿÿÿ8óİÊ—É1
+java:S2386$"Make this member "protected".(×»ê„8ÑÍ¿æÉ1
+]	java:S125K"<This block of commented-out lines of code should be removed.(ï¯Ä£şÿÿÿÿ8ßÍ¿æÉ1
+X	java:S125j"<This block of commented-out lines of code should be removed.(¿ÿÍ8äÍ¿æÉ1
+P
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8æÍ¿æÉ1
